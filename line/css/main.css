@@ -1,0 +1,50 @@
+@import url(common.css);
+.global {
+    margin: 114px 0 0px 0;
+}
+.global .tit strong {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.global .tit h1 {
+    color: #00b900;
+    margin: 16px 0 6px 0;
+}
+.global .tit p {
+    margin: 0 0 21px 0;
+}
+.global .tit a {
+    color: #00b900;
+    border: 1px solid #00b900;
+    padding: 9px 33px;
+    display: inline-block;
+    text-align: center;
+}
+.global .photo {
+    margin: 42px auto 0 auto;
+}
+
+.store {
+    color: #fff;
+    margin: 97px 0 0 0;
+    background: url(../images/line_store\ bg.jpg);
+    padding: 115px 0 97px 0;
+    text-align: center;
+}
+.store .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 13px 0;
+}
+.store .tit p {
+    margin: 0 0 34px 0;
+}
+.store .tit a {
+    border: 1px solid #fff;
+    padding: 9px 28px;
+    display: inline-block;
+}
+.store .photo {
+    margin: 37px auto 0 auto;
+}
