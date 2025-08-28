@@ -110,3 +110,15 @@ footer {
     background-color: #1d1d1d;
     color: rgba(255, 255, 255, 0.8);
 }
+footer .f_nav ul {
+    display: flex;/*li를 좌우배치*/
+    gap: 0 42px; /*위아래-좌우 여백값*/
+}
+footer .f_info {
+    margin: 8px 0 8px 0;
+    display: flex;/*adress span 좌우배치*/
+    gap: 0 22px;
+}
+footer .copyfight {
+
+}
