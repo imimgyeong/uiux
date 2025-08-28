@@ -114,11 +114,11 @@ footer .f_nav ul {
     display: flex;/*li를 좌우배치*/
     gap: 0 42px; /*위아래-좌우 여백값*/
 }
+footer .f_nav ul li.privacy {/* 문서의 구조를 이해하기위해*/
+    font-weight: 700;
+}
 footer .f_info {
     margin: 8px 0 8px 0;
     display: flex;/*adress span 좌우배치*/
     gap: 0 22px;
-}
-footer .copyfight {
-
 }
