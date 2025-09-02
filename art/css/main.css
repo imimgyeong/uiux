@@ -85,6 +85,7 @@ header .gnb ul li a {
     color: #C11920;
     padding: 14px 39px 14px 39px;
     border-radius: 30px;
+    /* transition: 0.5s; */
 }
 .biz .txt .btn_wrap a:hover {
     background-color: #C11920;
@@ -131,6 +132,10 @@ header .gnb ul li a {
     border-radius: 30px;
     margin: 48px 0 0 0;
 }
+.community .news .tit a:hover {
+    background-color: #fff;
+    color: #C11920;
+}
 .community .news .list {
     width: 832px;
 }
@@ -154,6 +159,9 @@ header .gnb ul li a {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.community .news .list ul li a:hover h3 {
+    font-weight: 700;
+}
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
@@ -176,6 +184,10 @@ header .gnb ul li a {
     border: 1px solid #fff;
     padding: 14px 50px 14px 50px;
     border-radius: 30px;
+}
+.community .media .tit a:hover {
+    background-color: #fff;
+    color: #C11920;
 }
 .community .media .list {
     margin: 34px 0 0 0;
@@ -201,6 +213,10 @@ header .gnb ul li a {
     height: 100%;
     object-fit: cover;
 }
+.community .media .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+    transition: 0.5s;
+}
 .community .media .list ul li a h3 {
     color: #1E2124;
     font-weight: 700;
@@ -221,4 +237,37 @@ footer {
     padding: 57px 0 57px 0;
     background-color: #1F1E24;
     color: rgba(255, 255, 255, 0.8);
+}
+footer .wrapper {
+    display: flex;/* inner-famiky_site좌우배치*/
+    justify-content: space-between;
+}
+footer .inner .f_nav ul {
+    display: flex;/* li를 좌우배치*/
+    gap: 0 45px;
+}
+footer .inner .f_nav ul a {
+    display: block;
+}
+footer .inner .f_nav ul a:hover {
+    text-decoration: underline;
+}
+footer .inner .f_info {
+    margin: 12px 0 12px 0;
+}
+footer .inner .f_info .group {
+    display: flex;
+    gap: 0 35px;/*상하-좌우 여백*/
+}
+footer .inner .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+footer .family_site button {
+    width: 214px;
+    line-height: 57px;/* 높이를 행간으로 주면 글자는 위 아래 가운데로 가게 되어있음*/
+    background-color: #C11920;
+    color: #fff;
+    display: block;/* 버튼을 만나면 항상 이거 무조건 해주기 ! */
+    text-align: left;
+    padding: 0 0 0 20px;
 }
