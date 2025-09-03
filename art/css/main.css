@@ -105,10 +105,7 @@ header .gnb ul li a {
 }
 
 .community {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 938px;
     margin: 103px 0 0 0;
-    /* height: 938px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면 안됨
-    background의 높이니까 background의 높이값을 주면 됨 */
     color: #fff;
     position: relative;/* before정렬의기준*/
 }
@@ -117,6 +114,10 @@ header .gnb ul li a {
     position: absolute;/* community를 기준으로 정렬*/
     left: 0;
     top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 938px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
 }
 .community .news {
     padding: 81px 0 0 0;
@@ -170,6 +171,7 @@ header .gnb ul li a {
     position: absolute;
     left: 0;
     top: 194px;
+
 }
 .community .news a.more:hover {
     background-color: #fff;
@@ -244,6 +246,7 @@ header .gnb ul li a {
     position: absolute;/* wrapper를기준으로 정렬*/
     right: 0;
     top: 0;
+    
 }
 .community .media a.more:hover {
     background-color: #fff;
@@ -265,11 +268,38 @@ footer .inner .f_nav ul {
     display: flex;/* li를 좌우배치*/
     gap: 0 45px;
 }
-footer .inner .f_nav ul a {
-    display: block;
+footer .inner .f_nav ul li {
+    position: relative; /* after정렬의 기준*/
 }
-footer .inner .f_nav ul a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -23px;
+    top: 7px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .inner .f_nav ul li:last-child::after{
+    display: none;
+    /*마지막 li의 after숨김처리*/
+}
+footer .inner .f_nav ul li a {
+    display: block;
+    position: relative;/* a after정렬의 기준*/
+}
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute;/* a 정렬의기준 */
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%;/* 기준이 되는 a의 100%*/
 }
 footer .inner .f_info {
     margin: 12px 0 12px 0;
@@ -289,4 +319,17 @@ footer .family_site button {
     display: block;/* 버튼을 만나면 항상 이거 무조건 해주기 ! */
     text-align: left;
     padding: 0 0 0 20px;
+    position: relative;/* after정렬의기준 */
+}
+footer .family_site button::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    position: absolute;/* button을 기준으로 정렬 */
+    right: 23px;
+    top: 20px;
+    transform: rotate(-45deg);
 }
