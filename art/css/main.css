@@ -110,6 +110,13 @@ header .gnb ul li a {
     /* height: 938px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면 안됨
     background의 높이니까 background의 높이값을 주면 됨 */
     color: #fff;
+    position: relative;/* before정렬의기준*/
+}
+.community::before {
+    content: "";/* 필수값 */
+    position: absolute;/* community를 기준으로 정렬*/
+    left: 0;
+    top: 0;
 }
 .community .news {
     padding: 81px 0 0 0;
@@ -117,6 +124,7 @@ header .gnb ul li a {
 .community .news .wrapper {
     display: flex;/*tit과 list좌우배치*/
     justify-content: space-between;
+    position: relative;/* more 정렬의 기준 */
 }
 .community .news .tit h2 {
     font-size: 40px;
@@ -124,17 +132,6 @@ header .gnb ul li a {
     line-height: 1.4;
     letter-spacing: -0.02em;
     margin: 27px 0 11px 0;
-}
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 14px 50px 14px 50px;
-    border-radius: 30px;
-    margin: 48px 0 0 0;
-}
-.community .news .tit a:hover {
-    background-color: #fff;
-    color: #C11920;
 }
 .community .news .list {
     width: 832px;
@@ -165,11 +162,28 @@ header .gnb ul li a {
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 14px 50px 14px 50px;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    top: 194px;
+}
+.community .news a.more:hover {
+    background-color: #fff;
+    color: #C11920;
+}
+
 .community .media {
     margin: 123px 0 0 0;
 }
+.community .media .wrapper {
+    position: relative;/* more정렬의 기준 */
+}
 .community .media .tit {
-    display: flex;/*h2-a 좌우배치*/
+    display: flex;/* h2-a 좌우배치 */
     justify-content: space-between;
     align-items: center;
 }
@@ -179,21 +193,12 @@ header .gnb ul li a {
     line-height: 1.4;
     letter-spacing: -0.02em;
 }
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 14px 50px 14px 50px;
-    border-radius: 30px;
-}
-.community .media .tit a:hover {
-    background-color: #fff;
-    color: #C11920;
-}
+
 .community .media .list {
     margin: 34px 0 0 0;
 }
 .community .media .list ul {
-    display: flex;/*li를 좌우배치*/
+    display: flex;/* li를 좌우배치 */
     justify-content: space-between;
 }
 .community .media .list ul li {
@@ -231,6 +236,20 @@ header .gnb ul li a {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 14px 50px 14px 50px;
+    border-radius: 30px;
+    position: absolute;/* wrapper를기준으로 정렬*/
+    right: 0;
+    top: 0;
+}
+.community .media a.more:hover {
+    background-color: #fff;
+    color: #C11920;
+}
+
 
 footer {
     margin: 154px 0 0 0;
