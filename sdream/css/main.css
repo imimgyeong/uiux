@@ -1,3 +1,102 @@
 @import url(default.css);
 @import url(fonts.css);
 @import url(common.css);
+
+.visual {
+    position: relative; /* btn_wrap 정렬의 기준*/
+}
+.visual .swiper-slide {
+    height: 100vh; /* 브라우저 높이와 동일 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual_bg01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual_bg02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual_bg03.jpg);
+}
+.visual .swiper-slide h3 {
+    font-size: 45px;
+    margin: 0 0 10px 0;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: calc(50% - 630px); /* 가운데를 기준으로 1260px의 절반인 630px만 옆으로 가라*/
+    top: calc(50% + 95px);
+    z-index: 1;
+    display: flex;
+    gap: 0 5px;
+}
+.visual .btn_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 47px;
+    height: 47px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_wrap button.btn_prev {
+    background-image: url(../images/visual_arrow.svg);
+}
+.visual .btn_wrap button.btn_play {
+    background-image: url(../images/visual_play.svg);
+}
+.visual .btn_wrap button.btn_stop {
+    background-image: url(../images/visual_stop.svg);
+}
+.visual .btn_wrap button.btn_next {
+    background-image: url(../images/visual_arrow.svg);
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width:768px){
+                    .visual .swiper-slide {
+                        align-items: center; /* ???????????바꿀까말까 */
+                    }
+                    .visual .swiper-slide h3 {
+                        font-size: 32px;
+                    }
+                    .visual .btn_wrap {
+                        left: 50%;/* left 50%는 정렬의기준 visual넓이의 50% */
+                        transform: translateX(-50%); /* 나 자신(btn_wrap) 넓이의 절반을 왼쪽으로 이동 */
+                        top: auto;
+                        /* pc버전에서 top을 줬다가 모바일에서 mobile에서 bottom으로 교체할거면
+                        top을 auto로 해지하고 bottom값을 줘야 적용됨 !!  */
+                        bottom: 30px;
+                    }
+                    .visual .btn_wrap button {
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                        width: 47px;
+                        height: 47px;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }
+                    .visual .btn_wrap button.btn_prev {
+                        background-image: url(../images/visual_arrow.svg);
+                    }
+                    .visual .btn_wrap button.btn_play {
+                        background-image: url(../images/visual_play.svg);
+                    }
+                    .visual .btn_wrap button.btn_stop {
+                        background-image: url(../images/visual_stop.svg);
+                    }
+                    .visual .btn_wrap button.btn_next {
+                        background-image: url(../images/visual_arrow.svg);
+                        transform: rotate(180deg);
+                    }
+                    
+}/*@media*/
+
+
+footer {
+    margin: 500px 0 0 0;
+}
