@@ -9,3 +9,14 @@ h1 {
     color: #1d1d1d;
     font-size: 40px;
 }
+h2 {
+    margin: 50px 0 0 0;
+    font-family: 'GMarketSans';
+    font-weight: 700;
+    color: #1d1d1d;
+    font-size: 24px;    
+}
+
+.text {
+    width: 300px;
+}
