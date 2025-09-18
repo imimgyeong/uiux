@@ -2,6 +2,83 @@
 @import url(fonts.css);
 @import url(common.css);
 
+header {
+    height: 80px;
+    position: absolute; /* wrap을 기준으로 정렬(이미 되어있음)*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    color: #fff;
+    display: flex; /* logo-gnb-util 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 0 24px;
+}
+header .logo a {
+    display: block;
+    width: 134px;
+    height: 52px;
+    background: url(../images/logo.svg) no-repeat center center / contain;
+    /* contain 아이콘의 이미지를 안자르고 다나오게 하겠다!
+    로고나 아이콘 쓸때 사용 */
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 모바일에서만 나옴 */
+}
+header .gnb .gnb_wrap ul {
+    display: flex; /* li를 좌우배치*/
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 80px; /* 행간을 heder높이 만큼*/
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 28px 0 28px;
+}
+header .util {
+    display: flex; /* mypage - lang  좌우배치 */
+}
+header .util .mypage,
+header .util .lang .lang_open {
+    width: 36px;
+    height: 36px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+header .util .mypage {
+    background-image: url(../images/util_mypage.svg);
+}
+header .util .lang .lang_open {
+    background-image: url(../images/util_lang.svg);
+}
+
+
+@media screen and (max-width:768px){
+                header {
+                    height: 56px;
+                    padding: 0 0 0 16px;
+                }
+                header .logo a {
+                    width: 70px;
+                    height: 27px;
+                }
+                header .gnb .gnb_open {
+                    display: block; /* 모바일에서만 나옴 */
+                    width: 56px;
+                    height: 56px;
+                    background: url(../images/gnb_open.svg) no-repeat center center;
+                }
+                header .gnb .gnb_wrap {
+                    display: none /* ul만숨기면 gnb_wrap이 살아있기때문에 gnb_wrap자체를 숨겨야함 */
+                }
+                header .util {
+                    display: none; /* 모바일에서 숨김*/
+                }
+}/* @media */
+
+
 .visual {
     position: relative; /* btn_wrap 정렬의 기준*/
 }
@@ -60,41 +137,44 @@
 }
 
 @media screen and (max-width:768px){
-                    .visual .swiper-slide {
-                        align-items: center; /* ???????????바꿀까말까 */
-                    }
-                    .visual .swiper-slide h3 {
-                        font-size: 32px;
-                    }
-                    .visual .btn_wrap {
-                        left: 50%;/* left 50%는 정렬의기준 visual넓이의 50% */
-                        transform: translateX(-50%); /* 나 자신(btn_wrap) 넓이의 절반을 왼쪽으로 이동 */
-                        top: auto;
-                        /* pc버전에서 top을 줬다가 모바일에서 mobile에서 bottom으로 교체할거면
-                        top을 auto로 해지하고 bottom값을 줘야 적용됨 !!  */
-                        bottom: 30px;
-                    }
-                    .visual .btn_wrap button {
-                        border: 1px solid #fff;
-                        border-radius: 50%;
-                        width: 47px;
-                        height: 47px;
-                        background-position: center center;
-                        background-repeat: no-repeat;
-                    }
-                    .visual .btn_wrap button.btn_prev {
-                        background-image: url(../images/visual_arrow.svg);
-                    }
-                    .visual .btn_wrap button.btn_play {
-                        background-image: url(../images/visual_play.svg);
-                    }
-                    .visual .btn_wrap button.btn_stop {
-                        background-image: url(../images/visual_stop.svg);
-                    }
-                    .visual .btn_wrap button.btn_next {
-                        background-image: url(../images/visual_arrow.svg);
-                        transform: rotate(180deg);
-                    }
+                .visual .swiper-slide {
+                    align-items: center; /* ???????????바꿀까말까 */
+                }
+                .visual .swiper-slide h3 {
+                    font-size: 32px;
+                }
+                .visual .swiper-slide h3 br {
+                    display: none;
+                }
+                .visual .btn_wrap {
+                    left: 50%;/* left 50%는 정렬의기준 visual넓이의 50% */
+                    transform: translateX(-50%); /* 나 자신(btn_wrap) 넓이의 절반을 왼쪽으로 이동 */
+                    top: auto;
+                    /* pc버전에서 top을 줬다가 모바일에서 mobile에서 bottom으로 교체할거면
+                    top을 auto로 해지하고 bottom값을 줘야 적용됨 !!  */
+                    bottom: 30px;
+                }
+                .visual .btn_wrap button {
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    width: 47px;
+                    height: 47px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                .visual .btn_wrap button.btn_prev {
+                    background-image: url(../images/visual_arrow.svg);
+                }
+                .visual .btn_wrap button.btn_play {
+                    background-image: url(../images/visual_play.svg);
+                }
+                .visual .btn_wrap button.btn_stop {
+                    background-image: url(../images/visual_stop.svg);
+                }
+                .visual .btn_wrap button.btn_next {
+                    background-image: url(../images/visual_arrow.svg);
+                    transform: rotate(180deg);
+                }
                     
 }/*@media*/
 
@@ -111,7 +191,7 @@
     top: 50px;
 }
 .biz .list {
-    width: 725px;
+    width: 750px;
     padding: 0 0 132px 0;
 }
 .biz .list ul {
@@ -131,12 +211,23 @@
 .biz .list ul li a {
     display: block;
     position: relative; /* txt 정렬의 기준 */
-
 }
 .biz .list ul li a .photo {
     overflow: hidden;
     height: 500px;
     border-radius: 20px;
+    position: relative; /* before 정렬의 기준*/
+}
+.biz .list ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #002776;
+    opacity: 0;
+    transition: 0.5s;
 }
 .biz .list ul li a .photo img {
     width: 100%;
@@ -147,16 +238,242 @@
     position: absolute;
     left: 50px;
     width: calc(100% - 100px);/* 100% - left값*2 */
-    bottom: 58px;
+    bottom: -50px;
     color: #fff;
-}
-.biz .list ul li a .txt p {
-    display: none;/* 안보임 */
+    transition: 0.5s;
 }
 .biz .list ul li a .txt h3 {
     font-size: 24px;
     color: #fff;
 }
+.biz .list ul li a .txt p {
+    opacity: 0;
+    margin: 10px 0 0 0;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.5s;
+}
+
+@media screen and (min-width:769px){/*769(포함)이상에 적용*/
+                .biz .list ul li a:hover .photo::before {
+                    opacity: 0.9;
+                }
+                .biz .list ul li a:hover .txt {
+                    bottom: 58px;
+                }
+                .biz .list ul li a:hover .txt p {
+                    opacity: 1;
+                }
+                
+}/*@media*/
+
+@media screen and (max-width:768px){/*768(포함)이하에 적용*/
+                .biz {
+                    margin: 72px 0 0 0;
+                }
+                .biz .wrapper {
+                    display: block;/* flex를 block으로 바꾼것*/
+                }
+                .biz .tit {
+                    position: relative;/* sticky를 relative로 바꿈요 */
+                    top: auto; /* auto 는 top에 선언하지 않은것처럼 해지시켜준단말 0준거랑은 다름 */
+                    margin: 0 0 36px 0;
+                }
+                .biz .list {
+                    width: auto; /* 넓이가 원래 들어가야 할 값이 들어가게 수정
+                    block요소 이기 때문에 100%들어간다는 의미*/
+                    padding: 0;
+                }
+                .biz .list ul {
+                    /* flex 유지 */
+                    flex-direction: column; /*세로로 배치*/
+                    flex-wrap: nowrap;/* 한줄 */
+                    gap: 16px 0;/* 위아래 -좌우 여백 */
+                }
+                .biz .list ul li {
+                    width: auto; /* 잘 모루것다 ???????*/
+                }
+                /*odd 홀수 even 짝수*/
+                .biz .list ul li:nth-child(even) {
+                    transform: translateY(0); /* 값을 빼려면 0*/
+                }
+                .biz .list ul li a .photo {
+                    height: 170px;
+                    border-radius: 10px;
+                }
+                .biz .list ul li a .txt {
+                    position: absolute;
+                    left: 30px;
+                    width: calc(100% - 60px);/* 100% - left값*2 */
+                    bottom: 30px;
+                }
+                .biz .list ul li a .txt h3 {
+                    font-size: 22px;
+                }
+                .biz .list ul li a .txt p {
+                    display: none;
+                }
+            
+}/*@media*/
+
+.notice {
+    margin: 104px 0 0 0;
+    background-color: #EEF7FF;
+    padding: 150px 0 133px 0;
+}
+.notice .wrapper {
+    position: relative; /* more정렬의 기준 */
+}
+.notice .list {
+    margin: 48px 0 0 0;
+}
+.notice .list ul li {
+    margin: 0 0 24px 0;
+}
+.notice .list ul li:last-child {
+    margin-bottom: 0; /* 하단 여백만 0 처리*/
+}
+.notice .list ul li a {
+    display: flex; /* inner-span 좌우배치*/
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 23px 50px 22px 39px;
+}
+.notice .list ul li a .inner {
+    display: flex; /* strong - h3 좌우배치 */
+    align-items: center;
+    gap: 0 20px;
+    font-size: 17px;
+    font-weight: 500;
+    width: calc(100% - 140px); /* 오른쪽에 날짜들어갈 공간빼고 나머지 전부 니땅*/
+}
+.notice .list ul li a .inner strong {
+    display: block;
+    font-weight: 700;
+    padding: 5px 11px 2px 11px;
+    background-color: #002776;
+    border-radius: 10px;
+    color: #fff;
+}
+.notice .list ul li a .inner h3 {
+    white-space: nowrap;/* 1줄제한 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 오버스타일 */
+.notice .list ul li a:hover {
+    background-color: #002776;
+    font-weight: 700;
+    color: #fff;
+}
+.notice .list ul li a:hover .inner h3 {
+    color: #fff;
+}
+.notice .list ul li a:hover .inner strong{
+    background-color: #2A98FF;
+}
+
+.notice .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 52px;
+    color: #002776;
+}
+.notice .more a {
+    display: block;
+    padding: 0 36px 0 0;
+}
+.notice .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -5px;
+    width: 36px;
+    height: 36px;
+    background: url(../images/notice_more2.svg) no-repeat center center;
+}
+
+.notice .more a:hover {
+    color: #002776;
+}
+.notice .more a:hover::after {
+    animation: more 2s linear infinite;
+}
+@keyframes more {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@media screen and (max-width:768px){
+                .notice {
+                    margin: 66px 0 0 0;
+                    padding: 101px 0 72px 0;
+                }
+                .notice .tit {
+                    width: calc(100% - 45px); /* 오른쪽 more자리 유지*/
+                }
+                .notice .list {
+                    margin: 24px 0 0 0;
+                }
+                .notice .list ul li {
+                    margin: 0 0 16px 0;
+                }
+                /* 뒤에서 2개 삭제하려면last-child,nth-last-child 둘 다 써줘야함 */
+                .notice .list ul li:last-child {
+                    display: none;
+                }
+                .notice .list ul li:nth-last-child(2) { 
+                /* nth-last-child(2) 2개가 아니라 뒤에서 2번째를 삭제하란 말임*/
+                    display: none;
+                }
+                .notice .list ul li a {
+                    display: block; /* 모바일에선 쭉밑으로 디자인이라 flex해제*/
+                    padding: 16px 16px 20px 16px;
+                }
+                .notice .list ul li a .inner {
+                    display: block; /* 모바일에선 쭉밑으로 디자인이라 flex해제 */
+                    font-size: 16px;
+                    width: auto;
+                }
+                .notice .list ul li a .inner strong {
+                    display: inline-block;
+                    background-color: #002776;
+                }
+                .notice .list ul li a .inner h3 {
+                    margin: 15px 0 10px 0;
+                }
+                .notice .more {
+                    top: 37px;
+                }
+                .notice .more a {
+                    padding: 0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: #002776 url(../images/notice_more_w.svg) no-repeat center center;
+                    /*색 아이콘 둘 다 줄때 색을 이렇게 그냥 넣으면 됨*/
+                }
+                .notice .more a::after {
+                   display: none;
+                }
+                .notice .more a span {
+                    display: none;
+                }
+                
+                .notice .more a:hover {
+                    color: #002776;
+                }
+                .notice .more a:hover::after {
+                    animation: more 2s linear infinite;
+                }
+                @keyframes more {
+                    0% { transform: rotate(0deg);}
+                    100% { transform: rotate(360deg);}
+                }
+}/* @media */
+
 
 
 
