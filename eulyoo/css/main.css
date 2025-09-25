@@ -20,7 +20,10 @@ section .tit h2 {
                 font-size: 28px;
                 margin: 0 0 9px 0;
             }
-}/*@media*/
+            section .tit p {
+                font-size: 16px;
+            }
+}/*section @media*/
 
 
 header {
@@ -119,8 +122,6 @@ header.fixed .gnb .gnb_wrap ul li a {
                     height: 56px;
                     background-color: #4B352A;
                 }
-              
-                
 }/*header @media*/
 
 
@@ -129,6 +130,7 @@ header.fixed .gnb .gnb_wrap ul li a {
 }
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이에 딱 맞춘단 말이에오 */
+    min-height: 540px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -263,7 +265,7 @@ header.fixed .gnb .gnb_wrap ul li a {
                     height: 10px;
                 } 
              
-}/*@media*/
+}/*visual @media*/
 
 
 .book {
@@ -274,15 +276,310 @@ header.fixed .gnb .gnb_wrap ul li a {
     margin-left: calc((100% - 1260px) / 2);/* 왼쪽 여백이라 left를 줘야함 */
     display: flex; /* tit - list 좌우배치 */
     justify-content: space-between;
-}
-.book .book_wrap .tit {
-
+    position: relative; /*ctrl_btn, more정렬의 기준 */
 }
 .book .book_wrap .list {
-    height: 200px;
-    border: 1px solid red;
-    width: calc(100% - 428px);
+    width: calc(100% - 418px);/* 100% - tit 영역 값 뺀것에서 그림자때문에 10px 더빼줌  */
+    margin: -10px;/* 그림자 안보여서 */
 }
+.book .book_wrap .list .swiper {
+    padding: 10px 30px 0 10px; /*10px은 그림자때문에 줬고 30px은 header 위 여백만큼 해준거임 */
+}
+.book .book_wrap .list .swiper-slide {
+    width: 190px;
+} 
+.book .book_wrap .list .swiper-slide a {
+    display: block;
+}
+.book .book_wrap .list .swiper-slide a .photo {
+    overflow: hidden;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
+    /* swiper에서 그림자를 주면 잘리는 그림자를 생각해서 여백을 생각해줘야함 */
+}
+.book .book_wrap .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.book .book_wrap .list .swiper-slide a .txt h3 {
+    margin: 20px 0 8px 0;
+    font-size: 24px;
+    /* 2 줄 */
+    line-height: 1.3;
+    max-height: 2.6em; /* 행간 * 줄수 단위em*/
+    overflow: hidden;
+}
+.book .book_wrap .list .swiper-slide a .txt p {
+    /* 무조건 1줄로 제한 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.book .book_wrap .ctrl_btn {
+    position: absolute; /* book_wrap을 기준으로 정렬 */
+    left: 0;
+    top: 315px;
+    display: flex;
+    gap: 0 10px
+}
+.book .book_wrap .ctrl_btn button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4B352A;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.29923 8.00544L8.50081 14.207C8.71175 14.418 8.8137 14.6641 8.80667 14.9453C8.79964 15.2266 8.69065 15.4727 8.47971 15.6836C8.26878 15.8945 8.02268 16 7.74143 16C7.46018 16 7.21409 15.8945 7.00315 15.6836L0.506252 9.20779C0.337501 9.03904 0.210938 8.8492 0.126563 8.63826C0.0421876 8.42732 0 8.21638 0 8.00544C0 7.79451 0.0421876 7.58357 0.126563 7.37263C0.210938 7.16169 0.337501 6.97185 0.506252 6.8031L7.00315 0.306201C7.21409 0.0952624 7.4637 -0.00669105 7.75198 0.000340223C8.04026 0.0073715 8.28987 0.116356 8.50081 0.327294C8.71175 0.538233 8.81721 0.784327 8.81721 1.06558C8.81721 1.34683 8.71175 1.59292 8.50081 1.80386L2.29923 8.00544Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.book .book_wrap .ctrl_btn button.btn_next {
+    transform: rotate(180deg);
+}
+.book .book_wrap .ctrl_btn button.swiper-button-disabled {
+    opacity: 0.5;
+}
+.book .book_wrap .more {
+    position: absolute; /* book_wrap을 기준으로 정렬 */
+    left: 0;
+    top: 150px;
+}
+.book .book_wrap .more a {
+    display: block;
+    color: #555;
+    padding: 0 23px 0 0;
+    position: relative; /* after 정렬의기준 */
+}
+.book .book_wrap .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 13px;
+    height: 13px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 7.75H1.25C1.0375 7.75 0.859417 7.67808 0.71575 7.53425C0.571917 7.39042 0.5 7.21225 0.5 6.99975C0.5 6.78708 0.571917 6.609 0.71575 6.4655C0.859417 6.32183 1.0375 6.25 1.25 6.25H6.25V1.25C6.25 1.0375 6.32192 0.859417 6.46575 0.71575C6.60958 0.571917 6.78775 0.5 7.00025 0.5C7.21292 0.5 7.391 0.571917 7.5345 0.71575C7.67817 0.859417 7.75 1.0375 7.75 1.25V6.25H12.75C12.9625 6.25 13.1406 6.32192 13.2843 6.46575C13.4281 6.60958 13.5 6.78775 13.5 7.00025C13.5 7.21292 13.4281 7.391 13.2843 7.5345C13.1406 7.67817 12.9625 7.75 12.75 7.75H7.75V12.75C7.75 12.9625 7.67808 13.1406 7.53425 13.2843C7.39042 13.4281 7.21225 13.5 6.99975 13.5C6.78708 13.5 6.609 13.4281 6.4655 13.2843C6.32183 13.1406 6.25 12.9625 6.25 12.75V7.75Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.book .book_wrap .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* 텍스트 기준 밑줄 위치 */
+    width: 100%;
+    height: 1px;
+    background-color: #555;
+}
+
+@media screen and (max-width:768px){
+                .book {
+                    margin: 100px 0 47px 0;
+                }
+                .book .book_wrap {
+                    width: auto;
+                    margin-left: 0;
+                    display: block; /* tit - list 위아래라 flex해제 */
+                }
+                .book .book_wrap .tit {
+                    margin: 0 0 0 16px;
+                }
+                .book .book_wrap .tit p {
+                    font-size: 16px;
+                }
+                .book .book_wrap .tit p br {
+                    display: none;
+                }
+                .book .book_wrap .list {
+                    width: auto;
+                    margin: 24px 0 0 0;
+                }
+                .book .book_wrap .list .swiper {
+                    padding: 10px 16px 0 16px; /*10px은 그림자때문에 줬고 30px은 header 위 여백만큼 해준거임 */
+                }
+                .book .book_wrap .list .swiper-wrapper {
+                    align-items: flex-start; /*????*/
+                }
+                .book .book_wrap .list .swiper-slide {
+                    width: 155px;
+                } 
+                .book .book_wrap .list .swiper-slide a .txt {
+                    height: auto; /* ?? */
+                }
+                .book .book_wrap .list .swiper-slide a .txt h3 {
+                    margin: 13px 0 4px 0;
+                    font-size: 22px;
+                }
+                .book .book_wrap .list .swiper-slide a .txt p {
+                    font-size: 16px;
+                }
+                .book .book_wrap .ctrl_btn {
+                    display: none;
+                }
+                .book .book_wrap .more {
+                    position: relative;
+                    left: auto;
+                    top: auto;
+                    margin: 40px 0 0 0;
+                    text-align: center;
+                }
+                .book .book_wrap .more a {
+                    display: inline-block;
+                }
+}/*book @media*/
+
+
+.interview {
+    background-color: #FEFEF4;
+    margin: 100px 0 0 0;
+    padding: 144px 0 166px 0;
+}
+.interview .wrapper {
+    position: relative; /* more정렬의 기준 */
+}
+.interview .tit {
+    text-align: center;
+}
+.interview .list {
+    margin: 39px 0 0 0;
+}
+.interview .list ul {
+    display: flex; /* li좌우배치 */
+    justify-content: space-between;
+}
+.interview .list ul li {
+    width: calc(33.33% - 16px); 
+    /* 100%/한줄에 나오는 li의 갯수(3) = 100/3 = 33.33%
+    여백의 합 (24+24=48)/한줄에 나오는 li의갯수(3) = 16px*/
+}
+.interview .list ul li:nth-child(2) {
+    margin: 72px 0 0 0;
+}
+.interview .list ul li a {
+    display: block;
+    position: relative; /* txt정렬의 기준 */
+}
+.interview .list ul li a .photo {
+    overflow: hidden;
+    height: 454px;
+    border-radius: 50px 0 50px 0;
+    position: relative; /* before정렬의 기준 */
+}
+.interview .list ul li:nth-child(2) a .photo {
+    border-radius: 0 50px 0 50px;
+}
+.interview .list ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    transition: 0.5s;
+}
+.interview .list ul li a:hover .photo::before {
+    display: none;
+}
+.interview .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1); /* 흑백 */
+    transition: 0.5s;
+}
+.interview .list ul li a:hover .photo img {
+    filter: grayscale(0); /* 칼라 */
+}
+.interview .list ul li a .txt {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: -49px;
+    z-index: 11;
+    width: calc(100% - 40px);
+    color: #fff;
+    padding: 40px 0 46px 40px;
+    border-radius: 50px 0 50px 0;
+    transition: 0.5s;
+}
+.interview .list ul li a:hover .txt {
+    padding: 40px 0 46px 40px;
+    background-color: #4B352A;
+    bottom: -72px;
+}
+.interview .list ul li:nth-child(2) a .txt {
+    border-radius: 0 50px 0 50px;
+}
+.interview .list ul li a .txt::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 65px;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.2692 16.7308H1.73077C1.24038 16.7308 0.829423 16.5648 0.497885 16.2329C0.165962 15.901 0 15.4898 0 14.9994C0 14.5087 0.165962 14.0977 0.497885 13.7665C0.829423 13.435 1.24038 13.2692 1.73077 13.2692H13.2692V1.73077C13.2692 1.24038 13.4352 0.829423 13.7671 0.497885C14.099 0.165962 14.5102 0 15.0006 0C15.4913 0 15.9023 0.165962 16.2335 0.497885C16.565 0.829423 16.7308 1.24038 16.7308 1.73077V13.2692H28.2692C28.7596 13.2692 29.1706 13.4352 29.5021 13.7671C29.834 14.099 30 14.5102 30 15.0006C30 15.4913 29.834 15.9023 29.5021 16.2335C29.1706 16.565 28.7596 16.7308 28.2692 16.7308H16.7308V28.2692C16.7308 28.7596 16.5648 29.1706 16.2329 29.5021C15.901 29.834 15.4898 30 14.9994 30C14.5087 30 14.0977 29.834 13.7665 29.5021C13.435 29.1706 13.2692 28.7596 13.2692 28.2692V16.7308Z' fill='white'/%3E%3C/svg%3E ");
+    background-size: contain;
+}
+.interview .list ul li a:hover .txt::after {
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+}
+.interview .list ul li a .txt h3 {
+    font-size: 32px;
+    margin: 0 0 12px 0;
+}
+.interview .list ul li a:hover .txt h3 br {
+    display: none;
+}
+.interview .list ul li a .txt p {
+    opacity: 0;
+    transition: 0.5s;
+}
+.interview .list ul li a:hover .txt p {
+    opacity: 1;
+}
+
+.interview .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 50%;
+    top: 114px;
+    transform: translateX(-50%);
+}
+.interview .more a {
+    display: block;
+    color: #555;
+    padding: 0 23px 0 0;
+    position: relative; /* after 정렬의기준 */
+}
+.interview .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 13px;
+    height: 13px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 7.75H1.25C1.0375 7.75 0.859417 7.67808 0.71575 7.53425C0.571917 7.39042 0.5 7.21225 0.5 6.99975C0.5 6.78708 0.571917 6.609 0.71575 6.4655C0.859417 6.32183 1.0375 6.25 1.25 6.25H6.25V1.25C6.25 1.0375 6.32192 0.859417 6.46575 0.71575C6.60958 0.571917 6.78775 0.5 7.00025 0.5C7.21292 0.5 7.391 0.571917 7.5345 0.71575C7.67817 0.859417 7.75 1.0375 7.75 1.25V6.25H12.75C12.9625 6.25 13.1406 6.32192 13.2843 6.46575C13.4281 6.60958 13.5 6.78775 13.5 7.00025C13.5 7.21292 13.4281 7.391 13.2843 7.5345C13.1406 7.67817 12.9625 7.75 12.75 7.75H7.75V12.75C7.75 12.9625 7.67808 13.1406 7.53425 13.2843C7.39042 13.4281 7.21225 13.5 6.99975 13.5C6.78708 13.5 6.609 13.4281 6.4655 13.2843C6.32183 13.1406 6.25 12.9625 6.25 12.75V7.75Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.interview .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* 텍스트 기준 밑줄 위치 */
+    width: 100%;
+    height: 1px;
+    background-color: #555;
+}
+
+
+
+
+
+
 
 
 
