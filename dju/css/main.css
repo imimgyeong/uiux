@@ -7,6 +7,13 @@ section h2 {
     font-weight: 700;
     line-height: 1.2;
 }
+@media screen and (max-width:768px){
+                section h2 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                }
+}/*section @media*/
 .notice {
     margin: 171px 0 96px 0;
 }
@@ -58,6 +65,49 @@ section h2 {
     height: 15px;
     background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2101_95' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2101_95)'%3E%3Cpath d='M6.875 8.125H3.75C3.57292 8.125 3.42448 8.0651 3.30469 7.94531C3.1849 7.82552 3.125 7.67708 3.125 7.5C3.125 7.32292 3.1849 7.17448 3.30469 7.05469C3.42448 6.9349 3.57292 6.875 3.75 6.875H6.875V3.75C6.875 3.57292 6.9349 3.42448 7.05469 3.30469C7.17448 3.1849 7.32292 3.125 7.5 3.125C7.67708 3.125 7.82552 3.1849 7.94531 3.30469C8.0651 3.42448 8.125 3.57292 8.125 3.75V6.875H11.25C11.4271 6.875 11.5755 6.9349 11.6953 7.05469C11.8151 7.17448 11.875 7.32292 11.875 7.5C11.875 7.67708 11.8151 7.82552 11.6953 7.94531C11.5755 8.0651 11.4271 8.125 11.25 8.125H8.125V11.25C8.125 11.4271 8.0651 11.5755 7.94531 11.6953C7.82552 11.8151 7.67708 11.875 7.5 11.875C7.32292 11.875 7.17448 11.8151 7.05469 11.6953C6.9349 11.5755 6.875 11.4271 6.875 11.25V8.125Z' fill='%23004EA2'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
+@media screen and (max-width:768px){
+                .notice {
+                    margin: 97px 0 77px 0;
+                }
+                .notice .tit h2 {
+                    margin: 8px 0 46px 0;
+                }
+                .notice .list ul {
+                    display: flex;
+                    flex-direction: column
+                }
+                
+                .notice .list ul a .photo {
+                    display: none;
+                }
+                .notice .list ul a .txt h3 {
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin: 17px 0 17px 0;
+                }
+                .notice .list ul a .txt p {
+                    display: none;
+                }
+                .notice .more {
+                    position: absolute;
+                    right: 0;
+                    top: 76px;
+                    color: #004EA2;
+                }
+                .notice .more a {
+                    display: block;
+                    padding: 0 18px 0 0;
+                }
+                .notice .more a::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 4px;
+                    width: 15px;
+                    height: 15px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2101_95' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2101_95)'%3E%3Cpath d='M6.875 8.125H3.75C3.57292 8.125 3.42448 8.0651 3.30469 7.94531C3.1849 7.82552 3.125 7.67708 3.125 7.5C3.125 7.32292 3.1849 7.17448 3.30469 7.05469C3.42448 6.9349 3.57292 6.875 3.75 6.875H6.875V3.75C6.875 3.57292 6.9349 3.42448 7.05469 3.30469C7.17448 3.1849 7.32292 3.125 7.5 3.125C7.67708 3.125 7.82552 3.1849 7.94531 3.30469C8.0651 3.42448 8.125 3.57292 8.125 3.75V6.875H11.25C11.4271 6.875 11.5755 6.9349 11.6953 7.05469C11.8151 7.17448 11.875 7.32292 11.875 7.5C11.875 7.67708 11.8151 7.82552 11.6953 7.94531C11.5755 8.0651 11.4271 8.125 11.25 8.125H8.125V11.25C8.125 11.4271 8.0651 11.5755 7.94531 11.6953C7.82552 11.8151 7.67708 11.875 7.5 11.875C7.32292 11.875 7.17448 11.8151 7.05469 11.6953C6.9349 11.5755 6.875 11.4271 6.875 11.25V8.125Z' fill='%23004EA2'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+}/*notice @media*/
 
 .quick {
     padding: 154px 0 133px 0;
@@ -80,11 +130,10 @@ section h2 {
     gap: 20px 20px;
 }
 .quick .list .inner ul li {
-    width: calc(25% - 20px);
+    width: calc(25% - 17px);
 }
 .quick .list .inner ul li a {
     display: block;
-    width: 160px;
     height: 150px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.1);
