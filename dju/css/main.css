@@ -74,9 +74,17 @@ section h2 {
                 }
                 .notice .list ul {
                     display: flex;
-                    flex-direction: column
+                    flex-direction: column;
+                    position: relative;
                 }
-                
+                .notice .list ul::before {
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-color: red;
+                }
                 .notice .list ul a .photo {
                     display: none;
                 }
