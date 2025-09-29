@@ -243,10 +243,10 @@
                     height: 35px;
                     background-color: transparent; /* 투명 */
                 }
-                .service .list ul li a i svg {
-                    /* 감싸는 역역에 대부분 svg에 써있는 사이즈보다 작으면 
-                    자동으로 사이즈가 줄어듬 */
-                }
+                /*.service .list ul li a i svg {
+                    /감싸는 역역에 대부분 svg에 써있는 사이즈보다 작으면 
+                    자동으로 사이즈가 줄어듬 
+                }*/
                 .service .list ul li a i path {
                     fill: #fff;
                     /* 내가 복사한 svg html에 path에 fill이 들어가있음 그래서  path에 fill을 줘야함 */
@@ -264,6 +264,115 @@
                     width: 50%;
                 }
 }/*service @media*/
+
+
+.sdi {
+    margin: 148px 0 0 0;
+}
+.sdi .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+}
+.sdi .inner {
+    margin: 26px 0 0 0;
+    display: flex;
+    gap: 0 24px;
+}
+.sdi .inner .item {
+    background-color: #e4e4e4;
+    border-radius: 20px;
+    height: 245px;
+    width: calc(25% - 18px);
+    /* 나와 같은 사이즈가 있을때의 사이즈 */
+    padding: 20px 30px 0 30px;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px);
+    /* 나와 같은 사이즈가 있을때의 사이즈 */
+    padding: 0;
+}
+.sdi .inner .item h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 9px 0;
+}
+.sdi .inner .career .career_tit {
+    background-color: #1549A4;
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 30px 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 0 17px;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #fff;
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 69px 0 0 0;
+}
+.sdi .inner .career .career_list ul li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul li a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    display: block;
+}
+.sdi .inner .career .career_list ul li a br {
+    display: none;
+}
+
+@media screen and (max-width:1024px){
+                .sdi .inner .career .career_list ul li a br {
+                    display: block;
+                }
+}/*sdi @media*/
+@media screen and (max-width:768px){
+                .sdi {
+                    margin: 74px 0 0 0;
+                }
+                .sdi .tit h2 {
+                    font-size: 28px;
+                    margin: 0 0 9px 0;
+                }
+                .sdi .inner {
+                    flex-wrap: wrap; /* 2줄 허용*/
+                    gap: 16px 16px;
+                }
+                .sdi .inner .item {
+                    width: calc(50% - 8px);
+                }
+                .sdi .inner .item.career {
+                    width: 100%;/* flex로 정렬되기 때문에 절대 auto 안됨 */
+                }
+                .sdi .inner .item h3 {
+                    font-size: 24px;
+                    margin: 0 0 9px 0;
+                }
+                .sdi .inner .career .career_list ul {
+                    margin: 44px 0 0 0;
+                }
+                .sdi .inner .career .career_list ul li {
+                    width: 33.33%;
+                    text-align: center;
+                }
+                .sdi .inner .career .career_list ul li a {
+                    font-size: 16px;
+                }
+                .sdi .inner .career .career_list ul li a br {
+                    display: block;
+                }
+                
+}/*sdi @media*/
+
 
 body {
     margin: 0 0 500px 0;
