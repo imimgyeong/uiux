@@ -97,10 +97,10 @@ button {
 
 */
 
-@media screen and (max-width:1386px){
+@media screen and (max-width:1320px){
                 .wrapper {
                     width: auto;
-                    margin: 0 5%;
+                    margin: 0 30px;
                 }
     
 }

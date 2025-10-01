@@ -85,6 +85,7 @@ header .util .flow::before {
     background: url(../images/util_flow.svg) no-repeat center center;
 }
 
+
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
     border-radius: 0 0 200px 0;
@@ -134,6 +135,7 @@ header .util .flow::before {
 .visual .life:hover::before {
     background-image: url(../images/life_ico_over.svg);
 }
+
 
 /* .culture {
     position: relative;
@@ -238,6 +240,7 @@ header .util .flow::before {
     100% { transform: rotate(360deg); }
 }
 
+
 .tour {
     margin: 106px 0 0 0;
     background-color: #F7F7F7;
@@ -322,6 +325,7 @@ header .util .flow::before {
     /* none으로 숨긴요소는 none빼고 뭐든 줘도 나타남
        다만 block이 만만해서 대부분 block을 줌 */
 }
+
 
 .community {
     height: 823px;

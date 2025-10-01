@@ -25,6 +25,25 @@ header .gnb ul li a {
     line-height: 80px; /* header 높이와 같은 값 */
     padding: 0 25px 0 25px;
 }
+header .util {
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+}
+header .util .weather {
+    padding: 0 0 0 25px;
+    position: relative;/* before정렬의 기준 */
+}
+header .util .weather::before {
+    content: "";
+    position: absolute; /* weather기준으로 정렬 */
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 100%;
+    background: url(../images/util_weather.svg) no-repeat left top;
+}
+
 
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
