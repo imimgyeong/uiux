@@ -97,20 +97,14 @@ button {
 
 */
 
-@media screen and (max-width:1320px){
+@media screen and (max-width:1360px){
                 .wrapper {
                     width: auto;
-                    margin: 0 30px;
+                    margin: 0 var(--content-margin);
                 }
     
-}
+}/*@media*/
 
-@media screen and (max-width:768px){
-/* 브라우저 사이즈 768px부터 그 이하의 사이즈에서만 적용*/
-                    .wrapper {
-                        margin: 16px;
-                    }
-} /*@media*/
 
 
 /* css변수 - 값은 media를 이용해서 수치는 변경가능 
@@ -123,11 +117,13 @@ button {
     --h3-font-size: 24px;
     --tit-line-height:1.3;
     --bold-weight: 700;
+    --content-margin:0 50px 0 50px;
 }
 @media screen and (max-width:1024px){
                 :root {
                     --tit-font-size: 34px;
                     --h3-font-size: 24px;
+                    --content-margin:0 30px 0 30px;
                 }
 }
 @media screen and (max-width:768px){
@@ -135,5 +131,6 @@ button {
                     --base-font-size: 16px;
                     --tit-font-size: 28px;
                     --h3-font-size: 22px;
+                    --content-margin:0 16px 0 16px;
                 }
 }/*@media*/
