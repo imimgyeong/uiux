@@ -2,9 +2,156 @@
 @import url(fonts.css);
 @import url(common.css);
 
-h1 {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #1d1d1d;
+
+.visual {
+    position: relative; /* ctrl_btn 정렬의 기준 */
+}
+.visual .swiper-slide {
+    height: 100dvh; /* 브라우저 높이와 동일 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+
+    display: flex; /* wrapper를 하단에 배치하기 위해 */
+    align-items: flex-end;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual03.jpg);
+}
+.visual .swiper-slide p {
+    font-size: 60px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    margin: 0 0 calc(20dvh + 56px) 0; /* calc(bottom: 20% + 팝업 p와 재생버튼 밑까지의 길이) */
+    /* 글자가 나타나는 효과 */
+    transition: 1s;
+    transform: translate(0, 100px); /* 좌우, 위아래*/
+    opacity: 0;
+}
+.visual .swiper-slide.swiper-slide-active p {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.visual .ctrl_btn {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% - 630px); /* calc(비주얼의 반 - 1260px의 반)으로 계산한것*/
+    bottom: 20%;
+    z-index: 10;
+    display: flex;
+    gap: 0 13px;
+}
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+}
+.visual .ctrl_btn .paging .bar {
+    width: 140px;
+    height: 3px;
+    background-color: var( --color-white30);
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .ctrl_btn .paging .bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-white);
+    animation: paging_bar 3s infinite;
+}
+.visual .ctrl_btn .stop, 
+.visual .ctrl_btn .play {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-white30);
+    display: flex; /* i 태그 가운데 배치 */
+    justify-content: center;
+    align-items: center;
+}
+.visual .ctrl_btn .play {
+    display: none; /* 숨김처리 */
+} 
+.visual .ctrl_btn .stop i {
+    display: block;
+    width: 8px;
+    /* 이미지나 svg코드 등은 넓이만 줘도 높이는 비율에 맞게 들어감 */
+}
+.visual .ctrl_btn .play i {
+    display: block;
+    width: 8px;
+    /* 이미지나 svg코드 등은 넓이만 줘도 높이는 비율에 맞게 들어감 */
+    margin: 0 0 0 3px;
+}
+
+@media screen and (max-width:1320px){
+                .visual .ctrl_btn {
+                    left: 30px;
+                }
+}/* 1320px @media*/
+
+@media screen and (max-width:768px){
+                .visual .ctrl_btn {
+                    left: 16px;
+                }
+                .visual .swiper-slide {
+                    height: 600px;
+                }
+                .visual .swiper-slide p {
+                    font-size: 32px;
+                    margin: 0 0 86px 0; /* 사이즈가 고정이라 밑 여백도 그냥 디자인대로 줘도ㄱㅊ */
+                    /* 글자가 나타나는 효과 */
+                    transform: translate(0, 100px); /* 좌우, 위아래*/
+                }
+                .visual .swiper-slide.swiper-slide-active p {
+                    transform: translate(0, 0);
+                    opacity: 1;
+                }
+                .visual .ctrl_btn {
+                    bottom: 55px;
+                    gap: 0 11px;
+                }
+                .visual .ctrl_btn .paging .bar {
+                    width: 78px;
+                }
+                .visual .ctrl_btn .stop, 
+                .visual .ctrl_btn .play {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: var(--color-white30);
+                    display: flex; /* i 태그 가운데 배치 */
+                    justify-content: center;
+                    align-items: center;
+                }
+                .visual .ctrl_btn .play {
+                    display: none; /* 숨김처리 */
+                } 
+                .visual .ctrl_btn .stop i {
+                    display: block;
+                    width: 8px;
+                    /* 이미지나 svg코드 등은 넓이만 줘도 높이는 비율에 맞게 들어감 */
+                }
+                .visual .ctrl_btn .play i {
+                    display: block;
+                    width: 8px;
+                    /* 이미지나 svg코드 등은 넓이만 줘도 높이는 비율에 맞게 들어감 */
+                    margin: 0 0 0 3px;
+                }
+}/* 768px @media*/
+
+
+
+footer {
+    margin:  150px 0 0 0;
 }
