@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'BinggreIi';
+    src: url('../fonts/Binggrae-Bold.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BinggreIi';
+    src: url('../fonts/Binggrae-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Together";
+    font-weight: 700;
+    src: url("../fonts/BinggraeII-Bold.ttf");
+    src: local('※'), url("../fonts/BinggraeII-Bold.ttf") format('ttf'), url("../fonts/BinggraeII-Bold.ttf") format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Together";
+    font-weight: 400;
+    src: url("../fonts/BinggraeII.ttf");
+    src: local('※'), url("../fonts/BinggraeII.ttf") format('ttf'), url("../fonts/BinggraeII.ttf") format('truetype');
+  }
