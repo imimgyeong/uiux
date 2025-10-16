@@ -100,7 +100,7 @@ button {
 @media screen and (max-width:1360px){
                 .wrapper {
                     width: auto;
-                    margin: 0 var(--content-margin);
+                    margin: var(--content-margin);
                 }
     
 }/*@media*/

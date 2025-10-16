@@ -1,0 +1,61 @@
+@import url(common.css);
+
+
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 12px;
+    }
+}/* @media */
+
+.btn1 {
+    margin: 50px 0 50px 0;
+}
+.btn1 button {
+    background-color: #FF2A2A;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    gap: 0 3px;
+    padding: 7px 17px 7px 17px;
+    border-radius: 30px;
+}
+.btn1 button i {
+    display: block;
+    width: 12.83px; /* 넓이만 주면 높이는 알아서 들어감 */
+}
+
+.btn2 {
+    margin: 50px 0 50px 0;
+}
+.btn2 button { /* 글자크기 17px */
+    font-size: 25px;
+    background-color: #FF2A2A;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    gap: 0 0.1765em;
+    padding: 0.4118em 1em 0.4118em 1em;
+    border-radius: 1.7647em;
+}
+.btn2 button i {
+    display: block;
+    width: 0.7547em; /* 넓이만 주면 높이는 알아서 들어감 */
+}
+
+.btn3 {
+    margin: 50px 0 50px 0;
+}
+.btn3 button { /* 글자크기 17px */
+    font-size: 1.5rem;
+    background-color: #FF2A2A;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    gap: 0 0.1765rem;
+    padding: 0.4118rem 1rem 0.4118rem 1rem;
+    border-radius: 1.7647rem;
+}
+.btn3 button i {
+    display: block;
+    width: 0.7547rem; /* 넓이만 주면 높이는 알아서 들어감 */
+}

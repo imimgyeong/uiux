@@ -19,6 +19,7 @@
     --color-white20 : rgba(255, 255, 255, 0.2);
     --color-line : #ededed;
     --header-h : 90px;
+    --wrapper-margin : 30px;
 }
 @media screen and (max-width:768px){
                 :root {
@@ -26,6 +27,7 @@
                     --font-size-title : 28px;
                     --font-size-title2 : 22px;
                     --header-h : 56px;
+                    --wrapper-margin : 16px;
                 }
 }
 
@@ -70,11 +72,6 @@ body {
 @media screen and (max-width:1320px){
                 .wrapper {
                     width: auto;
-                    margin: 0 30px;
+                    margin: 0 var(--wrapper-margin);
                 }
 }
-@media screen and (max-width:768px){
-                .wrapper {
-                    margin: 0 16px;
-                }
-}/*@media*/
