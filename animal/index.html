@@ -154,17 +154,21 @@
             <section class="find">
                 <div class="wrapper">
                     <h2>찾습니다</h2>
-                    <div class="tap_list">
+                    <div class="tab_list">
                         <ul>
                             <!--선택된 탭에는 active 클래스 추가
-                                button안에 span태그한테 선택됨이라고 글자를 써줌-->
-                            <li class="item1"><button>반려동물을 <span class="blind">선택됨</span></button></li>
-                            <li class="item2 active"><button>주인을 <span></span></button></li>
+                                button안에 span태그한테 선택됨이라고 글자를 써줌
+                                각자의 li에 li를 클릭하면 보일 tap_item의 이름을 써주는게 좋음
+                                나를 클릭하면 tab_item중에 item1을 보이게 해줘 라고 기록해 놓는게 좋음 
+                                그런데 class는 중복해서 다양한 값이 들어가서 class값 하기는 어려움 
+                                그래서 별도의 속성명을 써서 사용 'data-명칭'이라는 속성(css공식 지정 속성x, 퍼블이 임의로 만든 속성, 많이씀)-->
+                            <li class="item1 active" data-tab="item1"><button>반려동물을 <span class="blind">선택됨</span></button></li>
+                            <li class="item2"  data-tab="item2"><button>주인을 <span class="blind">선택됨</span></button></li>
                         </ul>
-                    </div><!--/tap_list-->
-                    <div class="tap_content">
-                        <!--선택된 tap_item active 클래스가 추가 title에 선택됨 이라고 써줌 -->
-                        <div class="tap_item item1 active" title="선택됨">
+                    </div><!--/tab_list-->
+                    <div class="tab_content">
+                        <!--선택된 tab_item active 클래스가 추가 title에 선택됨 이라고 써줌 -->
+                        <div class="tab_item item1 active" title="선택됨">
                             <h3 class="blind">반려동물을</h3>
                             <div class="list">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
@@ -172,157 +176,169 @@
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find01_01.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>말티푸</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>실종장소</strong>
-                                                        <span>충남 금산군</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>실종날짜</strong>
-                                                        <span>2025-10-11</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>	
-                                                            3키로도 안되는 작은 아이입니다.
-                                                            이름은 호두 입니다.
-                                                            사람을 좋아하지만 겁이 많은 아이라 보시면 조심히 데려와주세요.
-                                                            목줄도 하네스도 없습니다.
-                                                            제발 찾아주세요</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>요크셔테리어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>실종장소</strong>
+                                                            <span>충남 금산군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>실종날짜</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>	
+                                                                3키로도 안되는 작은 아이입니다.
+                                                                이름은 호두 입니다.
+                                                                사람을 좋아하지만 겁이 많은 아이라 보시면 조심히 데려와주세요.
+                                                                목줄도 하네스도 없습니다.
+                                                                제발 찾아주세요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find01_02.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>브리티시 숏헤어</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>실종장소</strong>
-                                                        <span>강원 영랑동</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>실종날짜</strong>
-                                                        <span>2025-10-13</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>코가 까맣고 귀가 큽니다
-                                                            배쪽에 검은 반점?!들이 많이 있습니다</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>브리티시 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>실종장소</strong>
+                                                            <span>강원 영랑동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>실종날짜</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>코가 까맣고 귀가 큽니다
+                                                                배쪽에 검은 반점?!들이 많이 있습니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find01_03.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>시바</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>실종장소</strong>
-                                                        <span>	경기 산남동</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>실종날짜</strong>
-                                                        <span>2025-10-14</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>사람을 아주 좋아하고, 잘 따릅니다</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>래브라도 리트리버</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>실종장소</strong>
+                                                            <span>	경기 산남동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>실종날짜</strong>
+                                                            <span>2025-10-14</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>사람을 아주 좋아하고, 잘 따릅니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find01_04.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>코리안숏헤어</strong>
-                                                    <span>암컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>실종장소</strong>
-                                                        <span>충북 오창 중부로 화훼마을</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>실종날짜</strong>
-                                                        <span>22025-10-08</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>치즈냥이로 콧등이 치즈/흰털 반반이고, 목주위 흰털이 많고 오른
-                                                            쪽 허벅지가 흰 바탕에 치즈 하트모양이 있습니다. 왼 허벅지는 흰
-                                                            털로 되어 있습니다.</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>코리안숏헤어</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>실종장소</strong>
+                                                            <span>충북 오창 중부로 화훼마을</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>실종날짜</strong>
+                                                            <span>22025-10-08</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>치즈냥이로 콧등이 치즈/흰털 반반이고, 목주위 흰털이 많고 오른
+                                                                쪽 허벅지가 흰 바탕에 치즈 하트모양이 있습니다. 왼 허벅지는 흰
+                                                                털로 되어 있습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find01_05.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>믹스견</strong>
-                                                    <span>암컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>실종장소</strong>
-                                                        <span>전북 남원시 사매면</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>실종날짜</strong>
-                                                        <span>2025-08-10</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>1. 흰색 몸에 얼굴은 갈색 반점,
-                                                            사람을 많이 무서워해서 가까이 가면 도망칠 수 있어요.
-                                                            2. 겁이 많고 낯선 사람을 피함.
-                                                            ?익숙한 목소리나 간식에 반응할 수 있어요.
-                                                            3. 겁이 많아 함부로 잡으려 하면 놀라 달아날 수 있습니다.</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>실종장소</strong>
+                                                            <span>전북 남원시 사매면</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>실종날짜</strong>
+                                                            <span>2025-08-10</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>1. 흰색 몸에 얼굴은 갈색 반점,
+                                                                사람을 많이 무서워해서 가까이 가면 도망칠 수 있어요.
+                                                                2. 겁이 많고 낯선 사람을 피함.
+                                                                ?익숙한 목소리나 간식에 반응할 수 있어요.
+                                                                3. 겁이 많아 함부로 잡으려 하면 놀라 달아날 수 있습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find01_06.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>말티푸</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>실종장소</strong>
-                                                        <span>경기 용인시 처인구</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>실종날짜</strong>
-                                                        <span>2025-07-29</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>용인시 처인구 원삼면에서 분실, 하이닉스 인근에 돌아다닐 가능성
-                                                            있음(학일리/죽능리/고당리/독성리)
-                                                            특징
-                                                            - 개냥이 / 사람 좋아함
-                                                            - (바라보고) 오른쪽 코에 갈색 점 위아래 2개
-                                                            - 아이라인 그린 눈매
-                                                            - (바라보고) 왼쪽 가운데 배쪽으로 크게 동그란 줄무늬</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티푸</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>실종장소</strong>
+                                                            <span>경기 용인시 처인구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>실종날짜</strong>
+                                                            <span>2025-07-29</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>용인시 처인구 원삼면에서 분실, 하이닉스 인근에 돌아다닐 가능성
+                                                                있음(학일리/죽능리/고당리/독성리)
+                                                                특징
+                                                                - 개냥이 / 사람 좋아함
+                                                                - (바라보고) 오른쪽 코에 갈색 점 위아래 2개
+                                                                - 아이라인 그린 눈매
+                                                                - (바라보고) 왼쪽 가운데 배쪽으로 크게 동그란 줄무늬</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>    
                                             </a>
                                         </li>
                                     </ul>
@@ -344,16 +360,18 @@
                                     </svg>
                                 </i>
                             </button><!--/next-->
-                            <a href="#n" class="more">
-                                <span>더보기</span>
-                                <i>
-                                    <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.0835 7.91683H1.50016C1.24044 7.91683 1.02273 7.82898 0.847038 7.65329C0.671343 7.47759 0.583496 7.25988 0.583496 7.00016C0.583496 6.74044 0.671343 6.52273 0.847038 6.34704C1.02273 6.17134 1.24044 6.0835 1.50016 6.0835H6.0835V1.50016C6.0835 1.24044 6.17134 1.02273 6.34704 0.847038C6.52273 0.671343 6.74044 0.583496 7.00016 0.583496C7.25988 0.583496 7.47759 0.671343 7.65329 0.847038C7.82898 1.02273 7.91683 1.24044 7.91683 1.50016V6.0835H12.5002C12.7599 6.0835 12.9776 6.17134 13.1533 6.34704C13.329 6.52273 13.4168 6.74044 13.4168 7.00016C13.4168 7.25988 13.329 7.47759 13.1533 7.65329C12.9776 7.82898 12.7599 7.91683 12.5002 7.91683H7.91683V12.5002C7.91683 12.7599 7.82898 12.9776 7.65329 13.1533C7.47759 13.329 7.25988 13.4168 7.00016 13.4168C6.74044 13.4168 6.52273 13.329 6.34704 13.1533C6.17134 12.9776 6.0835 12.7599 6.0835 12.5002V7.91683Z" />
-                                    </svg>
-                                </i>
-                            </a><!--/more-->
-                        </div><!--/tap_item item1-->
-                        <div class="tap_item item2">
+                            <div class="more">
+                                <a href="#n">
+                                    <span>더보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.91663 9.08366H1.49996C1.19301 9.08366 0.935723 8.97984 0.728084 8.7722C0.520445 8.56456 0.416626 8.30727 0.416626 8.00033C0.416626 7.69338 0.520445 7.43609 0.728084 7.22845C0.935723 7.02081 1.19301 6.91699 1.49996 6.91699H6.91663V1.50033C6.91663 1.19338 7.02045 0.936089 7.22808 0.728451C7.43572 0.520812 7.69301 0.416992 7.99996 0.416992C8.3069 0.416992 8.5642 0.520812 8.77183 0.728451C8.97947 0.936089 9.08329 1.19338 9.08329 1.50033V6.91699H14.5C14.8069 6.91699 15.0642 7.02081 15.2718 7.22845C15.4795 7.43609 15.5833 7.69338 15.5833 8.00033C15.5833 8.30727 15.4795 8.56456 15.2718 8.7722C15.0642 8.97984 14.8069 9.08366 14.5 9.08366H9.08329V14.5003C9.08329 14.8073 8.97947 15.0646 8.77183 15.2722C8.5642 15.4798 8.3069 15.5837 7.99996 15.5837C7.69301 15.5837 7.43572 15.4798 7.22808 15.2722C7.02045 15.0646 6.91663 14.8073 6.91663 14.5003V9.08366Z"/>
+                                        </svg>
+                                    </i>
+                                </a>
+                            </div><!--/more-->
+                        </div><!--/tab_item item1-->
+                        <div class="tab_item item2">
                             <h3 class="blind">주인을</h3>
                             <div class="list">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
@@ -361,160 +379,172 @@
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find02_01.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>진돗개</strong>
-                                                    <span>암컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>발견장소</strong>
-                                                        <span>부산 차 도로에서 주인 기다림</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>발견날짜</strong>
-                                                        <span>2025-09-01</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>헛짖음 없고 차분합니다.
-                                                            ‘앉아’, ‘손’ 등 기본 훈련이 되어 있습니다.
-                                                            리드줄로 산책도 잘하고, 차도 무리 없이 탑니다.
-                                                            사람 손길을 좋아해 배도 보여주며 믿음을 줍니다.
-                                                            병원 진료·주사 때도 얌전히 있을 만큼 순합니다.</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>진돗개</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>발견장소</strong>
+                                                            <span>부산 차 도로에서 주인 기다림</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>발견날짜</strong>
+                                                            <span>2025-09-01</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>헛짖음 없고 차분합니다.
+                                                                ‘앉아’, ‘손’ 등 기본 훈련이 되어 있습니다.
+                                                                리드줄로 산책도 잘하고, 차도 무리 없이 탑니다.
+                                                                사람 손길을 좋아해 배도 보여주며 믿음을 줍니다.
+                                                                병원 진료·주사 때도 얌전히 있을 만큼 순합니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find02_02.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>고양이</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>발견장소</strong>
-                                                        <span>경기 동두천시 동두천로343</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>발견날짜</strong>
-                                                        <span>2025-10-01</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>주차된차 밑에 겁을 먹은듯웅크리고 야옹야옹 울고있는 녀석이 있어 보니 흰털에 날씬한 고양이었어요. 밥을 못먹어서 배가홀죽했고 눈은 공격에의해 약간 할퀴어진 상태여서. 눈을 닦아주고 먹이도 주니 잘 따르고 안아주면 얌전히 안겨있는 천사같은 고양이였어요
-                                                            그런데 다시 길거리로 돌려보내자니 너무 눈이 영롱하고 예쁜게 도저히보낼수가 없었어요 그렇다고 제가 키울수있는입장이 아닙니다 좋은 주인을 만나 예쁨받고 사랑받았으면 하는 마음에. 도저히 못보내고 며칠 데리고있는데요 그만큼 고양이가 사랑스러워요 고양이를 키우고싶으신분 좋으신 주인분 만나서 아이가 행복했으면 하는 마음입니다♡</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>고양이</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>발견장소</strong>
+                                                            <span>경기 동두천시 동두천로343</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>발견날짜</strong>
+                                                            <span>2025-10-01</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>주차된차 밑에 겁을 먹은듯웅크리고 야옹야옹 울고있는 녀석이 있어 보니 흰털에 날씬한 고양이었어요. 밥을 못먹어서 배가홀죽했고 눈은 공격에의해 약간 할퀴어진 상태여서. 눈을 닦아주고 먹이도 주니 잘 따르고 안아주면 얌전히 안겨있는 천사같은 고양이였어요
+                                                                그런데 다시 길거리로 돌려보내자니 너무 눈이 영롱하고 예쁜게 도저히보낼수가 없었어요 그렇다고 제가 키울수있는입장이 아닙니다 좋은 주인을 만나 예쁨받고 사랑받았으면 하는 마음에. 도저히 못보내고 며칠 데리고있는데요 그만큼 고양이가 사랑스러워요 고양이를 키우고싶으신분 좋으신 주인분 만나서 아이가 행복했으면 하는 마음입니다♡</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find02_03.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>믹스견</strong>
-                                                    <span>암컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>발견장소</strong>
-                                                        <span>인천 계양구 임학동</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>발견날짜</strong>
-                                                        <span>2025-10-11</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>25년 10월 11일 인천 계양구 계양산 부근에서 발견했습니다.
-                                                            병원검사결과 5살추정 암컷입니다.</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>발견장소</strong>
+                                                            <span>인천 계양구 임학동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>발견날짜</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>25년 10월 11일 인천 계양구 계양산 부근에서 발견했습니다.
+                                                                병원검사결과 5살추정 암컷입니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find02_04.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>검은고양이</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>발견장소</strong>
-                                                        <span>부산 남구 주택가</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>발견날짜</strong>
-                                                        <span>2025-10-05</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>빈집에서 울고있던 아기고양이
-                                                            어미가 데려갈까 하루이상 지켜보았으나
-                                                            어미는 나타나지 않고
-                                                            온동네가 떠나갈듯 울어대는 아기고양이를 구조했습니다
-                                                            6주정도 된 올블랙의 왕자님입니다</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>검은고양이</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>발견장소</strong>
+                                                            <span>부산 남구 주택가</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>발견날짜</strong>
+                                                            <span>2025-10-05</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>빈집에서 울고있던 아기고양이
+                                                                어미가 데려갈까 하루이상 지켜보았으나
+                                                                어미는 나타나지 않고
+                                                                온동네가 떠나갈듯 울어대는 아기고양이를 구조했습니다
+                                                                6주정도 된 올블랙의 왕자님입니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find02_05.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>믹스견</strong>
-                                                    <span>수컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>발견장소</strong>
-                                                        <span>인천 계양구</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>발견날짜</strong>
-                                                        <span>2025-03-16</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>야수는 25년 3월에 입소해서 보호소에서 무려 7개월이나 있었어요.
-                                                            1-2주에 한번 잠시 산책할 때 빼곤 항상 좁은 견사에 갇혀서 답답하게
-                                                            지냈어요...
-                                                            너무 활발하고 호기심 천국인 아이인데, 얼마나 힘들까요...
-                                                            원래는 진짜 애교만점에 봉사자님들만 보면 발라당 몸을 뒤집어서 배
-                                                            를 보여주던 아이였어요.
-                                                            그런데 몇주 전부터 밥도 안먹고 산책하려고 걷다가도 주저앉고 거의
-                                                            쓰러져있어요..
-                                                            그 소식을 들은 제가 너무 안타까워 급히 구조했습니다.</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>발견장소</strong>
+                                                            <span>인천 계양구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>발견날짜</strong>
+                                                            <span>2025-03-16</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>야수는 25년 3월에 입소해서 보호소에서 무려 7개월이나 있었어요.
+                                                                1-2주에 한번 잠시 산책할 때 빼곤 항상 좁은 견사에 갇혀서 답답하게
+                                                                지냈어요...
+                                                                너무 활발하고 호기심 천국인 아이인데, 얼마나 힘들까요...
+                                                                원래는 진짜 애교만점에 봉사자님들만 보면 발라당 몸을 뒤집어서 배
+                                                                를 보여주던 아이였어요.
+                                                                그런데 몇주 전부터 밥도 안먹고 산책하려고 걷다가도 주저앉고 거의
+                                                                쓰러져있어요..
+                                                                그 소식을 들은 제가 너무 안타까워 급히 구조했습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
                                                 <div class="photo"><img src="images/find02_06.jpg" alt=""></div>
-                                                <h4>
-                                                    <strong>웰시코기</strong>
-                                                    <span>암컷</span>
-                                                </h4>
-                                                <ul>
-                                                    <li>
-                                                        <strong>발견장소</strong>
-                                                        <span>경기 수원시청역 부근</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>발견날짜</strong>
-                                                        <span>2025-10-01</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>특이사항</strong>
-                                                        <span>새벽4시경 집으로 가던 중 수원시청역 쪽 도로에서 위험하게 넘나드는 걸 보고 안전이 걱정돼서 일단 데리고 집으로 왔습니다.
-                                                            털 엉킴 정도가 심하고 발톱도 많이 자란 걸로 보아 집을 잃은 지 꽤 된 아이같지만 사람을 잘 따르고 매우 순합니다.
-                                                            손,앉아,엎드려 다 하고 잘 짖지도 않고 매우 조용합니다.
-                                                            미용을 하면 정말 예쁜 외모인데 제가 학생이라 미용시킬 돈도 임보할 처지도 안 돼서 주인이 나타나길 바라는 마음으로 글 올립니다.</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>웰시코기</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>발견장소</strong>
+                                                            <span>경기 수원시청역 부근</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>발견날짜</strong>
+                                                            <span>2025-10-01</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>특이사항</strong>
+                                                            <span>새벽4시경 집으로 가던 중 수원시청역 쪽 도로에서 위험하게 넘나드는 걸 보고 안전이 걱정돼서 일단 데리고 집으로 왔습니다.
+                                                                털 엉킴 정도가 심하고 발톱도 많이 자란 걸로 보아 집을 잃은 지 꽤 된 아이같지만 사람을 잘 따르고 매우 순합니다.
+                                                                손,앉아,엎드려 다 하고 잘 짖지도 않고 매우 조용합니다.
+                                                                미용을 하면 정말 예쁜 외모인데 제가 학생이라 미용시킬 돈도 임보할 처지도 안 돼서 주인이 나타나길 바라는 마음으로 글 올립니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </a>
                                         </li>
                                     </ul>
@@ -536,20 +566,177 @@
                                     </svg>
                                 </i>
                             </button><!--/next-->
-                            <a href="#n" class="more">
-                                <span>더보기</span>
-                                <i>
-                                    <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.0835 7.91683H1.50016C1.24044 7.91683 1.02273 7.82898 0.847038 7.65329C0.671343 7.47759 0.583496 7.25988 0.583496 7.00016C0.583496 6.74044 0.671343 6.52273 0.847038 6.34704C1.02273 6.17134 1.24044 6.0835 1.50016 6.0835H6.0835V1.50016C6.0835 1.24044 6.17134 1.02273 6.34704 0.847038C6.52273 0.671343 6.74044 0.583496 7.00016 0.583496C7.25988 0.583496 7.47759 0.671343 7.65329 0.847038C7.82898 1.02273 7.91683 1.24044 7.91683 1.50016V6.0835H12.5002C12.7599 6.0835 12.9776 6.17134 13.1533 6.34704C13.329 6.52273 13.4168 6.74044 13.4168 7.00016C13.4168 7.25988 13.329 7.47759 13.1533 7.65329C12.9776 7.82898 12.7599 7.91683 12.5002 7.91683H7.91683V12.5002C7.91683 12.7599 7.82898 12.9776 7.65329 13.1533C7.47759 13.329 7.25988 13.4168 7.00016 13.4168C6.74044 13.4168 6.52273 13.329 6.34704 13.1533C6.17134 12.9776 6.0835 12.7599 6.0835 12.5002V7.91683Z" />
-                                    </svg>
-                                </i>
-                            </a>
-                        </div><!--/tap_item item2-->
-                    </div><!--/tap_content-->
+                            <div class="more">
+                                <a href="#n">
+                                    <span>더보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.91663 9.08366H1.49996C1.19301 9.08366 0.935723 8.97984 0.728084 8.7722C0.520445 8.56456 0.416626 8.30727 0.416626 8.00033C0.416626 7.69338 0.520445 7.43609 0.728084 7.22845C0.935723 7.02081 1.19301 6.91699 1.49996 6.91699H6.91663V1.50033C6.91663 1.19338 7.02045 0.936089 7.22808 0.728451C7.43572 0.520812 7.69301 0.416992 7.99996 0.416992C8.3069 0.416992 8.5642 0.520812 8.77183 0.728451C8.97947 0.936089 9.08329 1.19338 9.08329 1.50033V6.91699H14.5C14.8069 6.91699 15.0642 7.02081 15.2718 7.22845C15.4795 7.43609 15.5833 7.69338 15.5833 8.00033C15.5833 8.30727 15.4795 8.56456 15.2718 8.7722C15.0642 8.97984 14.8069 9.08366 14.5 9.08366H9.08329V14.5003C9.08329 14.8073 8.97947 15.0646 8.77183 15.2722C8.5642 15.4798 8.3069 15.5837 7.99996 15.5837C7.69301 15.5837 7.43572 15.4798 7.22808 15.2722C7.02045 15.0646 6.91663 14.8073 6.91663 14.5003V9.08366Z"/>
+                                        </svg>
+                                    </i>
+                                </a>
+                            </div><!--/more-->
+                        </div><!--/tab_item item2-->
+                    </div><!--/tab_content-->
                 </div><!--/wrapper-->
             </section><!--/find-->
-            <section class="slogan"></section><!--/slogan-->
-            <section class="adopt"></section><!--/adopt-->
+            <section class="slogan">
+                <div class="wrapper">
+                    <h2>공공장소<strong class="place"></strong>에서 <br class="mo_only"> 주인 없이 떠도는 <br> 
+                        동물<strong class="animal"></strong>을 발견한 경우 <br> 
+                        관할 시군구청 또는 <br class="mo_only"> 동물보호센터<strong class="center"></strong>에 <br> 
+                        신고<strong class="call"></strong>하시기 <br class="mo_only"> 바랍니다</h2>
+                    <p>*소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는<br> 
+                        동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
+                </div>
+            </section><!--/slogan-->
+            <section class="adopt">
+                <div class="tit">
+                    <div class="wrapper"><h2>가족이 되어주세요</h2></div>
+                </div><!--/tit-->
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt01.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>래브라도 리트리버</h3>
+                                    <p>은퇴견, 꼬리가 짧음</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt02.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>달마시안</h3>
+                                    <p>애교가많음, 두 눈에 판다처럼 점박이 문양이 있음</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt03.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>비글</h3>
+                                    <p>합사가 안 되어 분양 보냅니다
+                                        중성화 완료 착하고 실외배변 및 배변판에 배변해요
+                                        겁이 많아요 작은 강아지들한테 치입니다. 접종 완료</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt04.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>삽살개믹스</h3>
+                                    <p>영이의 모견은 삽살개 믹스견으로, 영이 역시 그 피를 이어받아 꼬불거리는 삽살개 특
+                                        유의 독특한 비주얼을 갖고 태어났어요.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt05.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>보더콜리</h3>
+                                    <p>찜통 더위 속 보호소의 견사 한켠에서 구조된 브로콜리
+                                        열악한 환경 속에 있었지만, 여전히 사람을 좋아하고 에너지 넘치며 해맑게 웃는 모습이 사랑스러운 아이에요
+                                        힘든 시기를 견뎌내고 다시 한번 새로운 삶을 준비하는 브로콜리에게 따듯한 사랑을 건네는, 진짜 가족이 되어주세요!</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt06.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>스코티쉬 폴드</h3>
+                                    <p>귀여운 스코티쉬폴드아가에요 사람정말좋아하구요 완전개냥이에요 이름은츄입니다.저희가이번에 이사로인해 집주인이
+                                        동물이 안된다고해서요ㅜ 아십지만 좋은가정으로아이를 보내주려고합니다 여자아이구요 예방정종은다해놔습니다 중성화도 한상태구요
+                                        고양이 용품필요하시면 다드릴수있습니다. 가끔 가다가 아이소식만간간히 전학주시면되세요 아참 애기가 엉덩이랑꼬리
+                                        가 예민해요 거기만 피해주시면 완전사랑스러운 아이랍니다</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt07.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>아기고양이</h3>
+                                    <p>*고급스러운 재규어를 닮은 까만색 아기냥이!
+                                        *엄마를 자주 찾고 쭙쭙이?를 많이해서 마음이 아파요.
+                                        *다리 쪽에 흰색 털이 살짝 보여요. 어떤 털 색깔로 자랄지 무척 기대되는 비주얼!
+                                        *꼬리 모양이 넥스트레벨! 살짝 꺾여있는 게 매력적이에요.
+                                        *살살 만져주면 골골송을 부르며 눈을 감는 개냥이예요.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt08.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>시츄</h3>
+                                    <p>5차까지 주사다맞고 아픈곳하나없고
+                                        소변.대변 완벽하게가리고
+                                        4살 중성화x 시츄 남아입니다.
+                                        분양보냅니다
+                                        너무 온순하고 겁이많고 사람을좋아합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt09.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>푸들</h3>
+                                    <p>안락사위기에서 구조된 쿠쿠쿠쿠는 사람을 너무 좋아하고 잘 따라요!!
+                                        현재 쿠쿠는 신부전이 있어서 집밥 먹으며 편안하게 쉴 곳이 필요합니다
+                                        하지만 센터는 많은 아이들이 함께 하고 사람이 수시로 왔다갔다 해야 되는 환경이라 낮에는 단잠을 자는거 조차도 쉽지가 않네요ㅠㅠㅠ
+                                        사랑스러운 푸들 쿠쿠에게 평온하고따듯한 공간을 제공해 줄 가족을 구해요!임보 가족도 정말 환영합니다ㅠㅠㅠ!</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt10.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>골든리트리버</h3>
+                                    <p>강아지를 좋아해서 분양을 받았는데, 개인 자영업자라서 바쁜 관계로 많이 산책도 못 시켜 주고 미안한 마음이 마음이 많이 들어 좋
+                                        은 곳으로 분양을 보내고 싶습니다. I 나이는 1년 일 개월이고 저렴 하지 않은 가격으로 분양을 하였기 때문에 잘 생겼습니다. 그리
+                                        고 중성화 수술도 했습니다. 정말 잘 키워 주시고 산책 많이 시켜 주실 수 있는 분을 찾습니다. 가끔 사진 또 보내 주실 수 있는 분으
+                                        로 찾고 있습니다. 골든리트리버에 대해서 상식이 있으시고 강아지를 키워 보심 분들에게 분양을 보내고 싶습니다. 정말 착한 아이
+                                        이고 제가 미용실을 운영 하기 때문에 사람을 많이 만나서 사람을 매우 좋아합니다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--/list-->
+                <div class="ctrl_btn">
+                    <button class="prev">
+                        <span class="blind">이전팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.3854 10.1952H16.869C17.1855 10.1952 17.4508 10.0882 17.6649 9.87405C17.879 9.65994 17.9861 9.39462 17.9861 9.07811C17.9861 8.7616 17.879 8.49629 17.6649 8.28218C17.4508 8.06807 17.1855 7.96101 16.869 7.96101H4.3854L9.85918 2.48723C10.0826 2.26381 10.1897 2.00315 10.1803 1.70526C10.171 1.40736 10.0547 1.14671 9.83126 0.923287C9.60784 0.718486 9.34718 0.61143 9.04929 0.602121C8.75139 0.592812 8.49074 0.699867 8.26732 0.923287L0.894459 8.29614C0.782749 8.40785 0.703621 8.52887 0.657076 8.6592C0.610531 8.78953 0.587257 8.92917 0.587257 9.07811C0.587257 9.22706 0.610531 9.3667 0.657076 9.49703C0.703621 9.62735 0.782749 9.74837 0.894459 9.86008L8.26732 17.2329C8.47212 17.4377 8.72812 17.5401 9.03532 17.5401C9.34253 17.5401 9.60784 17.4377 9.83126 17.2329C10.0547 17.0095 10.1664 16.7442 10.1664 16.437C10.1664 16.1298 10.0547 15.8645 9.83126 15.6411L4.3854 10.1952Z"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <button class="next">
+                        <span class="blind">다음팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.6146 10.1952H1.13102C0.814504 10.1952 0.549193 10.0882 0.335082 9.87405C0.120971 9.65994 0.013916 9.39462 0.013916 9.07811C0.013916 8.7616 0.120971 8.49629 0.335082 8.28218C0.549193 8.06807 0.814504 7.96101 1.13102 7.96101H13.6146L8.14082 2.48723C7.9174 2.26381 7.81034 2.00315 7.81965 1.70526C7.82896 1.40736 7.94532 1.14671 8.16874 0.923287C8.39216 0.718486 8.65282 0.61143 8.95071 0.602121C9.24861 0.592812 9.50926 0.699867 9.73268 0.923287L17.1055 8.29614C17.2173 8.40785 17.2964 8.52887 17.3429 8.6592C17.3895 8.78953 17.4127 8.92917 17.4127 9.07811C17.4127 9.22706 17.3895 9.3667 17.3429 9.49703C17.2964 9.62735 17.2173 9.74837 17.1055 9.86008L9.73268 17.2329C9.52788 17.4377 9.27188 17.5401 8.96468 17.5401C8.65747 17.5401 8.39216 17.4377 8.16874 17.2329C7.94532 17.0095 7.83361 16.7442 7.83361 16.437C7.83361 16.1298 7.94532 15.8645 8.16874 15.6411L13.6146 10.1952Z"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <div class="more">
+                        <a href="#n">
+                            <span>더보기</span>
+                            <i>
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.91663 9.08366H1.49996C1.19301 9.08366 0.935723 8.97984 0.728084 8.7722C0.520445 8.56456 0.416626 8.30727 0.416626 8.00033C0.416626 7.69338 0.520445 7.43609 0.728084 7.22845C0.935723 7.02081 1.19301 6.91699 1.49996 6.91699H6.91663V1.50033C6.91663 1.19338 7.02045 0.936089 7.22808 0.728451C7.43572 0.520812 7.69301 0.416992 7.99996 0.416992C8.3069 0.416992 8.5642 0.520812 8.77183 0.728451C8.97947 0.936089 9.08329 1.19338 9.08329 1.50033V6.91699H14.5C14.8069 6.91699 15.0642 7.02081 15.2718 7.22845C15.4795 7.43609 15.5833 7.69338 15.5833 8.00033C15.5833 8.30727 15.4795 8.56456 15.2718 8.7722C15.0642 8.97984 14.8069 9.08366 14.5 9.08366H9.08329V14.5003C9.08329 14.8073 8.97947 15.0646 8.77183 15.2722C8.5642 15.4798 8.3069 15.5837 7.99996 15.5837C7.69301 15.5837 7.43572 15.4798 7.22808 15.2722C7.02045 15.0646 6.91663 14.8073 6.91663 14.5003V9.08366Z"/>
+                                </svg>
+                            </i>
+                        </a>
+                    </div><!--/more-->
+                </div><!--/ctrl_btn-->
+                <!--글자를 감싸고있는 rolling은 브라우저넓이와 동일
+                    글자를 감싸고있는 p태그는 글자의 넓이를 그대로 인식해야함(position:absolute 사용하면됨)-->
+                <div class="rolling">
+                    <p>HELPING PAWS FIND THEIR WAY BACK. HELPING PAWS FIND THEIR WAY BACK.</p>
+                </div>
+            </section><!--/adopt-->
             <section class="review"></section><!--/review-->
         </div><!--/container-->
         <footer></footer>
