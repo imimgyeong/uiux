@@ -861,7 +861,6 @@ header.fixed .logo a {
 .review {
     /* margin: 188px 0 101px 0; */
     margin: clamp(108px, 12vw, 188px) 0 clamp(72px, 6.5vw, 101px) 0;
-    overflow-x: hidden;
 }
 .review .wrapper {
     position: relative; /* prev, next, more정렬의 기준 */
