@@ -298,7 +298,27 @@ header.fixed .logo a {
 
 
 .visual {
-    position: relative; /* ctrl_btn 정렬의 기준 */
+    position: relative; /* ctrl_btn 정렬의 기준 , spin정렬의 기준 */
+}
+.visual .spin {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    z-index: 11;
+}
+.visual .spin .spin_txt {
+    animation: spin 5s linear infinite;
+    /* 애니메이션 이름, 1번실행하는데 걸리는 시간, 가속도, 무한반복*/
+}
+.visual .spin .spin_arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}    
+    100% {transform: rotate(360deg);}
 }
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이와 동일 */
@@ -395,6 +415,9 @@ header.fixed .logo a {
 }/* 1320px @media*/
 
 @media screen and (max-width:768px){
+                .visual .spin {
+                    display: none;
+                }
                 .visual .ctrl_btn {
                     left: 16px;
                 }
