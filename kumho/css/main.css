@@ -262,7 +262,6 @@ section .tit h2 {
                     opacity: 1;
                 }
                 .biz .list ul li.active .txt a:hover {
-                    border-color: var(--color-point);
                     background-color: var(--color-point);
                 } 
                 .biz .list.over ul li:not(.active) {
@@ -622,9 +621,3 @@ section .tit h2 {
                     display: none;
                 }
 }/* @media max-width:1024px */
-
-
-
-footer {
-    margin: 1500px 0 0 0;
-}

@@ -85,6 +85,16 @@ $(document).ready(function(){
         scroll_chk() //스크롤 할때마다 실행
     })
 
+/*---------------family_site 열고 닫기------------------------
+footer .f_util .family_site .family_open열기를 클릭하면
+footer .f_util .family_site 에 open 추가
+footer .f_util .family_site .family_close 닫기를 클릭하면 
+
+------------------------------------------------------------*/
+    $('footer .f_util .family_site .family_open').on('click',function(){
+        console.log('클릭')
+    })
+
 
 })//마지막입니다 나가지마세요 
 
