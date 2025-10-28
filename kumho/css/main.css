@@ -622,3 +622,9 @@ section .tit h2 {
                     display: none;
                 }
 }/* @media max-width:1024px */
+
+
+
+footer {
+    margin: 1500px 0 0 0;
+}

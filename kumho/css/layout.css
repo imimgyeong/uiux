@@ -388,6 +388,6 @@ footer .f_util .family_site .close {
 footer .f_util .top {
     height: 41px;
     line-height: 41px;
-    padding: 2px 15px 0 15px;
+    padding: px 15px 0 15px;
     background-color: var(--color-point);
 }
