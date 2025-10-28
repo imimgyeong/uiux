@@ -426,24 +426,76 @@ footer .f_util .family_site .family_wrap ul li a span::after {
 footer .f_util .family_site .family_close {
     display: none;
 }
-footer .f_util .family_site .family_close::after {
-    transform: rotate(180deg);
-}
+
 /* family_site 열렸을때 */
 footer .f_util .family_site.open .family_open {
     display: none;
 }
 footer .f_util .family_site.open .family_close {
-display: block;
-}
-footer .f_util .family_site.open .family_wrap {
     display: block;
 }
-
-
+footer .f_util .family_site.open .family_close::after {
+    animation: family_btn 0.5s 1 forwards; /* forwards 마지막상태 유지한다는 뜻 */
+}
+@keyframes family_btn {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
 footer .f_util .top {
     height: 2.4118em;
     line-height: 2.4118em;
     padding: 0.1176em 0.8824em 0 0.8824em;
     background-color: var(--color-point);
+}
+footer .inner {
+    margin: 18px 0 0 0;
+}
+
+footer .inner .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.5294em;
+}
+footer .inner .f_info {
+    margin: 24px 0 0 0;
+}
+
+@media screen and (max-width:1280px){
+                footer .wrapper {
+                gap: 0 40px;
+                }
+                footer .inner .f_nav ul {
+                gap: 0 1.5em;
+                }
+}
+@media screen and (max-width:1024px){
+                footer {
+                    padding: 51px  0 81px 0;
+                }
+                footer .wrapper {
+                    display: block;
+                }
+                /* footer .f_logo {
+                    width: 98px;
+                    height: 32px;
+                } */
+                footer .f_util {
+                    position: relative;
+                    right: auto; /* 원래 존재하지 않았던것 처럼 */
+                    top: auto;
+                    margin: 24px 0 37px 0;
+                }
+                footer .f_util .family_site {
+                    width: calc(100% - 49px); 
+                    max-width: 404px;
+                    /* 관련사이트 여는 버튼, 바로가기 사이트 등의 넓이가 같음
+                    그래서 감싸고있는 family_site에 넓이를 주고 내부요소는 그에 100%를 꽉차게 줌 */
+                    position: relative; /* family_wrap 정렬의 기준 */
+                }
+                footer .inner {
+                    margin: 0;
+                }
+                footer .inner .f_info {
+                    margin: 24px 0 0 0;
+                }
 }
