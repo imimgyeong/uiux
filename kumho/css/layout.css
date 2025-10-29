@@ -342,6 +342,55 @@ header.up:not(.menu_pc, .menu_mo) {
                 }
 }/* max-width : 768px @media */
 
+/*-------------시작 : 서브에서 이미 선택되어있는 메뉴 디자인 ---------------*/
+
+header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
+    color: var(--color-point);
+    font-weight: 700;
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+    color: var(--color-point);
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-point);
+}
+
+
+/*-------------끝 : 서브에서 이미 선택되어있는 메뉴 디자인 ---------------*/
+
+@media screen and (max-width:1024px){ 
+                header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+                    color: var(--color-point);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before,
+                header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after  {
+                    background-color: var(--color-point);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+                    transform: rotate(0);
+                }  
+                header .gnb .gnb_wrap ul.depth1 > li:has(.active) >ul.depth2 {
+                    display: block;
+                }
+
+}/* @media */
 
 footer {
     background-color: var(--color-backgroud);
