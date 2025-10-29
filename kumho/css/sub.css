@@ -11,3 +11,132 @@
 @import url(common.css);
 @import url(layout.css);
 @import url(contents.css);
+
+.sub_visual {
+   height: 350px;
+   background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
+   color: var(--color-white);
+   display: flex; /* wrapper를 sub_visual 아래로 정렬 */
+   flex-direction: column;
+   justify-content: flex-end;
+}
+.sub_visual .breadcrumb ol {
+   display: flex;
+   gap: 0 1.7647em;
+   align-items: center; /* 위 아래 가운데 */
+}
+.sub_visual .breadcrumb ol li {
+   position: relative; /* after 정렬의 기준 */
+}
+.sub_visual .breadcrumb ol li::after {
+   content: "";
+   position: absolute; /* li를 기준으로 정렬 */
+   right: -1.0588em;
+   top: 0.3529em;
+   width: 0.3529em;
+   height: 0.3529em;
+   border-color: var(--color-white);
+   border-style: solid;
+   border-width: 1px 1px 0 0;
+   transform: rotate(45deg);
+}
+.sub_visual .breadcrumb ol li:last-child::after {
+   display: none;
+}
+.sub_visual .breadcrumb ol li.home a {
+   margin-bottom: 0.4706em;
+   display: block;
+   width: 0.7841em;
+   height: 0.8576em;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 15' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12.9167V5.41667C0 5.15278 0.0590278 4.90278 0.177083 4.66667C0.295139 4.43056 0.458333 4.23611 0.666667 4.08333L5.66667 0.333333C5.95833 0.111111 6.29167 0 6.66667 0C7.04167 0 7.375 0.111111 7.66667 0.333333L12.6667 4.08333C12.875 4.23611 13.0382 4.43056 13.1563 4.66667C13.2743 4.90278 13.3333 5.15278 13.3333 5.41667V12.9167C13.3333 13.375 13.1701 13.7674 12.8438 14.0937C12.5174 14.4201 12.125 14.5833 11.6667 14.5833H9.16667C8.93056 14.5833 8.73264 14.5035 8.57292 14.3437C8.41319 14.184 8.33333 13.9861 8.33333 13.75V9.58333C8.33333 9.34722 8.25347 9.14931 8.09375 8.98958C7.93403 8.82986 7.73611 8.75 7.5 8.75H5.83333C5.59722 8.75 5.39931 8.82986 5.23958 8.98958C5.07986 9.14931 5 9.34722 5 9.58333V13.75C5 13.9861 4.92014 14.184 4.76042 14.3437C4.60069 14.5035 4.40278 14.5833 4.16667 14.5833H1.66667C1.20833 14.5833 0.815972 14.4201 0.489583 14.0937C0.163194 13.7674 0 13.375 0 12.9167Z' /%3E%3C/svg%3E%0A");
+}
+.sub_visual .sub_tit {
+   margin: 7px 0 65px 0;
+   font-size: 5rem;
+   font-weight: 700;
+   line-height: 1.3;
+}
+.snb {
+   height: 83px;
+   border: 1px solid var(--color-line);
+   font-weight: 700;
+}
+.snb ul {
+   display: flex;
+   justify-content: center;
+}
+.snb ul li a {
+   display: block;
+   line-height: 83px;
+   padding: 0 32px;
+}
+.snb ul li a span {
+   position: relative; /* after 정렬의 기준 */
+}
+.snb ul li.active a span::after {
+   content: "";
+   position: absolute;
+   left: -5px;
+   bottom: -30px;
+   width: calc(100% + 10px);
+   height: 3px;
+   background-color: var(--color-point);
+}
+.contents {
+   min-height: 500px;
+}
+.contents .page_tit {
+   margin: 63px 0 78px 0;
+}
+.contents .page_tit h2 {
+   font-size: 4rem;
+   font-weight: 700;
+   line-height: 1.3;
+   text-align: center;
+}
+
+@media screen and (max-width:1024px){
+               .sub_visual {
+                  height: 300px;
+               }
+               .sub_visual .sub_tit {
+                  margin: 6px 0 38px 0;
+                  font-size: 2.8rem;
+               }
+               .snb {
+                  height: 56px;
+               }
+               .snb ul {
+                  justify-content: flex-start;
+                  overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+                  overflow-x: auto; /* 좌우 스크롤바 생성 */
+                  /* 스크롤 바 없애기 */
+                  -ms-overflow-style: none;  /* IE, Edge */
+                  scrollbar-width: none;  /* Firefox */
+               }
+               .snb ul::-webkit-scrollbar {
+                  display: none;
+               }
+               .snb ul li a {
+                  display: block;
+                  line-height: 56px;
+                  padding: 0 13px;
+                  white-space: nowrap;
+               }
+               .snb ul li.active a span::after {
+                  bottom: -18px;
+               }
+               .contents {
+                  min-height: 500px;
+               }
+               .contents .page_tit {
+                  margin: 46px 0 52px 0;
+               }
+               .contents .page_tit h2 {
+                  font-size: 2.4rem;
+                  text-align: center;
+               }
+}/* @media (max-width:768px) */

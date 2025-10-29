@@ -11,7 +11,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        console.log(device_status)
+        // console.log(device_status)
     }
 
     device_chk() //문서가 로딩되었을때 1번실행
@@ -66,13 +66,13 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling 
-        console.log(diff_scroll)
+        // console.log(diff_scroll)
         if(diff_scroll < 0){// 스크롤을 위로 올라간다는 뜻
             $('header').addClass('up')
             console.log('if?')
         }else{// 아래로 스크롤된다는 뜻
             $('header').removeClass('up')
-            console.log('else?')
+            // console.log('else?')
         }
         if(scrolling > 0){ //스크롤내림
             $('header').addClass('fixed')
