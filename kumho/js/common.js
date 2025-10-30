@@ -32,14 +32,12 @@ $(document).ready(function(){
     })
 
     let gnb_open
-    let gnb_active
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
         if( device_status == 'mobile'){
 		    e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
             gnb_open = $(this).parent().hasClass('open')
-            gnb_active = $(this).parent().find('.active').length
             // console.log(gnb_open)
-            if((gnb_open == true) || (gnb_active > 0)){ //열려있다면
+            if(gnb_open == true){ //열려있다면
                 $(this).parent().removeClass('open')
                 $(this).next().slideUp()
             }else{
@@ -50,6 +48,10 @@ $(document).ready(function(){
             }
         }
 	});
+
+
+
+
 
     // header .gnb .gnb_wrap .gnb_close
     // header .gnb .gnb_open
@@ -71,7 +73,7 @@ $(document).ready(function(){
         // console.log(diff_scroll)
         if(diff_scroll < 0){// 스크롤을 위로 올라간다는 뜻
             $('header').addClass('up')
-            console.log('if?')
+            // console.log('if?')
         }else{// 아래로 스크롤된다는 뜻
             $('header').removeClass('up')
             // console.log('else?')
