@@ -6,6 +6,9 @@
     <script src="js/fullpage.min.js"></script>
     <link rel="stylesheet" href="css/fullpage.min.css">
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/count.js"></script>
     <!--외부 라이브러리 파일-->
 
     <!--내가 만든 파일-->
@@ -18,7 +21,7 @@
     <header class="">
         <h1 class="logo"><a href="index.html"><span class="blind">생명의숲 FOREST FOR LIFE</span></a></h1>
         <nav class="gnb">
-            <button class="gnb_open"><span>메뉴 열기</span></button>
+            <button class="gnb_open"><span class="blind">메뉴 열기</span></button>
             <div class="gnb_wrap">
                 <ul class="depth1">
                     <li><a href="#n"><span>소개</span></a></li>
@@ -43,10 +46,79 @@
              fp-auto-height 클래스를 주면 footer 처럼 콘텐츠 높이만큼만 나타남 
              fp-auto-height-responsive 모바일에서 fullpage 안할꺼면 줘야햄 -->
         <section class="visual section fp-auto-height-responsive"> 
-            <h2>visual</h2>
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual01.jpg" alt=""></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>내 나무 갖기</strong>
+                                <h3>서울 마이트리 <br>특별한 날을 기념하는 새로운 방법</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div><!--/txt-->
+                    </li>
+                    <li class="swiper-slide">
+                        <!-- autoplay 자동실행 /loop 연속실행/ muted음소거 -->
+                        <div class="video">
+                            <video autoplay loop muted>
+                                <source src="images/main/visual02.mp4">
+                            </video>
+                        </div><!--/video-->
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의 숲 후원의 달</strong>
+                                <h3>지금지구와 우리를 위한 힘 모으기 <br>2025.11.01 ~ 11.30</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div><!--/txt-->
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual03.jpg" alt=""></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2022 울진산불 이후의 변화</strong>
+                                <h3>숲의 상처와 회복 <br>: 산불피해 복원현장 기록 사진전 </h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div><!--/txt-->
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual04.jpg" alt=""></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>나무 할아버지 박상진 교수</strong>
+                                <h3>우리가 지켜야 할 <br>고목나무 이야기</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div><!--/txt-->
+                    </li>
+                </ul>
+            </div><!--/swiper-->
+            <div class="paging">
+                <ul>
+                    <!-- <li><span>문구</span></li> -->
+                </ul>
+            </div><!--/paging-->
         </section><!--/visual-->
         <section class="tree section fp-auto-height-responsive">
-            <h2>tree</h2> 
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <strong data-start="0" data-end="102302">0</strong>
+                        <span>그루</span>
+                    </h2>
+                    <p>우리가 함께 심은 102,302그루의 약속</p>
+                </div><!--/tit-->
+                <div class="photo">
+                    <img src="images/main/tree.png" alt="나무" class="tree_img">
+                    <img src="images/main/cloud01.png" alt="구름" class="cloud01">
+                    <img src="images/main/cloud02.png" alt="구름" class="cloud02">
+                    <img src="images/main/sun.png" alt="해" class="sun">
+                    <img src="images/main/caterpillar.png" alt="애벌레" class="caterpillar">
+                </div><!--/photo-->
+            </div> <!--/wrapper-->
         </section><!--/tree-->
         <section class="work section fp-auto-height-responsive"> 
             <h2>work</h2>
@@ -58,5 +130,17 @@
             <h2>footer</h2>
         </footer>
     </div><!--/fullpage-->
+    <aside class="quick">
+        <button class="quick_open" title="열기"><span class="blind">퀵 메뉴열기</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><a href="#Main"><span>TOP</span></a></li>
+            </ul>
+        </div>
+        <button class="quick_close" title="닫기"><span class="blind">퀵 메뉴닫기</span></button>
+    </aside>
 </body>
 </html>
