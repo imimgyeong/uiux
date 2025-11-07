@@ -93,6 +93,13 @@ header.dark {
                 }
 }/* @media */
 
+/*----------------- 풀페이지 안할때 header 스타일 고정
+body 에 fp-scrollable fp-responsive 클래스 추가됨 -------------------*/
+body.fp-scrollable header {
+    background-color: var(--color-main);
+
+}
+
 
 footer {
     background-color: var(--color-basic);
