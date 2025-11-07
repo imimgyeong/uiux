@@ -97,7 +97,6 @@ header.dark {
 body 에 fp-scrollable fp-responsive 클래스 추가됨 -------------------*/
 body.fp-scrollable header {
     background-color: var(--color-main);
-
 }
 
 
