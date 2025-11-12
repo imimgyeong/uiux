@@ -141,6 +141,7 @@ header.fixed .logo a {
                 header.menu_pc .logo a {
                     background-image: url(../images/logo.svg);
                 }
+                
                 header .gnb .gnb_wrap ul.depth1 > li.over > a {
                     color: var(--color-main);
                 }
