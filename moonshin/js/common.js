@@ -27,11 +27,13 @@ $(document).ready(function(){
     $('header .gnb .gnb_bg').on('mouseenter', function(){
         $('header').removeClass('menu_pc')
     })
-    $('header .util .lang').on('focusin', function(){
-        $('header').removeClass('menu_pc')
-    })
 
-    let gnb_open
+    
+
+
+
+
+    let gnb_open 
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
         if( device_status == 'mobile'){
 		    e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
@@ -49,12 +51,6 @@ $(document).ready(function(){
         }
 	});
 
-
-
-
-
-    // header .gnb .gnb_wrap .gnb_close
-    // header .gnb .gnb_open
     $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_mo')
     })
@@ -62,53 +58,36 @@ $(document).ready(function(){
         $('header').removeClass('menu_mo')
     })
 
-    //스크롤을 내리면 header fixed추가
-    let scrolling = $(window).scrollTop()//현재 스크롤된 값
-    let prev_scroll //이전에 스크롤된 값
-    let diff_scroll //차이 값(diffrent)
-    function scroll_chk(){
-        prev_scroll = scrolling
-        scrolling = $(window).scrollTop()
-        diff_scroll = prev_scroll - scrolling 
-        // console.log(diff_scroll)
-        if(diff_scroll < 0){// 스크롤을 위로 올라간다는 뜻
-            $('header').addClass('up')
-            // console.log('if?')
-        }else{// 아래로 스크롤된다는 뜻
-            $('header').removeClass('up')
-            // console.log('else?')
-        }
-        if(scrolling > 0){ //스크롤내림
-            $('header').addClass('fixed')
-        }else{ //0이거나 0보다 작은경우 (fixed제거)
-            $('header').removeClass('fixed')
-        }
-    }
-    scroll_chk() //문서가 로딩되고 단 1번 실행
-    $(window).scroll(function(){
-        scroll_chk() //스크롤 할때마다 실행
-    })
+       /*-------header에 클래스 fixed 추가-------*/
+       let scrolling = $(window).scrollTop()//현재 스크롤된 값
+       let prev_scroll //이전에 스크롤된 값
+       let diff_scroll //차이 값(diffrent)
+       function scroll_chk(){
+           prev_scroll = scrolling
+           scrolling = $(window).scrollTop()
+           diff_scroll = prev_scroll - scrolling 
+           // console.log(diff_scroll)
+           if(diff_scroll < 0){// 스크롤을 위로 올라간다는 뜻
+               $('header').addClass('up')
+               // console.log('if?')
+           }else{// 아래로 스크롤된다는 뜻
+               $('header').removeClass('up')
+               // console.log('else?')
+           }
+           if(scrolling > 0){ //스크롤내림
+               $('header').addClass('fixed')
+           }else{ //0이거나 0보다 작은경우 (fixed제거)
+               $('header').removeClass('fixed')
+           }
+       }
+       scroll_chk() //문서가 로딩되고 단 1번 실행
+       $(window).scroll(function(){
+           scroll_chk() //스크롤 할때마다 실행
+       })
 
-    /*---------------family_site 열고 닫기------------------------
-        footer .f_util .family_site .family_open열기를 클릭하면
-        footer .f_util .family_site 에 open 추가
-        footer .f_util .family_site .family_close 닫기를 클릭하면 
-    ------------------------------------------------------------*/
-    $('footer .f_util .family_site .family_open').on('click',function(){
-        $('footer .f_util .family_site').addClass('open')
-        $('footer .f_util .family_site .family_wrap').slideDown()
-    })
-    $('footer .f_util .family_site .family_close').on('click',function(){
-        $('footer .f_util .family_site').removeClass('open')
-        $('footer .f_util .family_site .family_wrap').slideUp()
-    })
 
-    /* top버튼 클릭하면 상단으로 이동 */
-    $('footer .f_util .top').on('click', function(){
-        $('html, body').animate({
-            scrollTop : 0
-        }, 500)
-    })
-
+        
+    
+  
 })//마지막입니다 나가지마세요 
 

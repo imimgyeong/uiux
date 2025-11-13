@@ -103,7 +103,6 @@ header.up:not(.menu_pc, .menu_mo) {
                     background-color: var(--color-point);
                 }
                 header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-                    
                     position: absolute;
                     left: 50%; /* 정렬의 기준 li넓이의 절반 */
                     top: var(--header-h);
@@ -130,7 +129,7 @@ header.up:not(.menu_pc, .menu_mo) {
                     z-index: -2;
                     width: 100%;
                     height: 0;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: rgba(0, 0, 0, 0.7);
                     backdrop-filter: blur(10px);
                     opacity: 0;
                     transition: height 0s, opacity 0.5s;
@@ -185,7 +184,6 @@ header.up:not(.menu_pc, .menu_mo) {
                 header.menu_pc .gnb .gnb_bg {
                     height: 100vh;
                     opacity: 1;
-                    
                 }
 }/* min-width : 1025px @media */
 @media screen and (max-width:1280px) and (min-width:1025px) {
@@ -393,6 +391,8 @@ header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
                 }
 
 }/* @media */
+
+
 
 footer {
     background-color: var(--color-backgroud);

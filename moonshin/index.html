@@ -6,23 +6,26 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <!--라이브러리파일-->
     <!--내가 만든 파일-->
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>창원시립마산문신미술관</title>
 </head>
 <body>
     <div id="wrap">
-        <header class="">
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">창원시립마산문신미술관</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span>메뉴열기</span></button>
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                 <div class="gnb_wrap">
                     <div class="gnb_logo"><span class="blind">창원시립마산문신미술관</span></div>
                     <ul class="depth1">
-                        <li class="">
+                        <li>
                             <a href="#n"><span>문신미술관</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>문신소개</span></a></li>
@@ -66,8 +69,9 @@
                             <a href="#n"><span>문신미술상</span></a>
                         </li>
                     </ul>
-                    <button class="gnb_close"><span>메뉴닫기</span></button>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
                 </div><!--/gnb_wrap-->
+                <div class="gnb_bg"></div><!--메뉴배경-->
             </nav><!--/gnb-->
         </header>
         <div class="container">
@@ -102,28 +106,33 @@
                         <button class="play"><span class="blind">재생버튼</span></button>
                     </div><!--/ctrl_btn-->
                 </div><!--/swiper-->
-                
                 <div class="info">
                     <div class="wrapper">
                         <div class="info_list">
                             <ul>
-                                <li>
-                                    <em class="tit">관람시간</em>
-                                    <span  class="txt">개관시간 09:00 - 18:00 <br>
-                                    <strong>발권은 관람 종료 1시간 전까지만 가능합니다</strong></span></p>
+                                <li class="view">
+                                    <span class="tit">관람시간</span>
+                                    <div class="content">
+                                        <span>개관시간 09:00 - 18:00</span>
+                                        <span class="close">발권은 관람 종료 1시간 전까지만 가능합니다</span>
+                                    </div>
                                 </li>
-                                <li>
-                                    <em class="tit">휴관일</em>
-                                    <span  class="txt">매주 월요일 <br>
-                                        1월 1일 <br>
-                                        설, 추석</span>
+                                <li class="holy">
+                                    <span class="tit">휴관일</span>
+                                    <div class="content">
+                                        <span>매주 월요일</span>
+                                        <span>1월 1일</span>
+                                        <span>설, 추석</span>
+                                    </div>
                                 </li>
-                                <li>
-                                    <em class="tit">관람료</em>
-                                    <span  class="txt">어른(25~64세) 500원 <br>
-                                        어린이(7~12세) 200원 <br>
-                                        청소년, 군인, 대학생 200원 <br>
-                                        예술인(예술인패스 소지자) 200원</span>
+                                <li class="cash">
+                                    <span class="tit">관람료</span>
+                                    <div class="content">
+                                        <span>어른(25~64세) 500원</span>
+                                        <span>어린이(7~12세) 200원</span>
+                                        <span>청소년, 군인, 대학생 200원</span>
+                                        <span>예술인(예술인패스 소지자) 200원</span>
+                                    </div>
                                 </li>
                             </ul>
                         </div><!--/info_list-->
@@ -134,7 +143,112 @@
                     </div><!--/wrapper-->
                 </div><!--/info-->
             </section><!--/visual-->
-            <section class="time"></section><!--/time-->
+            <section class="time">
+                <div class="rolling">
+                    <p>I toil as a slave, dwell with the people, and create as a god.</p>
+                </div>
+                <div class="time_tit">
+                    <div class="wrapper">
+                        <h2>문신의 시간</h2>
+                        <p>한 조각가가 남긴 형태의 여정을 시간의 흐름 속에서 따라가며, 그의 삶과 작품 세계를 만나봅니다.</p>
+                    </div>
+                </div><!--/tit-->
+                <div class="time_list">
+                    <div class="container"> <!-- 홈페이지 전체를 감싸는 요소 또는 콘텐츠를 감싸는 요소 (wrap, container) -->
+                        <div class="list">
+                            <ul> <!-- flex를 적용할 요소, 각각의 좌우로 스크롤 될 요소를 감싸는 요소 -->
+                                <li>
+                                    <button>
+                                        <div class="year"><span>1995</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_01.jpg" alt=""></div>
+                                            <div class="txt">
+                                                <strong>(좌) 무제 <br> (우) 무제</strong>
+                                                <p>석고, 58.5x36x12.5cm <br> 석고, 96x45x16cm</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li> <!-- 좌우로 배치될 요소들 -->
+                                <li>
+                                    <button>
+                                        <div class="year"><span>1994</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_02.jpg" alt=""></div>
+                                            <div class="txt">
+                                                <strong>무제</strong>
+                                                <p>석고, 69x26.5x14cm</p>
+                                            </div>
+                                        </div>
+                                    </button>     
+                                </li>
+                                <li> 
+                                    <button>
+                                        <div class="year"><span>1993</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_03.jpg" alt=""></div>
+                                            <div class="txt">
+                                                <strong>무제</strong>
+                                                <p>도자기에 페인팅, 25x26x25cm</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                <li> 
+                                    <button>
+                                        <div class="year"><span>1992</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_04.jpg" alt=""></div>
+                                            <div class="txt">
+                                                <strong>무제</strong>
+                                                <p>석고, 89.5x16x56.5cm</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                <li> 
+                                    <button>
+                                        <div class="year"><span>1991</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_05.jpg" alt=""></div>
+                                            <div class="txt">
+                                                <strong>(좌) 무제 <br> (우) 무제</strong>
+                                                <p>청동, 50x23x14cm <br> 청동, 44x31x15cm</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                <li> 
+                                    <button>
+                                        <div class="year"><span>1990</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_06.png" alt=""></div>
+                                            <div class="txt">
+                                                <strong>(좌) 파리1990 <br>(우) 무제</strong>
+                                                <p>청동, 46x74x22cm <br>청동, 39x16x16cm</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                <li> 
+                                    <button>
+                                        <div class="year"><span>1989</span></div>
+                                        <div class="content">
+                                            <div class="photo"><img src="images/main/time_07.jpg" alt=""></div>
+                                            <div class="txt">
+                                                <strong>(좌) 우주를 향하여 Ⅲ <br>(우) 개미</strong>
+                                                <p>청동, 75x40x25cm <br>청동, 127x25x15cm</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--/list-->
+                <div class="more">
+                    <a href="#n"><span>더보기</span></a>
+                </div><!--/more-->
+            </section><!--/time-->
             <section class="collection"></section><!--/collection-->
             <section class="exhibition"></section><!--/exhibition-->
             <section class="notice"></section><!--/notice-->

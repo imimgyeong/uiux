@@ -7,41 +7,7 @@
 
 $(document).ready(function(){
 
-    /*-------header에 클래스 fixed 추가-------*/
-    let scrolling
-        function scroll_chk(){ //함수를 정의한다
-            scrolling = $(window).scrollTop()
-            console.log(scrolling)
-            if(scrolling > 0){
-                $('header').addClass('fixed')
-            }else{
-                $('header').removeClass('fixed')
-            }
-        }
-        //문서가 로딩 되었을때 단 1번 실행
-        scroll_chk()
-        //브라우저가 스크롤 될때마다 1번씩 함수 실행
-        $(window).scroll(function(){
-            scroll_chk()
-    })
-
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
-        if(device_status == 'pc'){ //pc일때만 동작 
-            // console.log('오버했음')
-            $('header').addClass('menu_pc')
-            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
-            $(this).addClass('over')
-            $(this).find('.depth2').slideDown()
-        }
-    })
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
-        $(this).removeClass('over')
-        $(this).find('.depth2').slideUp()
-    })
-    $('header').on('mouseleave', function(){
-        $(this).removeClass('menu_pc')
-    })
+    
 
     
     /*----------- 시작 : visual swiper -----------*/
