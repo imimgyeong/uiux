@@ -6,6 +6,7 @@
 
 .visual {
     position: relative; /* ctrl 정렬의 기준 */
+    margin: 0 0 58px 0;
 }
 .visual .swiper-slide {
     height: 700px;
@@ -160,11 +161,18 @@
     width: 127px;
     height: 144px;
     border-radius: 10px;
+    
     background-color: var(--color-black);
-    padding: 94px 33px 0 33px;
+    padding: 92px 31px 0 31px;
     color: var(--color-white);
     font-weight: 700;
     margin: 29px 0 0 0;
+}
+.visual .info_btn a:hover {
+    border: 2px solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-font);
+    font-weight: 700;
 }
 .visual .info_btn a span {
     position: relative;
@@ -179,16 +187,26 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
 .visual .info_btn a.docent span::before {
     width: 47.5px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 48 43' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.2119 42.5V38.75H40.4806C40.689 38.75 40.8694 38.6858 41.0219 38.5575C41.174 38.4296 41.25 38.2615 41.25 38.0531V20.5675C41.25 15.7883 39.54 11.765 36.12 8.4975C32.7004 5.23 28.5771 3.59625 23.75 3.59625C18.9229 3.59625 14.7996 5.23 11.38 8.4975C7.96 11.765 6.25 15.7883 6.25 20.5675V35.2881H4.375C3.17625 35.2881 2.1475 34.8708 1.28875 34.0362C0.429583 33.2012 0 32.1844 0 30.9856V26.13C0 25.3192 0.230833 24.5763 0.6925 23.9013C1.15417 23.2267 1.75667 22.6844 2.5 22.2744L2.61563 19.0819C2.82063 16.3606 3.52729 13.8398 4.73563 11.5194C5.94396 9.19896 7.49354 7.17896 9.38437 5.45937C11.2756 3.73979 13.4583 2.4 15.9325 1.44C18.4071 0.479999 21.0129 0 23.75 0C26.4871 0 29.0865 0.479999 31.5481 1.44C34.0098 2.4 36.1925 3.73333 38.0962 5.44C40 7.14667 41.5496 9.16021 42.745 11.4806C43.9404 13.8015 44.6535 16.3223 44.8844 19.0431L45 22.1731C45.7275 22.516 46.326 23.0065 46.7956 23.6444C47.2652 24.2823 47.5 24.9937 47.5 25.7787V31.3606C47.5 32.1456 47.2652 32.8571 46.7956 33.495C46.326 34.1329 45.7275 34.6233 45 34.9662V38.0531C45 39.2835 44.5585 40.3323 43.6756 41.1994C42.7923 42.0665 41.7273 42.5 40.4806 42.5H22.2119ZM16.7306 25.6731C16.1185 25.6731 15.5969 25.4656 15.1656 25.0506C14.7348 24.6356 14.5194 24.1219 14.5194 23.5094C14.5194 22.8973 14.7348 22.3798 15.1656 21.9569C15.5969 21.5335 16.1185 21.3219 16.7306 21.3219C17.3431 21.3219 17.8648 21.5335 18.2956 21.9569C18.7269 22.3798 18.9425 22.8973 18.9425 23.5094C18.9425 24.1219 18.7269 24.6356 18.2956 25.0506C17.8648 25.4656 17.3431 25.6731 16.7306 25.6731ZM30.7694 25.6731C30.1569 25.6731 29.6352 25.4656 29.2044 25.0506C28.7731 24.6356 28.5575 24.1219 28.5575 23.5094C28.5575 22.8973 28.7731 22.3798 29.2044 21.9569C29.6352 21.5335 30.1569 21.3219 30.7694 21.3219C31.3815 21.3219 31.9031 21.5335 32.3344 21.9569C32.7652 22.3798 32.9806 22.8973 32.9806 23.5094C32.9806 24.1219 32.7652 24.6356 32.3344 25.0506C31.9031 25.4656 31.3815 25.6731 30.7694 25.6731ZM9.67813 21.75C9.41854 17.67 10.6877 14.1787 13.4856 11.2762C16.2835 8.37417 19.7467 6.92313 23.875 6.92313C27.3429 6.92313 30.4029 7.99604 33.055 10.1419C35.7075 12.2877 37.3173 15.0656 37.8844 18.4756C34.3331 18.434 31.0519 17.5015 28.0406 15.6781C25.0294 13.8544 22.7177 11.3544 21.1056 8.17812C20.471 11.2869 19.141 14.0352 17.1156 16.4231C15.0898 18.811 12.6106 20.5867 9.67813 21.75Z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 50 45' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5 45V40H42.5V22.25C42.5 17.375 40.8021 13.2396 37.4062 9.84375C34.0104 6.44792 29.875 4.75 25 4.75C20.125 4.75 15.9896 6.44792 12.5938 9.84375C9.19792 13.2396 7.5 17.375 7.5 22.25V37.5H5C3.625 37.5 2.44792 37.0104 1.46875 36.0312C0.489583 35.0521 0 33.875 0 32.5V27.5C0 26.625 0.21875 25.8021 0.65625 25.0312C1.09375 24.2604 1.70833 23.6458 2.5 23.1875L2.6875 19.875C3.02083 17.0417 3.84375 14.4167 5.15625 12C6.46875 9.58333 8.11458 7.47917 10.0938 5.6875C12.0729 3.89583 14.3438 2.5 16.9062 1.5C19.4688 0.5 22.1667 0 25 0C27.8333 0 30.5208 0.5 33.0625 1.5C35.6042 2.5 37.875 3.88542 39.875 5.65625C41.875 7.42708 43.5208 9.52083 44.8125 11.9375C46.1042 14.3542 46.9375 16.9792 47.3125 19.8125L47.5 23.0625C48.2917 23.4375 48.9063 24 49.3438 24.75C49.7813 25.5 50 26.2917 50 27.125V32.875C50 33.7083 49.7813 34.5 49.3438 35.25C48.9063 36 48.2917 36.5625 47.5 36.9375V40C47.5 41.375 47.0104 42.5521 46.0312 43.5312C45.0521 44.5104 43.875 45 42.5 45H22.5ZM17.5 27.5C16.7917 27.5 16.1979 27.2604 15.7188 26.7813C15.2396 26.3021 15 25.7083 15 25C15 24.2917 15.2396 23.6979 15.7188 23.2188C16.1979 22.7396 16.7917 22.5 17.5 22.5C18.2083 22.5 18.8021 22.7396 19.2812 23.2188C19.7604 23.6979 20 24.2917 20 25C20 25.7083 19.7604 26.3021 19.2812 26.7813C18.8021 27.2604 18.2083 27.5 17.5 27.5ZM32.5 27.5C31.7917 27.5 31.1979 27.2604 30.7188 26.7813C30.2396 26.3021 30 25.7083 30 25C30 24.2917 30.2396 23.6979 30.7188 23.2188C31.1979 22.7396 31.7917 22.5 32.5 22.5C33.2083 22.5 33.8021 22.7396 34.2812 23.2188C34.7604 23.6979 35 24.2917 35 25C35 25.7083 34.7604 26.3021 34.2812 26.7813C33.8021 27.2604 33.2083 27.5 32.5 27.5ZM10.0625 23.625C9.77083 19.2083 11.1042 15.4167 14.0625 12.25C17.0208 9.08333 20.7083 7.5 25.125 7.5C28.8333 7.5 32.0938 8.67708 34.9062 11.0312C37.7188 13.3854 39.4167 16.3958 40 20.0625C36.2083 20.0208 32.7188 19 29.5312 17C26.3438 15 23.8958 12.2917 22.1875 8.875C21.5208 12.2083 20.1146 15.1771 17.9688 17.7812C15.8229 20.3854 13.1875 22.3333 10.0625 23.625Z' /%3E%3C/svg%3E%0A");
 }
 .visual .info_btn a.direction span::before {
     width: 42.5px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 43 43' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.75 42.3075L13.75 37.0575L2.99063 41.2206C2.25354 41.5061 1.57083 41.4244 0.9425 40.9756C0.314167 40.5269 0 39.9131 0 39.1344V6.34625C0 5.8525 0.132292 5.40938 0.396875 5.01688C0.661042 4.62438 1.03208 4.34 1.51 4.16375L13.75 0L28.75 5.25L39.5094 1.08688C40.2465 0.801459 40.9292 0.871044 41.5575 1.29563C42.1858 1.72021 42.5 2.31396 42.5 3.07688V36.0575C42.5 36.5671 42.3558 37.0142 42.0675 37.3988C41.7788 37.7833 41.3877 38.0638 40.8944 38.24L28.75 42.3075ZM26.875 37.7213V8.47125L15.625 4.53813V33.7881L26.875 37.7213ZM30.625 37.7213L38.75 35.0288V5.40375L30.625 8.47125V37.7213ZM3.75 36.9038L11.875 33.7881V4.53813L3.75 7.27875V36.9038Z' /%3E%3C/svg%3E%0A");
 }
+.visual .info_btn a.docent:hover span::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 50 45' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5 45V40H42.5V22.25C42.5 17.375 40.8021 13.2396 37.4062 9.84375C34.0104 6.44792 29.875 4.75 25 4.75C20.125 4.75 15.9896 6.44792 12.5938 9.84375C9.19792 13.2396 7.5 17.375 7.5 22.25V37.5H5C3.625 37.5 2.44792 37.0104 1.46875 36.0312C0.489583 35.0521 0 33.875 0 32.5V27.5C0 26.625 0.21875 25.8021 0.65625 25.0312C1.09375 24.2604 1.70833 23.6458 2.5 23.1875L2.6875 19.875C3.02083 17.0417 3.84375 14.4167 5.15625 12C6.46875 9.58333 8.11458 7.47917 10.0938 5.6875C12.0729 3.89583 14.3438 2.5 16.9062 1.5C19.4688 0.5 22.1667 0 25 0C27.8333 0 30.5208 0.5 33.0625 1.5C35.6042 2.5 37.875 3.88542 39.875 5.65625C41.875 7.42708 43.5208 9.52083 44.8125 11.9375C46.1042 14.3542 46.9375 16.9792 47.3125 19.8125L47.5 23.0625C48.2917 23.4375 48.9063 24 49.3438 24.75C49.7813 25.5 50 26.2917 50 27.125V32.875C50 33.7083 49.7813 34.5 49.3438 35.25C48.9063 36 48.2917 36.5625 47.5 36.9375V40C47.5 41.375 47.0104 42.5521 46.0312 43.5312C45.0521 44.5104 43.875 45 42.5 45H22.5ZM17.5 27.5C16.7917 27.5 16.1979 27.2604 15.7188 26.7813C15.2396 26.3021 15 25.7083 15 25C15 24.2917 15.2396 23.6979 15.7188 23.2188C16.1979 22.7396 16.7917 22.5 17.5 22.5C18.2083 22.5 18.8021 22.7396 19.2812 23.2188C19.7604 23.6979 20 24.2917 20 25C20 25.7083 19.7604 26.3021 19.2812 26.7813C18.8021 27.2604 18.2083 27.5 17.5 27.5ZM32.5 27.5C31.7917 27.5 31.1979 27.2604 30.7188 26.7813C30.2396 26.3021 30 25.7083 30 25C30 24.2917 30.2396 23.6979 30.7188 23.2188C31.1979 22.7396 31.7917 22.5 32.5 22.5C33.2083 22.5 33.8021 22.7396 34.2812 23.2188C34.7604 23.6979 35 24.2917 35 25C35 25.7083 34.7604 26.3021 34.2812 26.7813C33.8021 27.2604 33.2083 27.5 32.5 27.5ZM10.0625 23.625C9.77083 19.2083 11.1042 15.4167 14.0625 12.25C17.0208 9.08333 20.7083 7.5 25.125 7.5C28.8333 7.5 32.0938 8.67708 34.9062 11.0312C37.7188 13.3854 39.4167 16.3958 40 20.0625C36.2083 20.0208 32.7188 19 29.5312 17C26.3438 15 23.8958 12.2917 22.1875 8.875C21.5208 12.2083 20.1146 15.1771 17.9688 17.7812C15.8229 20.3854 13.1875 22.3333 10.0625 23.625Z' /%3E%3C/svg%3E%0A"); 
+}
+.visual .info_btn a.direction:hover span::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 43 43' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.75 42.3075L13.75 37.0575L2.99063 41.2206C2.25354 41.5061 1.57083 41.4244 0.9425 40.9756C0.314167 40.5269 0 39.9131 0 39.1344V6.34625C0 5.8525 0.132292 5.40938 0.396875 5.01688C0.661042 4.62438 1.03208 4.34 1.51 4.16375L13.75 0L28.75 5.25L39.5094 1.08688C40.2465 0.801459 40.9292 0.871044 41.5575 1.29563C42.1858 1.72021 42.5 2.31396 42.5 3.07688V36.0575C42.5 36.5671 42.3558 37.0142 42.0675 37.3988C41.7788 37.7833 41.3877 38.0638 40.8944 38.24L28.75 42.3075ZM26.875 37.7213V8.47125L15.625 4.53813V33.7881L26.875 37.7213ZM30.625 37.7213L38.75 35.0288V5.40375L30.625 8.47125V37.7213ZM3.75 36.9038L11.875 33.7881V4.53813L3.75 7.27875V36.9038Z' /%3E%3C/svg%3E%0A");
+}
 
 @media screen and (max-width:1024px){
+                .visual {
+                    margin: 0 0 45px 0;
+                }
                 .visual .swiper-slide {
                     height: 600px;
                 }
@@ -219,15 +237,17 @@
                 .visual .swiper-slide h3 {
                     font-size: 32px;
                 }
+                .visual .info .wrapper {
+                    display: block ;
+                }
                 .visual .info_btn {
+                    position: relative;
+                    right: auto;
+                    top: auto;
+                    margin: 46px auto 0;
                     display: flex;
-                    align-content: flex-end;
-                    align-items: flex-end;
-                    justify-content: center;
                     gap: 0 16px;
-                    position: absolute;
-                    left: 0;
-                    bottom: -73px;
+                    justify-content: center;
                 }
                 .visual .info_btn a {
                     display: block;
@@ -235,6 +255,7 @@
                     height: 44px;
                     padding: 9px 25px 8px 25px;
                     text-align: center;
+                    margin: 0;
                 }
                 .visual .info_btn a span::before {
                     display: none;
@@ -245,11 +266,212 @@
 
 
 .time {
-    background-color: var(--color-point);
+    overflow-x: hidden; /* rolling 가로 스크롤바 삭제 */
+    background-color: #F2F2F2;
+    position: relative;
+    padding: 446px 0 0 0;
+    margin-top: 53px;
+}
+.time .rolling {
+    position: absolute;
+    left: 0;
+    top: 6%;
+    z-index: 10;
+    font-size: clamp(60px, 7vw, 100px);
+    font-weight: 700;
+    color: var(--color-point);
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
+.time .rolling p {
+    position: absolute; /* rolling을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    transform: translateX(-50.37%);
+    animation: time_roll 30s linear infinite;
+    /* 애니메이션이름, 20초동안실행, 가속도x, 무한반복 */
+}
+@keyframes time_roll {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-50.37%);}
+}
+.time .time_tit {
+    text-align: center;
+}
+.time .time_tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 14px 0;
+}
+.time .time_list .list {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+ /* 좌우로 배치될 요소를 감싸는 요소로 flex를 줘야함 */
+.time .time_list .list ul {
+    border-top: 1px solid var(--color-black);
+    display:flex;
+    width: 100%;
+    gap: 0 24px;
+    padding: 50px 0 0 calc(50% - 202px);
+
+}
+ /* 좌우로 배치될 요소는 최소 넓이가 지정되는 것이 좋다. */
+.time .time_list .list ul li {
+    display:block; 
+    min-width:404px; 
+    height:442px; 
     position: relative;
 }
+.time .time_list .list ul li:last-child {
+    min-width: calc(404px + 150px);
+}
+.time .time_list .list ul li .year {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.time .time_list .list ul li .year span {
+    position: relative;
+    bottom: 28px;
+    font-weight: 700;
+}
+.time .time_list .list ul li .year span::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 27px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-black);
+}
+.time .time_list .list ul li .year span::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    bottom: -62px;
+    width: 1px;
+    height: 55px;
+    background-color: var(--color-black);
+}
+.time .time_list .list ul li .content {
+    width: 404px;
+}
+.time .time_list .list ul li .content .photo {
+    position: relative;
+    overflow: hidden;
+    height: 283px;
+}
+.time .time_list .list ul li .content .photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.time .time_list .list ul li .content .txt {
+    display: flex;
+    gap: 0 21px;
+    text-align: left;
+    margin: 17px 0 0 0;
+}
+.time .time_list .list ul li .content .txt strong {
+    font-weight: 700;
+}
+@media screen and (max-width:1024px){
+                .time .time_tit h2 {
+                    font-size: 40px;
+                }
+}
+@media screen and (max-width:768px){
+                .time .time_tit h2 {
+                    font-size: 28px;
+                }
+}
+
+.collection {
+    margin: 135px 0 159px 0;
+}
+.collection .tit {
+    margin: 0 0 35px 0;
+}
+.collection .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 14px 0;
+}
+.collection .tit h2 a span {
+    position: relative;
+}
+.collection .tit h2 a span::after {
+    content: "";
+    position: absolute;
+    right: -67px;
+    bottom: 7px;
+    width: 55px;
+    height: 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 55 22' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55 22H0V15.6362H42.5994L33.61 4.49943L37.2419 0L55 22Z' /%3E%3C/svg%3E%0A");
+}
+
+.collection .list {
+    display: flex;
+    justify-content: space-between;
+}
+.collection .list .spec {
+    height: 372px;
+    background-color: #f2f2f2;
+    padding: 50px 40px 62px 40px;
+}
+.collection .list .spec ul li {
+    border-bottom: 1px solid #767676;
+    margin-bottom: 33px;
+}
+.collection .list .spec ul li h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.collection .list .spec .info_c strong {
+    font-weight: 700;
+    margin-right: 39px;
+}
+.collection .list .spec  .collection_swiper .swiper-slide { 
+    overflow:hidden; 
+} /* 글자가 하단에 내려갔을때 안보이게 하기 위해서 */
+.collection .list .spec .collection_swiper .swiper-slide .info_c { 
+    position:relative; 
+} /* top값으로 움직이기 때문에 position:relative는 필수*/
+.collection .list .spec .collection_swiper { 
+    height:372px 
+} /* 팝업의 높이가 됨 */
 
 
 
-
-
+.collection .list .art .swiper-slide { 
+    width: 191px; 
+}
+.collection .list .art .swiper-slide .photo {
+    overflow: hidden;
+    height: 249px;
+}
+.collection .list .art .swiper-slide img { 
+    display:block; 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+} /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌 object-fit 상세설명 */
+.collection .list .art.swiper-slide.swiper-slide-active { 
+    width:404px;
+    height: 373px; 
+}  /* active된 팝업의 사이즈 - 절대 transition 금지 */

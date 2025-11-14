@@ -69,7 +69,6 @@ header .logo a {
         left: 50%; /* li 넓이의 50% */
         transform: translateX(-50%); /* depth2넓이의 50% */
         top: var(--header-h);
-        background-color: var(--color-black);
         border-top: 0;
         min-width: 100%; /* li 넓이의 100% */
     }
