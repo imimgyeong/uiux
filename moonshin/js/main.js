@@ -10,7 +10,7 @@ $(document).ready(function(){
     
 
     
-    /*----------- 시작 : visual swiper -----------*/
+/*----------- 시작 : visual swiper -----------*/
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         // autoplay: {  /* 팝업 자동 실행 */
@@ -40,9 +40,9 @@ $(document).ready(function(){
         $('.visual .ctrl_btn .stop').show()
         // console.log('재생버튼')
     })
-    /*----------- 끝 : visual swiper -----------*/
+/*----------- 끝 : visual swiper -----------*/
 
-     /*----------- 시작 : .time scrollTrigger -----------*/
+/*----------- 시작 : .time scrollTrigger -----------*/
     let pageWrapper = document.querySelector(".time .time_list .container");/* 홈페이지 콘텐츠 전체를 감싸는 요소, 만약 .list로 준다면 화면에 list만 꽉차게됨. */
     let items = document.querySelector(".time .time_list .list ul");/* flex를 준 요소 */
     let localItems = gsap.utils.toArray(".time .time_list .list ul li");/* 좌우로 배치될 각각의 요소 */
@@ -66,90 +66,98 @@ $(document).ready(function(){
             invalidateOnRefresh: true 
         }
     })
-    /*----------- 끝 : .time scrollTrigger -----------*/
+/*----------- 끝 : .time scrollTrigger -----------*/
 
 
-    /*----------- 시작 : .collection swiper -----------*/
-    let swiper_tit = ['col01', 'col02', 'col03', 'col04', 'col05']; // 팝업의 제목 
-    let swiper_tit_name = $('.col_list .col_info .collection_swiper'); // 팝업의 제목이 표시될 요소 
-    const collection_swiper = new Swiper('.collection .col_info', { /* 팝업을 감싼는 요소의 class명 */
 
-        autoplay: {  /* 팝업 자동 실행 */
-            delay: 2500,
-            disableOnInteraction: true,
-        },
 
-        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.swiper-pagination', /* 해당 요소의 class명 */
-            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-            renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-                return '<span class="' + className + '">' + (index + 1) + "</span>";
+/*----------- 시작 : .collection .spec swiper -----------*/
+
+    // 각 슬라이드의 텍스트 DOM 수집
+    function getSpecData(index) {
+        let slide = $('.collection .list .spec .swiper-slide').eq(index);
+
+        return {
+            title: slide.find('h3').text(),
+            artist: slide.find('li').eq(0).find('span').text(),
+            year: slide.find('li').eq(1).find('span').text(),
+            material: slide.find('li').eq(2).find('span').text(),
+            size: slide.find('li').eq(3).find('span').text()
+        };
+    }
+
+    // 표시될 영역 (항상 1개)
+    let $specBox = $('.collection .list .spec');
+    let $title = $specBox.find('h3');
+    let $list = $specBox.find('ul li');
+
+    // 초기값 삽입
+    function setSpec(index) {
+        const data = getSpecData(index);
+
+        // 애니메이션을 위해 먼저 아래로 내리고 투명하게
+        $title.css({ top: '20px', opacity: 0 });
+        $list.css({ top: '20px', opacity: 0 });
+
+        // 텍스트 교체
+        $title.find('h3').text(data.title);
+        $list.eq(0).find('span').text(data.artist);
+        $list.eq(1).find('span').text(data.year);
+        $list.eq(2).find('span').text(data.material);
+        $list.eq(3).find('span').text(data.size);
+
+        // 위로 슬라이드 업 + fade-in
+        $title.animate({ top: 0, opacity: 1 }, 400);
+        $list.animate({ top: 0, opacity: 1 }, 400);
+    }
+
+        // Swiper 초기화
+    const spec_swiper = new Swiper('.collection .list .spec .swiper', {
+        slidesPerView: 1,
+        allowTouchMove: false, // 텍스트는 직접 드래그 못하게 (국회도서관 스타일)
+        
+        loop: true,
+        //effect: "fade",
+        speed: 600,
+        
+    });
+    /*----------- 끝 : .collection .spec swiper -----------*/
+        
+
+    /*----------- 시작 : .collection .art swiper -----------*/
+    const art_swiper = new Swiper('.collection .list .art .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
+        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 768px 이상일때 적용 */
+                spaceBetween: 16,
             },
         },
-        navigation: {  /* 이전, 다음 버튼 */
-            nextEl: '.swiper-button-next',  /* 다음 버튼의 클래스명 */
-            prevEl: '.swiper-button-prev',  
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        //effect: "slide",
+        speed: 600,
+        navigation: {
+            nextEl: '.collection .ctrl_btn .btn_next',
+            prevEl: '.collection .ctrl_btn .btn_prev',
         },
         on: {
-            slideChange: function(){
-                swiper_tit_name.text(swiper_tit[this.realIndex]);
-                swiper_tit_name.css('top','100%')
-                swiper_tit_name.animate({
-                    top: 0
-                }, 500)
+            slideChange: function() {
+                spec_swiper.slideTo(this.realIndex+1)
+                const activeSlide = this.slides[this.activeIndex]
+                const activeSlideWidth = activeSlide.offsetWidth
+                const otherSlides = this.slides[this.previousIndex]
+                const otherSlideWidth = otherSlides.offsetWidth			
+                const slideWidthDifference = activeSlideWidth - otherSlideWidth;
+                this.setTranslate(this.translate - slideWidthDifference);
+            },
+            slideChangeTransitionEnd: function() {
+                // 전환이 끝나면 Swiper를 다시 업데이트
+                setTimeout(() => {
+                    this.update();
+                }, 100);  // 잠시 딜레이를 주고 업데이트
             }
-        }
+        },
     });
-    swiper.autoplay.stop();  /* 일시정지 기능 */
-    swiper.autoplay.start();  /* 재생 기능 */
 
-    /*----------- 끝 : collection swiper -----------*/
-
-    /*----------- 시작 : art swiper -----------*/
-    const swiper = new Swiper('.swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-		768: {    /* 768px 이상일때 적용 */
-			spaceBetween: 24,
-		},
-	},
-	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-	autoplay: {  /* 팝업 자동 실행 */
-		delay: 2500,
-		disableOnInteraction: true,
-	},
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-		el: '.swiper-pagination', /* 해당 요소의 class명 */
-		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-	},
-	on: {
-		slideChange: function() {
-			const activeSlide = this.slides[this.activeIndex]
-			const activeSlideWidth = activeSlide.offsetWidth
-			const otherSlides = this.slides[this.previousIndex]
-			const otherSlideWidth = otherSlides.offsetWidth			
-			const slideWidthDifference = activeSlideWidth - otherSlideWidth;
-			this.setTranslate(this.translate - slideWidthDifference);
-		},
-		slideChangeTransitionEnd: function() {
-			// 전환이 끝나면 Swiper를 다시 업데이트
-			setTimeout(() => {
-				this.update();
-			}, 100);  // 잠시 딜레이를 주고 업데이트
-		}
-	},
-    });
-    swiper.autoplay.stop();  /* 일시정지 기능 */
-    swiper.autoplay.start();  /* 재생 기능 */
-    /*----------- 끝 : art swiper -----------*/
 
 })//맨끝
