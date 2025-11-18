@@ -158,6 +158,36 @@ $(document).ready(function(){
             }
         },
     });
+    /*----------- 시작 : notice tab  -----------
+    *.notice .area .content .tap button 을 클릭했을때 1번째를 클릭하면 active클래스를 주고
+    * button에서 어떤 tap을 보이게 해야하는지 단서를 줘야함
+    *.notice .area .content .inner .tab_cont 에서 1번째 요소에 active클래스를 줌 
+    */
+
+    let tab_name
+    $('.notice .area .content .tap button').on('click', function(){
+        //클릭한 button을 active클래스 추가
+        $('.notice .area .content .tap button').removeClass('active')
+        $(this).addClass('active')
+        //클릭한 button을 span에다가 선택됨이라고 글자쓰기
+        $('.notice .area .content .tap button span').text('')
+        $(this).find('button span').text('선택됨')
+
+        // 클릭한 button과 관련된 inner tab_cont에 active클래스 주기
+        tab_name = $(this).attr('data-tab')
+        // console.log(tab_name)
+        $('.notice .area .content .inner .tab_cont').removeClass('active')
+        //.notice로 찾을때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
+        $('.notice .area .content .inner').find('.' +tab_name).addClass('active')
+
+        //선택된 tab_cont의 title에만 '선택됨'이라고 써주기
+        $('.notice .area .content .inner .tab_cont').attr('titlse', '')
+        $('.notice .area .content .inner').find('.' +tab_name).attr('title', '선택됨')
+
+    })
+    /*----------- 끝 : 찾습니다 tap  -----------*/
+
+
 
 
 })//맨끝

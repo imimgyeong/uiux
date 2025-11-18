@@ -303,6 +303,26 @@
     line-height: 1.3;
     margin: 0 0 14px 0;
 }
+.time .time_tit h2 a span {
+    position: relative;
+}
+.time .time_tit h2 a span::after {
+    content: "";
+    position: absolute;
+    right: -67px;
+    bottom: 7px;
+    width: 55px;
+    height: 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 55 22' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55 22H0V15.6362H42.5994L33.61 4.49943L37.2419 0L55 22Z' /%3E%3C/svg%3E%0A");
+}
+.time .time_tit h2 a:hover span::after {
+    transform: translateX(20%);
+    transition: 0.7s;
+}
+
 .time .time_list .list {
     height: 100dvh;
     display: flex;
@@ -385,6 +405,7 @@
     font-weight: 700;
 }
 @media screen and (max-width:1024px){
+              
                 .time .time_tit h2 {
                     font-size: 40px;
                 }
@@ -422,6 +443,11 @@
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 55 22' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55 22H0V15.6362H42.5994L33.61 4.49943L37.2419 0L55 22Z' /%3E%3C/svg%3E%0A");
 }
+.collection .tit h2 a:hover span::after {
+    transform: translateX(20%);
+    transition: 0.7s;
+}
+
 
 .collection .list {
     display: flex;
@@ -642,6 +668,10 @@
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 55 22' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55 22H0V15.6362H42.5994L33.61 4.49943L37.2419 0L55 22Z' /%3E%3C/svg%3E%0A");
 }
+.exhibition .sticky .tit a:hover span::after {
+    transform: translateX(20%);
+    transition: 0.7s;
+}
 .exhibition .sticky .current {
     width: 511px;
 }
@@ -706,7 +736,7 @@
 }
 
 .exhibition .list {
-    width: 648px;
+    width: 50%;
     padding: 0 0 126px 0;
 }
 .exhibition .list ul {
@@ -725,7 +755,7 @@
 }
 .exhibition .list ul li a .photo {
     overflow: hidden;
-    height: 441px;
+    height: auto;
 }
 .exhibition .list ul li a .photo img {
     width: 100%;
@@ -754,87 +784,92 @@
                     height: 14px;
                 }
                 .exhibition .sticky .current {
-                    width: 326px;
+                    width: 426px;
                 }
                 .exhibition .sticky .current a .photo {
-                    height: 451px;
+                    height: auto;
                 }
-                /*!!!!!!여기부터 고치면됨*/
                 .exhibition .sticky .current a .info {
-                    position: absolute;
-                    left: 50px;
-                    bottom: 75px;
-                    width: calc(100% - 100px);
-                    color: var(--color-white);
-                    opacity: 0;
-                    transition: 0.5s;
-                    display: flex;
-                    flex-direction: column;
-                }
-                .exhibition .sticky .current a:hover .info {
-                    opacity: 1;
+                    left: 27px;
+                    bottom: 20px;
                 }
                 .exhibition .sticky .current a .info h3 {
-                    font-size: 40px;
-                    font-weight: 700;
-                    /*2줄제한*/
-                    line-height: 1.3;
-                    height: 2.6em;/* 행간*줄수 단위em*/
-                    overflow: hidden;
-                    /* 글자 끝 ...추가 */
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    margin: 0 0 123px 0;
+                    font-size: 34px;
+                    margin: 0 0 30px 0;
                 }
                 .exhibition .sticky .current a .info strong {
-                    font-size: 28px;
-                    font-weight: 700;
+                    font-size: 24px;
                 }
                 .exhibition .sticky .current a .info span{
-                    color: rgba(255, 255, 255, 0.8);
-                    margin: 5px 0 38px 0;
+                    margin: 5px 0 24px 0;
                 }
                 
                 .exhibition .list {
-                    width: 648px;
-                    padding: 0 0 126px 0;
+                    width: 50%;
+                    padding: 0 0 79px 0;
                 }
                 .exhibition .list ul {
-                    display: flex;
-                    flex-wrap: wrap;/* 여러줄 허용 */
-                    gap: 60px 60px;/* 위아래 -좌우 여백 */
+                    gap: 30px 30px;/* 위아래 -좌우 여백 */
                 }
                 .exhibition .list ul li {
-                    width: calc(50% - 30px);
+                    width: calc(50% - 15px);
                     /* 100 / 한줄에 나오는 li의 갯수 100/2 = 50% 
-                        한줄의 여백의 합 / 한줄에 나오는 li의 갯수 = 60/2 = 30px*/
+                        한줄의 여백의 합 / 한줄에 나오는 li의 갯수 = 30/2 = 15px*/
                 }
                 /*odd 홀수 even 짝수*/
                 .exhibition .list ul li:nth-child(odd) {
-                    transform: translateY(126px); /* 위아래는 Y*/
+                    transform: translateY(139px); /* 위아래는 Y*/
                 }
-                .exhibition .list ul li a .photo {
-                    overflow: hidden;
-                    height: 441px;
-                }
-                .exhibition .list ul li a .photo img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-}
+}/*1024 @media */
 @media screen and (max-width:768px){
-                .exhibition .sticky .tit h2 {
-                    font-size: 28px;
+                .exhibition {
+                    padding: 72px 0 179px 0;
+                    text-align: center;
                 }
                 .exhibition .wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
+                    display: block;
                  }
-}
+                .exhibition .sticky {
+                    position: relative;
+                 }
+                .exhibition .sticky .tit h2 {
+                    font-size: 28px;
+                    margin: 0 0 10px 0;
+                }
+                .exhibition .sticky .tit h2 a span::after {
+                    right: -40px;
+                    bottom: 5px;
+                    width: 33px;
+                    height: 14px;
+                }
+                .exhibition .sticky .current {
+                    width: auto;
+                }
+                .exhibition .sticky .current a .photo {
+                    height: auto;
+                }
+                .exhibition .sticky .current a .info {
+                    left: 27px;
+                    bottom: 20px;
+                }
+                .exhibition .sticky .current a .info h3 {
+                    font-size: 34px;
+                    margin: 0 0 30px 0;
+                }
+                .exhibition .sticky .current a .info strong {
+                    font-size: 24px;
+                }
+                .exhibition .sticky .current a .info span{
+                    margin: 5px 0 24px 0;
+                }
+                
+                .exhibition .list {
+                    display: none;
+                }
+                
+            
+                
+}/* 768 @media */
 
 
 
@@ -855,3 +890,168 @@
     line-height: 1.3;
     margin: 0 0 14px 0;
 }
+.notice .area {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 34px;
+}
+.notice .area .content {
+    width: 50%;
+    border-bottom: 3px solid #ededed;
+}
+
+.notice .area .content .tap {
+    padding-right: 153px;
+    margin-bottom: 37px;
+    border-bottom: 3px solid #ededed;
+    display: flex;
+
+}
+.notice .area .content .tap button {
+    width: 33.3%;
+    font-size: 24px;
+    background-color: #fff;
+    color: rgba(29, 29, 29, 0.4);
+    position: relative;
+}
+.notice .area .content .tap button.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-black);
+}
+.notice .area .content .tap button.active {
+    color: var(--color-font);
+    font-weight: 700;
+}
+
+
+.notice .area .content .tab_cont a.more {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-black);
+    border: 1px solid var(--color-white);
+    border-radius: 10px;
+    padding: 8px 8px 8px 8px;
+    position: absolute;
+    right: 0;
+    top: -77px;
+}
+.notice .area .content .tab_cont a.more::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 7px;
+    top: 7px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z' /%3E%3C/svg%3E%0A");
+}
+.notice .area .content .tab_cont a:hover.more {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+}
+.notice .area .content .tab_cont a:hover.more::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='%231E1E1E' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z' /%3E%3C/svg%3E%0A");
+}
+.notice .area .content .inner {
+    position: relative;
+}
+
+.notice .area .content .inner .tab_cont.active {
+    display: block;
+}
+.notice .area .content .inner .tab_cont {
+    display: none;
+}
+.notice .area .content .inner .tab_cont ul li {
+    margin-bottom: 26px;
+}
+.notice .area .content .inner .tab_cont ul li a {
+    display: flex;
+    justify-content: space-between;
+}
+.notice .area .content .inner .tab_cont ul li a strong {
+    /*1줄제한*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.notice .area .content .inner .tab_cont ul li a:hover strong {
+    font-weight: 700;
+}
+.notice .area .content .inner .tab_cont ul li a span {
+    color: #767676;
+}
+
+.notice .area .photo {
+    overflow: hidden;
+    width: clamp(608px, 31.5vw, 325px);
+    height: 352px;
+    border-radius: 10px;
+}
+.notice .area .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:1024px){
+                .notice {
+                    margin: 72px 0 64px 0;
+                }
+                .notice .tit {
+                    margin: 0 0 30px 0;
+                }
+                .notice .tit h2 {
+                    font-size: 34px;
+                    margin: 0 0 10px 0;
+                }
+                .notice .area {
+                    gap: 0 26px;
+                }
+                .notice .area .content {
+                    width: 100%;
+                    border-bottom: 3px solid #ededed;
+                }
+                .notice .area .content .tap {
+                    padding-right: 61px;
+                    margin-bottom: 37px;
+                }
+                .notice .area .content .tap button {
+                    font-size: 22px;
+                }
+             
+                .notice .area .content .tab_cont a.more {
+                    top: -73px;
+                }
+
+                .notice .area .content .inner .tab_cont ul li {
+                    margin-bottom: 26px;
+                }
+                .notice .area .content .inner .tab_cont ul li a span {
+                    display: none;
+                }
+                
+}
+@media screen and (max-width:768px){
+                .notice .tit h2 {
+                    font-size: 28px;
+                }
+                .notice .area {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0 26px;
+                }
+                .notice .area .photo {
+                    width: auto;
+                    height: 188px;
+                    margin-top: 26px;
+                }
+}
+
