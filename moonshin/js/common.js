@@ -79,7 +79,7 @@ $(document).ready(function(){
            scrolling = $(window).scrollTop()
            diff_scroll = prev_scroll - scrolling 
            // console.log(diff_scroll)
-           if(diff_scroll < 0){// 스크롤을 위로 올라간다는 뜻
+           if((diff_scroll < 0) && (scrolling > 0)){// 스크롤을 위로 올라간다는 뜻
                $('header').addClass('up')
                // console.log('if?')
            }else{// 아래로 스크롤된다는 뜻

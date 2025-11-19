@@ -818,7 +818,7 @@
 }/*1024 @media */
 @media screen and (max-width:768px){
                 .exhibition {
-                    padding: 72px 0 179px 0;
+                    padding: 72px 0 73px 0;
                     text-align: center;
                 }
                 .exhibition .wrapper {
@@ -843,6 +843,7 @@
                 .exhibition .sticky .current {
                     width: auto;
                     max-width: 511px;
+                    margin: 0 auto;
                 }
                 .exhibition .sticky .current a .photo {
                     height: auto;
