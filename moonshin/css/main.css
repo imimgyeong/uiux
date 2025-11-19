@@ -456,6 +456,7 @@
 }
 .collection .list .spec {
     width: 32%;
+    min-width : 404px;
     height: 372px;
     background-color: #f2f2f2;
     padding: 50px 40px 62px 40px;
@@ -478,14 +479,16 @@
     border-bottom: 1px solid #767676;
     margin-bottom: 33px;
     position:relative; /* top값으로 움직이기 때문에 position:relative는 필수*/
+    display: flex;
 }
 .collection .list .spec ul > li > ul >li strong {
     font-weight: 700;
-    margin-right: 39px;
+    width: 100px;
 }
 
 .collection .list .art {
     width: 66%;
+    max-width: calc(100% - 428px);
 }
 .collection .list .art .swiper-slide { 
     width: 191px; 
@@ -571,6 +574,7 @@
                 }
                 .collection .list .art {
                     width: 100%;
+                    max-width: 100%;
                 }
                 .collection .list .art .swiper-slide { 
                     width: 212px; 
@@ -643,6 +647,7 @@
     position: sticky;
     /* 감싸는 요소 중 단 하나라도  overflow:hidden 속성을 주면 작동이 안됨 */
     top: 35px;
+    width: 40%;
  }
  .exhibition .sticky .tit {
     margin: 0 0 35px 0;
@@ -672,12 +677,11 @@
     transform: translateX(20%);
     transition: 0.7s;
 }
-.exhibition .sticky .current {
-    width: 511px;
-}
+    /* .exhibition .sticky .current {
+        width: 511px;
+    } */
 .exhibition .sticky .current a .photo {
     overflow: hidden;
-    height: 713px;
     position: relative; /* before 정렬의 기준*/
 }
 .exhibition .sticky .current a .photo img {
@@ -736,7 +740,7 @@
 }
 
 .exhibition .list {
-    width: 50%;
+    width: 55%;
     padding: 0 0 126px 0;
 }
 .exhibition .list ul {
@@ -751,7 +755,7 @@
 }
 /*odd 홀수 even 짝수*/
 .exhibition .list ul li:nth-child(odd) {
-    transform: translateY(126px); /* 위아래는 Y*/
+    transform: translateY(152px); /* 위아래는 Y*/
 }
 .exhibition .list ul li a .photo {
     overflow: hidden;
@@ -767,12 +771,6 @@
                 .exhibition {
                     padding: 72px 0 79px 0;
                  }
-                 
-                .exhibition .sticky {
-                    position: sticky;
-                    /* 감싸는 요소 중 단 하나라도  overflow:hidden 속성을 주면 작동이 안됨 */
-                    top: 50px;
-                 }
                 .exhibition .sticky .tit h2 {
                     font-size: 34px;
                     margin: 0 0 10px 0;
@@ -783,9 +781,7 @@
                     width: 33px;
                     height: 14px;
                 }
-                .exhibition .sticky .current {
-                    width: 426px;
-                }
+                
                 .exhibition .sticky .current a .photo {
                     height: auto;
                 }
@@ -805,7 +801,6 @@
                 }
                 
                 .exhibition .list {
-                    width: 50%;
                     padding: 0 0 79px 0;
                 }
                 .exhibition .list ul {
@@ -831,6 +826,9 @@
                  }
                 .exhibition .sticky {
                     position: relative;
+                    top: auto;
+                    margin: 0 0 20px 0;
+                    width: 100%;
                  }
                 .exhibition .sticky .tit h2 {
                     font-size: 28px;
@@ -844,6 +842,7 @@
                 }
                 .exhibition .sticky .current {
                     width: auto;
+                    max-width: 511px;
                 }
                 .exhibition .sticky .current a .photo {
                     height: auto;
@@ -864,7 +863,27 @@
                 }
                 
                 .exhibition .list {
-                    display: none;
+                    overflow-x: auto;
+                    width: 100%;
+                }
+                .exhibition .list ul {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    width: 1440px;
+                    /*li한개의 넓이(166px) X li의 갯수
+                        1328
+                        + 
+                        li사이의 여백 X (li의 갯수 - 1) 
+                        112+
+                        ul에 넓이를 주고
+                        ul을 감싸는 요소에 overflow-x:auto;*/
+                    gap: 0 24px;
+                }
+                .exhibition .list ul li {
+                    width: 166px;
+                }
+                .exhibition .list ul li:nth-child(odd) {
+                    transform: translateY(0); /* 위아래는 Y*/
                 }
                 
             

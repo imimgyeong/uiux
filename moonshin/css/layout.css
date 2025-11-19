@@ -25,7 +25,21 @@ header .logo a {
     background: url(../images/commom/logo.svg) no-repeat center center / contain;
     /* contain 로고가 안잘리고 영역에 맞게 사이즈 조절해서 나옴 */
 }
+
+/* header가 fixed되었을때 */
+header.fixed {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+/*-------------스크롤 아래로 내릴때 header올림 -------------
+    header에 menu_pc, menu_mo 있을때는 작동이 안됐으면 좋겠다 
+*/
+header.up:not(.menu_pc, .menu_mo) {
+    transform: translateY(-110%);
+}
+
 @media screen and (min-width:1025px) {
+
     header .gnb .gnb_open,
     header .gnb .gnb_close {
         display: none; /* 모바일에서 보이는것 */
@@ -38,31 +52,18 @@ header .logo a {
     }
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         font-weight: 700;
         line-height: var(--header-h);
-        padding: 0 1.0833em;
+        padding: 0 0.8em;
         white-space: nowrap;/* 행간이 높아서 2줄이 되면 이상함 2줄제한 */
     }
-    header .gnb .gnb_wrap ul.depth1 > li:hover > a,
-    header .gnb .gnb_wrap ul.depth1 > li > a:focus {
-        color: var(--color-point);
-    }
+    
+    
     header .gnb .gnb_wrap ul.depth1 > li > a > span {
         position: relative; /*  before정렬의 기준 */
     }
-    header .gnb .gnb_wrap ul.depth1 > li:hover > a > span::before {
-        content: "";
-        position: absolute;
-        right: -9px;
-        bottom: 1px;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background-color: var(--color-point);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
+    
 
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
         position: absolute; /* li를 기준으로 정렬 */
@@ -124,7 +125,7 @@ header .logo a {
         width: 100%;
         height: 0;
         background-color: var(--color-black);
-        transition: height 0.5s;
+        transition: height 0s;
     }
     header.menu_pc::before {
         height: 297px;
@@ -138,8 +139,6 @@ header .logo a {
         height: 100vh;
         opacity: 1;
     }
-
-
 
     /* 메뉴 - li에 오버했을 때 over 추가 */
     header .gnb .gnb_wrap ul.depth1 > li.over > a {
@@ -156,32 +155,29 @@ header .logo a {
         padding-top: 0;
         transition: height 0.5s;
     }
-
-
-}
-
-/* header가 fixed되었을때 */
-header.fixed {
-    background-color: var(--color-black);
-    color: var(--color-white);
-}
-/*-------------스크롤 아래로 내릴때 header올림 -------------
-    header에 menu_pc, menu_mo 있을때는 작동이 안됐으면 좋겠다 
-*/
-header.up:not(.menu_pc, .menu_mo) {
-    transform: translateY(-110%);
-}
-
-
+    header .gnb .gnb_wrap ul.depth1 > li.over > a,
+    header .gnb .gnb_wrap ul.depth1 > li > a:focus {
+        color: var(--color-point);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span::before {
+        content: "";
+        position: absolute;
+        right: -9px;
+        bottom: 1px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--color-point);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}/*@media*/
 
 @media screen and (max-width:1024px){
                 header {
                     padding-right: 0; /* 오른쪽 여백 삭제*/
                 }
-                header .logo a {
-                    width: 135.21px;
-                    height: 18px;
-                }
+               
                 header .gnb .gnb_open {
                     display: block;
                     width: var(--header-h);
@@ -327,6 +323,10 @@ header.up:not(.menu_pc, .menu_mo) {
 }/*@media 1024px*/
 
 @media screen and (max-width:768px){
+                header .logo a {
+                    width: 135.21px;
+                    height: 18px;
+                }
                 header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a::before,
                 header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a::after {
                     right: 24px;

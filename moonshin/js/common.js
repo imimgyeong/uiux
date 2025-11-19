@@ -22,9 +22,21 @@ $(document).ready(function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if( device_status == 'pc'){
             $('header').addClass('menu_pc')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideDown()
+            $(this).addClass('over')
+            $(this).find('.depth2').slideDown()
         }
     })
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave ', function(){
+        $(this).removeClass('over')
+    })
     $('header .gnb .gnb_bg').on('mouseenter', function(){
+        $('header').removeClass('menu_pc')
+        $(this).find('.depth2').slideUp()
+    })
+     $('header .gnb .gnb_wrap ul.depth1 > li:last-child').on('focusout', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
         $('header').removeClass('menu_pc')
     })
 
