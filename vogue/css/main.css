@@ -1,0 +1,56 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+
+.visual .swiper-slide {
+    height: 800px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 5px 0;
+    
+}
+.visual .swiper-slide .txt{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* 투명도 꼭 필요 */
+    backdrop-filter: blur(4px); /* 블러 적용 */
+    padding: 41px 0 26px 0;
+}
+
+.visual .swiper-slide h3 {
+    font-family: "Pretendard";
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.visual .swiper-slide p strong {
+    position: relative;
+    margin: 0 22px 0 0;
+}
+.visual .swiper-slide p strong::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: -14px;
+    width: 1px;
+    height: 12px;
+    background-color: #ededed;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/main/visual01.jpg);
+}
+.visual .swiper-slide.popup2{
+    background-image: url(../images/main/visual02.jpg)
+}
+.visual .swiper-slide.popup3{
+    background-image: url(../images/main/visual03.jpg)
+}

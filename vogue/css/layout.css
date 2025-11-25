@@ -1,0 +1,299 @@
+/*------------------------------------
+ * 파일명 : layout.css
+    - 작성자 : 황난경
+    - 작성일 : 2025-11-25
+    - 설  명 : header/footer 스타일을 선언함
+--------------------------------------*/
+
+header {
+    position: relative;/* wrap을 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-white);
+    background-color: var(--color-black);
+    padding: 0 var(--wrapper-margin);
+}
+header .inner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+header .logo {
+    width: 100%;
+    height: 123px;
+    padding: 32px 0 0 0;
+    border-bottom: 1px solid #ededed;
+    
+}
+header .logo a {
+    display: block;
+    width: 231px;
+    height: 60px;
+    margin: 0 auto; /* 가운데 정렬 */
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+    /* contain 로고가 안잘리고 영역에 맞게 사이즈 조절해서 나옴 */
+
+}
+header .gnb {
+    width: 100%;
+    height: 77px;
+}
+header .util {
+    display: flex; /* lang-search 좌우배치 */
+    right: 19px;
+    top: 4px;
+    gap: 0 7px;
+    padding: 52px var(--wrapper-margin) 0 0;
+    position: absolute;
+    
+}
+header .util .lang {
+    display: block;
+    padding-left: 1.4706em;/* 아이콘이 배경으로 들어갈 영역 */
+    position: relative; /* after 기준 */
+    font-family: "Lato";
+}
+header .util .lang::after {
+    content: "";
+    position: absolute;
+    right: -0.7059em;
+    top: 0.5882em;
+    width: 0.4624em;
+    height: 0.2529em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 5' fill='%23EDEDED' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.42839 4.0875L0.145833 0.805208C0.100695 0.759895 0.0651042 0.709289 0.0390625 0.653386C0.0130208 0.597657 0 0.537848 0 0.473959C0 0.346354 0.0431424 0.235416 0.129427 0.141145C0.215712 0.0470482 0.329427 0 0.470573 0H7.38568C7.52682 0 7.64054 0.0475689 7.72682 0.142708C7.81311 0.237673 7.85625 0.348524 7.85625 0.47526C7.85625 0.507031 7.80755 0.617013 7.71016 0.805208L4.42786 4.0875C4.35252 4.16302 4.27457 4.21814 4.19401 4.25286C4.11345 4.28759 4.02483 4.30495 3.92812 4.30495C3.83142 4.30495 3.7428 4.28759 3.66224 4.25286C3.58168 4.21814 3.50373 4.16302 3.42839 4.0875Z' /%3E%3C/svg%3E%0A");
+}
+header .util .search .sch_open {
+    position: relative; /* after 기준 */
+    width: 26px;
+    height: 26px;
+    
+}
+header .util .search .sch_open::before {
+    content: "";
+    position: absolute;
+    right: -0.7647em;
+    top: 0.2941em;
+    width: 1.0753em;
+    height: 1.0759em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='%23EDEDED' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62485 13.2497C4.77488 13.2497 3.2082 12.6081 1.92481 11.3249C0.641604 10.0415 0 8.47483 0 6.62485C0 4.77488 0.641604 3.2082 1.92481 1.92481C3.2082 0.641604 4.77488 0 6.62485 0C8.47483 0 10.0415 0.641604 11.3249 1.92481C12.6081 3.2082 13.2497 4.77488 13.2497 6.62485C13.2497 7.39854 13.1199 8.13746 12.8602 8.84163C12.6004 9.54579 12.2539 10.1582 11.8205 10.679L18.054 16.9125C18.2041 17.0623 18.2808 17.2508 18.2842 17.478C18.2877 17.7051 18.2109 17.8971 18.054 18.054C17.8971 18.2109 17.7068 18.2894 17.4831 18.2894C17.2596 18.2894 17.0694 18.2109 16.9125 18.054L10.679 11.8205C10.1373 12.2678 9.51437 12.6178 8.81021 12.8705C8.10604 13.1233 7.37759 13.2497 6.62485 13.2497ZM6.62485 11.625C8.02073 11.625 9.20301 11.1406 10.1717 10.1717C11.1405 9.20301 11.625 8.02073 11.625 6.62485C11.625 5.22898 11.1405 4.0467 10.1717 3.07802C9.20301 2.10916 8.02073 1.62473 6.62485 1.62473C5.22898 1.62473 4.0467 2.10916 3.07802 3.07802C2.10916 4.0467 1.62473 5.22898 1.62473 6.62485C1.62473 8.02073 2.10916 9.20301 3.07802 10.1717C4.0467 11.1406 5.22898 11.625 6.62485 11.625Z' /%3E%3C/svg%3E%0A");
+}
+/*-------------스크롤 아래로 내릴때 header올림 -------------
+    header에 menu_pc, menu_mo 있을때는 작동이 안됐으면 좋겠다 
+*/
+header.up:not(.menu_pc, .menu_mo) {
+    transform: translateY(-110%);
+}
+
+
+@media screen and (min-width:1025px) {
+                header .gnb .gnb_open,
+                header .gnb .gnb_wrap .gnb_logo,
+                header .gnb .gnb_close {
+                    display: none; /* 모바일에서 보이는것 */
+                }
+                header .gnb .gnb_wrap ul.depth1 {
+                    display: flex; /* li 좌우배치 */
+                    justify-content: center;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a {
+                    display: block;
+                    font-family: "Vogue";
+                    font-size: 2.4rem;
+                    padding: 0 1.2083em;
+                    white-space: nowrap;/* 행간이 높아서 2줄이 되면 이상함 2줄제한 */
+                    line-height: 77px;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    display: none;/* 오버했을 시 보임*/
+                    position: absolute; /*  */
+                    left: 0;
+                    top: 100%;
+                    width: 100vw;           /* 전체폭 */
+                    height: 68px;          /* 고정 높이 */
+                    background: var(--color-black);
+                    padding: 21px 0;
+
+                    display: flex;
+                    justify-content: center;
+                    gap: 0 45px;
+                    color: var(--color-white);
+                    white-space: nowrap;
+                    opacity: 0;
+                }
+
+                /*메뉴에 오버했을 때 */
+                header.menu_pc {
+                    background-color: var(--color-black);
+                    color: var(--color-white);
+                    width: 100%;
+                } 
+               
+                header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+                    white-space: nowrap;
+                    opacity: 1;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.over > a {
+                    color: var(--color-point);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.over > a,
+                header .gnb .gnb_wrap ul.depth1 > li > a:focus {
+                    color: var(--color-point);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+                    position: relative;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.over > a > span::before {
+                    content: "";
+                    position: absolute;
+                    right: -8px;
+                    bottom: 4px;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    background-color: var(--color-point);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span {
+                    position: relative; /*  after 기준 */
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:hover > a > span::after {
+                    content: "";
+                    position: absolute;
+                    right: -7px;
+                    bottom: 1px;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 50%;
+                    background-color: var(--color-point);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:hover > a {
+                    color: var(--color-point);
+                }
+    
+}/* @media min_1025px */
+@media screen and (max-width:1024px) {
+                header .logo {
+                    width: 100%;
+                    height: 123px;
+                    padding: 32px 0 0 0;
+                    border-bottom: 1px solid #ededed;
+                }
+                header .logo a {
+                    display: block;
+                    width: 231px;
+                    height: 60px;
+                    margin: 0 auto; /* 가운데 정렬 */
+                    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+                    /* contain 로고가 안잘리고 영역에 맞게 사이즈 조절해서 나옴 */
+                }
+                header .gnb .gnb_open,
+                header .gnb .gnb_wrap .gnb_logo,
+                header .gnb .gnb_close {
+                    display: none; /* 모바일에서 보이는것 */
+                }
+                header .gnb .gnb_wrap ul.depth1 {
+                    display: flex; /* li 좌우배치 */
+                    justify-content: center;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a {
+                    display: block;
+                    font-family: "Vogue";
+                    font-size: 2.4rem;
+                    padding: 0 1.2083em;
+                    white-space: nowrap;/* 행간이 높아서 2줄이 되면 이상함 2줄제한 */
+                    line-height: 77px;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    display: none;/* 오버했을 시 보임*/
+                    position: absolute; /*  */
+                    left: 0;
+                    top: 100%;
+                    width: 100vw;           /* 전체폭 */
+                    height: 68px;          /* 고정 높이 */
+                    background: var(--color-black);
+                    padding: 21px 0;
+
+                    display: flex;
+                    justify-content: center;
+                    gap: 0 45px;
+                    color: var(--color-white);
+                    white-space: nowrap;
+                    opacity: 0;
+                }
+            
+}/* @media max_1024px */
+
+/*여기서부터 고치면됨*/
+@media screen and (max-width:768px) {
+                header .logo {
+                    width: 100%;
+                    height: 123px;
+                    padding: 32px 0 0 0;
+                    border-bottom: 1px solid #ededed;
+                }
+                header .logo a {
+                    display: block;
+                    width: 231px;
+                    height: 60px;
+                    margin: 0 auto; /* 가운데 정렬 */
+                    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+                    /* contain 로고가 안잘리고 영역에 맞게 사이즈 조절해서 나옴 */
+                }
+                header .gnb .gnb_open,
+                header .gnb .gnb_wrap .gnb_logo,
+                header .gnb .gnb_close {
+                    display: none; /* 모바일에서 보이는것 */
+                }
+                header .gnb .gnb_wrap ul.depth1 {
+                    display: flex; /* li 좌우배치 */
+                    justify-content: center;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a {
+                    display: block;
+                    font-family: "Vogue";
+                    font-size: 2.4rem;
+                    padding: 0 1.2083em;
+                    white-space: nowrap;/* 행간이 높아서 2줄이 되면 이상함 2줄제한 */
+                    line-height: 77px;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    display: none;/* 오버했을 시 보임*/
+                    position: absolute; /*  */
+                    left: 0;
+                    top: 100%;
+                    width: 100vw;           /* 전체폭 */
+                    height: 68px;          /* 고정 높이 */
+                    background: var(--color-black);
+                    padding: 21px 0;
+
+                    display: flex;
+                    justify-content: center;
+                    gap: 0 45px;
+                    color: var(--color-white);
+                    white-space: nowrap;
+                    opacity: 0;
+                }
+}
+
+
+
+
+
+
+
+footer {
+    margin: 500px 0 0 0;
+}
