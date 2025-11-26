@@ -1,7 +1,9 @@
 $(document).ready(function(){
     let mobile_size = 1024 //모바일 메뉴 시작 사이즈
+    let header_mobile_size = 768;  // header 메뉴만 모바일 시작
     let window_w //브라우저 넓이
     let device_status //현재 pc인지 mobile인지 구분하는 값
+    let header_device_status; // header device
 
     function device_chk(){
         window_w = $(window).width()
@@ -10,6 +12,8 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
+        // header 전용 기준
+        header_device_status = (window_w > header_mobile_size) ? 'pc' : 'mobile'
         // console.log(device_status)
     }
     device_chk() //문서가 로딩되었을때 1번실행
@@ -58,8 +62,10 @@ $(document).ready(function(){
              }
          }
      });
+
+     
  
-     $('header .gnb .gnb_open').on('click', function(){
+     $('header .gnb .gnb_wrap .gnb_open').on('click', function(){
          $('header').addClass('menu_mo')
      })
      $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
