@@ -566,7 +566,7 @@ header.fixed .gnb .gnb_wrap ul li a {
                     background-color: #4B352A;
                     bottom: -72px;
                 }
-                            .interview .list ul li a:hover .txt::after {
+                .interview .list ul li a:hover .txt::after {
                     right: 30px;
                     top: 30px;
                     width: 30px;
@@ -574,7 +574,8 @@ header.fixed .gnb .gnb_wrap ul li a {
                 }
                 .interview .list ul li a:hover .txt h3 br {
                     display: none;
-                }.interview .list ul li a:hover .txt p {
+                }
+                .interview .list ul li a:hover .txt p {
                     opacity: 1;
                 }
 }/*interview hover @media*/

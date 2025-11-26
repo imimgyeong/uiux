@@ -136,7 +136,10 @@ header.up:not(.menu_pc, .menu_mo) {
                     background-color: var(--color-black);
                     color: var(--color-white);
                     width: 100%;
-                } 
+                }
+                header.menu_pc .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    height: 68px;
+                }/*????*/
                
                 header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
                     white-space: nowrap;
@@ -236,7 +239,6 @@ header.up:not(.menu_pc, .menu_mo) {
             
 }/* @media max_1024px */
 
-/*여기서부터 고치면됨*/
 @media screen and (max-width:768px) {
                 header {
                     padding-right: 0; /* 오른쪽 여백 삭제*/
@@ -272,51 +274,125 @@ header.up:not(.menu_pc, .menu_mo) {
                     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 14' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 2C0.716667 2 0.479167 1.90417 0.2875 1.7125C0.0958333 1.52083 0 1.28333 0 1C0 0.716667 0.0958333 0.479167 0.2875 0.2875C0.479167 0.0958333 0.716667 0 1 0H17C17.2833 0 17.5208 0.0958333 17.7125 0.2875C17.9042 0.479167 18 0.716667 18 1C18 1.28333 17.9042 1.52083 17.7125 1.7125C17.5208 1.90417 17.2833 2 17 2H1ZM1 14C0.716667 14 0.479167 13.9042 0.2875 13.7125C0.0958333 13.5208 0 13.2833 0 13C0 12.7167 0.0958333 12.4792 0.2875 12.2875C0.479167 12.0958 0.716667 12 1 12H17C17.2833 12 17.5208 12.0958 17.7125 12.2875C17.9042 12.4792 18 12.7167 18 13C18 13.2833 17.9042 13.5208 17.7125 13.7125C17.5208 13.9042 17.2833 14 17 14H1ZM1 8C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H17C17.2833 6 17.5208 6.09583 17.7125 6.2875C17.9042 6.47917 18 6.71667 18 7C18 7.28333 17.9042 7.52083 17.7125 7.7125C17.5208 7.90417 17.2833 8 17 8H1Z' /%3E%3C/svg%3E%0A");
                 }
                  header .gnb .gnb_wrap {
-                    display: block;/*????????*/
+                    display: block;
                     position: absolute; /* header를 기준으로 정렬 */
-                    right: -71%;
+                    right: 0;
                     top: 0;
                     z-index: 10;
                     height: 100dvh;
-                    background-color: var(--color-black);
-                    color: var(--color-white);
-                    width: 70%;
+                    background-color: var(--color-white);
+                    color: var(--color-font);
+                    width: 100%;
                     transition: right 0.5s;
                 }
                 header.menu_mo .gnb .gnb_wrap {
                     right: 0;
                 }
+                header .gnb .gnb_wrap .gnb_logo {
+                    display: block;
+                    position: absolute; /* gnb_wrap을 기준으로 정렬 */
+                    left: 16px;
+                    top: 0;
+                    width: 69px;
+                    /* height: calc(var(--header-h) - 10px); */
+                    height: var(--header-h);
+                    background: url(../images/common/logo_b.svg) no-repeat center center / contain;
+                }
                 header .gnb .gnb_wrap ul.depth1 {
-                    display: block; /* li 좌우배치 */
+                    display: block; 
+                    margin-top: var(--header-h);
+                    height: calc(100dvh - var(--header-h));
+                    overflow-y: hidden;
+                    background-color: var(--color-white);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li {
+                    position: relative; /* depth2 정렬의 기준 */
+                    border-top: 1px solid #ededed;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li:last-child {
+                    border-bottom: 1px solid #ededed;
                 }
                 header .gnb .gnb_wrap ul.depth1 > li > a {
                     display: block;
-                    font-family: "Vogue";
-                    font-size: 2.4rem;
-                    padding: 0 1.2083em;
-                    white-space: nowrap;/* 행간이 높아서 2줄이 되면 이상함 2줄제한 */
-                    line-height: 77px;
+                    font-size: 2.2rem;
+                    padding: 0 16px;
+                    line-height: 60px;
+                    position: relative;
                 }
-                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-                    display: none;/* 오버했을 시 보임*/
-                    position: absolute; /*  */
-                    left: 0;
-                    top: 100%;
-                    width: 100vw;           /* 전체폭 */
-                    height: 68px;          /* 고정 높이 */
-                    background: var(--color-black);
-                    padding: 21px 0;
+                header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a::before,
+                header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a::after {
+                    content: "";
+                    position: absolute;
+                    right: 23px;
+                    top: 50%;
+                    width: 11px;
+                    height: 2px;
+                    border-radius: 30px;
+                    background-color: var(--color-font);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                    transform: rotate(90deg);
+                    transition: transform 0.3s;
+                }
+                  /* 시작 open 클래스가 들어갔을때*/
+                header .gnb .gnb_wrap ul.depth1 > li.open > a {
+                    color: var(--color-point);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.open > a::before,
+                header .gnb .gnb_wrap ul.depth1 > li.open > a::after  {
+                    background-color: var(--color-point);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+                    transform: rotate(0);
+                }
+                /* 끝 open 클래스가 들어갔을때*/
 
-                    display: flex;
-                    justify-content: center;
-                    gap: 0 45px;
-                    color: var(--color-white);
-                    white-space: nowrap;
-                    opacity: 0;
+                header .gnb .gnb_wrap ul.depth1 > li:hover > a,
+                header .gnb .gnb_wrap ul.depth1 > li > a:focus {
+                    color: var(--color-point);
                 }
-                header .util {
+                header .gnb .gnb_wrap ul.depth1 > li:hover > a > span::before {
+                    content: "";
+                    position: absolute;
+                    right: -9px;
+                    bottom: 1px;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    background-color: var(--color-point);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                
+
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    margin: 12px 0 15px 40px;
+                    color: var(--color-font);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                    display: block;
+                    padding: 5px 0;
+                }
+             
+                header .gnb .gnb_wrap .gnb_close {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: var(--header-h);
+                    height: var(--header-h);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 13.15px;
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.575 7.975L1.675 12.875C1.49167 13.0583 1.25833 13.15 0.975 13.15C0.691667 13.15 0.458333 13.0583 0.275 12.875C0.0916667 12.6917 0 12.4583 0 12.175C0 11.8917 0.0916667 11.6583 0.275 11.475L5.175 6.575L0.275 1.675C0.0916667 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916667 0.458333 0.275 0.275C0.458333 0.0916667 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916667 1.675 0.275L6.575 5.175L11.475 0.275C11.6583 0.0916667 11.8917 0 12.175 0C12.4583 0 12.6917 0.0916667 12.875 0.275C13.0583 0.458333 13.15 0.691667 13.15 0.975C13.15 1.25833 13.0583 1.49167 12.875 1.675L7.975 6.575L12.875 11.475C13.0583 11.6583 13.15 11.8917 13.15 12.175C13.15 12.4583 13.0583 12.6917 12.875 12.875C12.6917 13.0583 12.4583 13.15 12.175 13.15C11.8917 13.15 11.6583 13.0583 11.475 12.875L6.575 7.975Z' /%3E%3C/svg%3E%0A");
+                }
+                header .util a {
                     display: none;
                 }
+                header .util .search {
+                    display: block;
+                }
+                
 }
 
 
