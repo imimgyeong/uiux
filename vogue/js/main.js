@@ -59,5 +59,63 @@ $(document).ready(function(){
     });
     /*-----------끝 : fashion swiper-----------*/
 
+    /*-----------시작 : beauty swiper-----------*/
+    const beauty_swiper = new Swiper('.beauty .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    breakpoints: {
+        769: {    /* 769px 이상일때 적용 */
+            slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 24,
+        },
+    },
+       
+   });
+   /*-----------끝 : beauty swiper-----------*/
+
+    /*-----------시작 : living swiper-----------*/
+    const living_swiper = new Swiper('.living .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    breakpoints: {
+        769: {    /* 769px 이상일때 적용 */
+            slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 24,
+        },
+    },
+        
+    });
+    /*-----------끝 : living swiper-----------*/
+
+    /*-----------시작 : culture swiper-----------*/
+    const culture_swiper = new Swiper('.culture .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    breakpoints: {
+        769: {    /* 769px 이상일때 적용 */
+            slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 24,
+        },
+    },
+        
+    });
+    /*-----------끝 : culture swiper-----------*/
+
+    /*-----------시작 : pick swiper-----------*/
+    const pick_swiper = new Swiper('.pick .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	
+    });
+    /*-----------끝 : pick swiper-----------*/
+
+
+
     
 })//나가지마세욤

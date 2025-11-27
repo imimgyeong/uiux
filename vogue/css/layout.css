@@ -402,5 +402,154 @@ header.up:not(.menu_pc, .menu_mo) {
 
 
 footer {
-    margin: 500px 0 0 0;
+    padding: 77px 0 89px 0;
+    background-color: var(--color-black);
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .wrapper {
+    display: flex; /* f_logo - inner - sns 좌우배치 */
+    justify-content: space-between;
+    gap: 0 54px;
+}
+footer .f_logo {
+    width: 190px;
+    height: 49px;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+footer .wrapper .inner .f_nav {
+    margin: 42px 0 17px 0;
+}
+footer .wrapper .inner .f_nav ul {
+    display: flex;
+    gap: 0 43px;
+}
+footer .wrapper .sns ul {
+    display: flex;
+    gap: 0 16px;
+}
+footer .wrapper .sns ul li a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    position: relative;
+}
+footer .wrapper .sns ul li a::before {
+    content: "";
+    position: absolute;
+    right: 11px;
+    top: 12px;
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+footer .wrapper .sns ul li.insta a::before {
+    background-size: 25.33px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 26 26' fill='%23000000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.6666 8.44531C10.3843 8.44531 8.44434 10.3853 8.44434 12.6675C8.44434 14.9498 10.3843 16.8898 12.6666 16.8898C14.9488 16.8898 16.8888 14.9498 16.8888 12.6675C16.8888 10.3853 14.9488 8.44531 12.6666 8.44531Z' fill='black'/%3E%3Cpath d='M18.0788 0H7.3697C3.22424 0 0 3.22424 0 7.25455V17.9636C0 22.1091 3.22424 25.3333 7.3697 25.3333H18.0788C22.1091 25.3333 25.3333 22.1091 25.3333 17.9636V7.25455C25.3333 3.22424 22.1091 0 18.0788 0ZM12.6667 19.3455C8.98182 19.3455 6.10303 16.3515 6.10303 12.7818C6.10303 9.21212 8.98182 6.10303 12.6667 6.10303C16.3515 6.10303 19.2303 9.09697 19.2303 12.6667C19.2303 16.2364 16.3515 19.3455 12.6667 19.3455ZM19.4606 7.48485C18.6545 7.48485 17.9636 6.79394 17.9636 5.98788C17.9636 5.18182 18.6545 4.49091 19.4606 4.49091C20.2667 4.49091 20.9576 5.18182 20.9576 5.98788C20.9576 6.79394 20.2667 7.48485 19.4606 7.48485Z' /%3E%3C/svg%3E%0A");
+}
+footer .wrapper .sns ul li.youtube a::before {
+    background-size: 26px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 26 18' fill='%23000000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 5.6423C26 2.52268 23.4424 0 20.2957 0H5.70434C2.55043 0 0 2.52979 0 5.6423V12.3577C0 15.4773 2.55761 18 5.70434 18H20.2957C23.4496 18 26 15.4702 26 12.3577V5.6423ZM17.4219 9.50099L10.877 12.7059C10.6184 12.8409 9.74911 12.6561 9.74911 12.3719V5.79864C9.74911 5.50729 10.6256 5.32253 10.8842 5.46465L17.1489 8.833C17.4148 8.98223 17.6878 9.35886 17.4219 9.50099Z' /%3E%3C/svg%3E%0A");
+}
+footer .wrapper .sns ul li.face a::before {
+    background-size: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 26' fill='%23000000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1547 14.6236L12.8296 9.91692H8.60986V6.86668C8.60986 5.58237 9.19612 4.32725 11.0844 4.32725H13V0.321074C13 0.321074 11.2617 0 9.59833 0C6.12848 0 3.85844 2.25484 3.85844 6.33399V9.91692H0V14.6236H3.85844V26H8.60986V14.6236H12.1547Z' /%3E%3C/svg%3E%0A");
+}
+footer .wrapper .sns ul li.twiter a::before {
+    background-size: 19.5px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23000000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3574 0H18.3475L11.815 8.26L19.5 19.5H13.4827L8.76971 12.683L3.377 19.5H0.385065L7.37227 10.665L0 0H6.17007L10.4302 6.231L15.3574 0ZM14.308 17.52H15.9648L5.26978 1.876H3.4918L14.308 17.52Z' /%3E%3C/svg%3E%0A");
+}
+
+
+footer .wrapper .sns ul li.insta a:hover {
+    background: conic-gradient(
+    from 0deg,
+    #FFD900 0%,
+    #FFD900 25%,
+    #A633FE 65%,
+    #FF06E6 95%,
+    #FFD900 100%);
+}
+footer .wrapper .sns ul li.insta a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 26 26' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.6675 8.44531C10.3853 8.44531 8.44531 10.3853 8.44531 12.6675C8.44531 14.9498 10.3853 16.8898 12.6675 16.8898C14.9498 16.8898 16.8898 14.9498 16.8898 12.6675C16.8898 10.3853 14.9498 8.44531 12.6675 8.44531Z' fill='%23ffffff'/%3E%3Cpath d='M18.0788 0H7.3697C3.22424 0 0 3.22424 0 7.25455V17.9636C0 22.1091 3.22424 25.3333 7.3697 25.3333H18.0788C22.1091 25.3333 25.3333 22.1091 25.3333 17.9636V7.25455C25.3333 3.22424 22.1091 0 18.0788 0ZM12.6667 19.3455C8.98182 19.3455 6.10303 16.3515 6.10303 12.7818C6.10303 9.21212 8.98182 6.10303 12.6667 6.10303C16.3515 6.10303 19.2303 9.09697 19.2303 12.6667C19.2303 16.2364 16.3515 19.3455 12.6667 19.3455ZM19.4606 7.48485C18.6545 7.48485 17.9636 6.79394 17.9636 5.98788C17.9636 5.18182 18.6545 4.49091 19.4606 4.49091C20.2667 4.49091 20.9576 5.18182 20.9576 5.98788C20.9576 6.79394 20.2667 7.48485 19.4606 7.48485Z' /%3E%3C/svg%3E%0A");
+}
+
+footer .wrapper .sns ul li.youtube a:hover {
+    background-color: #E50000;
+}
+footer .wrapper .sns ul li.youtube a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 26 18' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 5.6423C26 2.52268 23.4424 0 20.2957 0H5.70434C2.55043 0 0 2.52979 0 5.6423V12.3577C0 15.4773 2.55761 18 5.70434 18H20.2957C23.4496 18 26 15.4702 26 12.3577V5.6423ZM17.4219 9.50099L10.877 12.7059C10.6184 12.8409 9.74911 12.6561 9.74911 12.3719V5.79864C9.74911 5.50729 10.6256 5.32253 10.8842 5.46465L17.1489 8.833C17.4148 8.98223 17.6878 9.35886 17.4219 9.50099Z' /%3E%3C/svg%3E%0A");
+}
+
+footer .wrapper .sns ul li.face a:hover{
+    background-color: #008CFF;
+}
+footer .wrapper .sns ul li.face a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 26' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1547 14.6236L12.8296 9.91692H8.60986V6.86668C8.60986 5.58237 9.19612 4.32725 11.0844 4.32725H13V0.321074C13 0.321074 11.2617 0 9.59833 0C6.12848 0 3.85844 2.25484 3.85844 6.33399V9.91692H0V14.6236H3.85844V26H8.60986V14.6236H12.1547Z' /%3E%3C/svg%3E%0A");
+}
+
+footer .wrapper .sns ul li.twiter a:hover{
+    background-color: #000000;
+    border: 1px solid #fff;
+}
+footer .wrapper .sns ul li.twiter a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3574 0H18.3475L11.815 8.26L19.5 19.5H13.4827L8.76971 12.683L3.377 19.5H0.385065L7.37227 10.665L0 0H6.17007L10.4302 6.231L15.3574 0ZM14.308 17.52H15.9648L5.26978 1.876H3.4918L14.308 17.52Z' /%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:768px) {
+                footer {
+                    padding: 54px 0 89px 0;
+                }
+                footer .wrapper {
+                    display: flex; /* f_info - inner 좌우배치 */
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 27px 0;
+                    text-align: center;
+                }
+                footer .f_logo {
+                    width: 135px;
+                    height: 35px;
+                    margin: 0 auto;
+                    
+                }
+                footer .wrapper .inner .f_nav {
+                    margin: 99px 0 10px 0;
+                    position: relative; /* sns 정렬기준 기준을 어디다가 줘야하지 여기부터 고치면됨*/
+                }
+                footer .wrapper .inner .f_nav ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0 38px;
+                }
+                footer .wrapper .sns ul {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                }
+                footer .wrapper .sns ul li a {
+                    width: 45px;
+                    height: 45px;
+                }
+                footer .wrapper .sns ul li a::before {
+                    right: 11px;
+                    top: 11px;
+                    width: 22px;
+                    height: 22px;
+                }
+                footer .wrapper .sns ul li.insta a::before {
+                    background-size: 20.58px;
+                }
+                footer .wrapper .sns ul li.youtube a::before {
+                    background-size: 22px;
+                }
+                footer .wrapper .sns ul li.face a::before {
+                    background-size: 11px;
+                }
+                footer .wrapper .sns ul li.twiter a::before {
+                    background-size: 16.5px;
+                }
 }
