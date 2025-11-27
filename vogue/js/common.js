@@ -44,34 +44,56 @@ $(document).ready(function(){
     })
      /*----------- 끝 : pc버전 메뉴오버 -----------*/
 
-     /*----------- 시작 : 모바일버전 메뉴오버 -----------*/
-     let gnb_open 
-     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
-         if( device_status == 'mobile'){
-             e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
-             gnb_open = $(this).parent().hasClass('open')
-             // console.log(gnb_open)
-             if(gnb_open == true){ //열려있다면
-                 $(this).parent().removeClass('open')
-                 $(this).next().slideUp()
-             }else{
-                 $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-                 $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
-                 $(this).parent().addClass('open')
-                 $(this).next().slideDown()
-             }
-         }
-     });
+    /*----------- 시작 : 모바일버전 메뉴오버 (수정됨) -----------*/
 
-     
- 
-     $('header .gnb .gnb_wrap .gnb_open').on('click', function(){
-         $('header').addClass('menu_mo')
-     })
-     $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
-         $('header').removeClass('menu_mo')
-     })
-     /*----------- 끝 : 모바일버전 메뉴오버 -----------*/
+    let gnb_open; // 변수 선언은 그대로 둡니다.
+
+    // 1. DEPTH1 메뉴 아코디언 로직 (클릭 위임 방식으로 변경)
+    // 'header' 내부에서 발생하는 클릭 이벤트를 감지하고 ul.depth1 > li > a 인 경우에만 실행
+    $('header').on('click', '.gnb .gnb_wrap ul.depth1 > li > a', function(e){
+        console.log(header_device_status);
+        if( header_device_status == 'mobile'){ // device_status 변수가 정의되어 있다고 가정합니다.
+            
+            // 닫기 버튼이 아닌, 메뉴의 depth1을 클릭했을 때만 e.preventDefault() 실행
+            // (gnb_open 버튼 클릭 시는 작동하면 안 됨)
+            e.preventDefault();
+            
+            gnb_open = $(this).parent().hasClass('open');
+            
+            if(gnb_open == true){ // 열려있다면 닫기
+                $(this).parent().removeClass('open');
+                $(this).next().slideUp();
+            }else{ // 닫혀있다면 열기
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp();
+                $(this).parent().addClass('open');
+                $(this).next().slideDown();
+            }
+        }
+    });
+
+
+    // 2. 메뉴 열기 버튼 클릭 이벤트 (클릭 위임 방식으로 변경)
+    // .gnb_open을 클릭하면 header에 .menu_mo 클래스를 추가
+    $('header').on('click', '.gnb_open', function(){
+        $('header').addClass('menu_mo');
+    });
+
+
+    // 3. 메뉴 닫기 버튼 클릭 이벤트 (작동하지 않던 핵심 문제 해결 및 초기화 로직 추가)
+    // .gnb_close를 클릭하면 header에서 .menu_mo 클래스를 제거
+    $('header').on('click', '.gnb_close', function(){
+        
+        // 1. 메인 메뉴 닫기 (문제 해결)
+        $('header').removeClass('menu_mo');
+        
+        // 2. 하위 메뉴 (depth2) 정리 (추가 개선)
+        // 다음에 메뉴를 열었을 때 모든 depth2가 닫혀 있도록 초기화
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
+        $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp(); 
+    });
+
+    /*----------- 끝 : 모바일버전 메뉴오버 (수정됨) -----------*/
 
      /*----------- 시작 :스크롤 시 header에 fixed -----------*/
     let scrolling = $(window).scrollTop()//현재 스크롤된 값
