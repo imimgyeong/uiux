@@ -46,7 +46,7 @@ $(document).ready(function(){
 
     /*----------- 시작 : 모바일버전 메뉴오버 (수정됨) -----------*/
 
-    let gnb_open; // 변수 선언은 그대로 둡니다.
+    let gnb_open
 
     // 1. DEPTH1 메뉴 아코디언 로직 (클릭 위임 방식으로 변경)
     // 'header' 내부에서 발생하는 클릭 이벤트를 감지하고 ul.depth1 > li > a 인 경우에만 실행
