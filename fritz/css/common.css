@@ -2,17 +2,17 @@
 
 :root {
     --color-font : #1d1d1d;
-    --color-black : #000000;
-    --color-backgroud : #FAF9F7;
-    --color-point : #CB2525;
+    --color-navy : #073861;
+    --color-backgroud : #F4E8D1;
+    --color-point : #B8121A;
     --color-white : #fff;
-    --color-line : #ededed;
-    --header-h : 200px;
-    --wrapper-margin : 30px;
+    --color-black80 : rgba(29, 29, 29, 0.8);
+    --header-h : 90px;
+    --wrapper-margin : 50px;
 }
 @media screen and (max-width:1024px){
                 :root {
-                    --header-h : 200px;
+                    --header-h : 90px;
                 }
 }
 @media screen and (max-width:768px){
@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    font-family: "Lato","Vogue", "Pretendard", sans-serif;
+    font-family: "Miwon","Cafe24Danjeonghae", "Pretendard", sans-serif;
     /* 영문폰트와 한글폰트를 섞어서 쓸 때, 반드시 영문폰트는 한글이 지원되지 않는 폰트를 사용해야함
        font-family에서 영문폰트를 먼저 선언한 뒤 한글폰트를 선언해야 
        영문폰트를 먼저 적용하고 지원안되는 한글을 만나면 다음폰트가 적용  */
@@ -83,7 +83,7 @@ body {
 .mo_only {/* 모바일에서만 보임*/
     display: none;
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1024px){
                 .mo_only {/* 모바일에서만 보임*/
                     display: block;
                 }
