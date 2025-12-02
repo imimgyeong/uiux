@@ -21,7 +21,6 @@
 .visual .swiper-slide.popup3{
     background-image: url(../images/main/visual03.jpg)
 }
-
 .visual .swiper button {
     position: absolute;
     z-index: 1;
@@ -51,9 +50,10 @@
                 }
 }
 
+
 .signature {
     padding: 156px 0 95px 0;
-    background-image: url(../images/main/bg01.jpg);
+    background: url(../images/main/bg01.jpg) no-repeat center center / cover;
 }
 .signature .content ul {
     display: flex;
@@ -92,6 +92,9 @@
     overflow: hidden;
     height: 302px;
 }
+.signature .content ul li a:hover .photo {
+    transform: translateY(-20px);
+}
 .signature .content ul li a .photo img {
     width: 100%;
     height: 100%;
@@ -111,6 +114,7 @@
     margin-left: 55px;
 }
 
+
 /* 여기서부터 고치면됨 */
 @media screen and (max-width:768px) {
                 .signature {
@@ -121,54 +125,86 @@
                     text-align: center;
                 }
                 .signature .content ul li {
-                    position: relative;
-                    width: 33.33%;
-                    height: 500px;
-                
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    width: 100%;
+                    height: auto;
+                    margin: 87px 0 58px 0;
                 }
                 .signature .content ul li::after {
                     content: "";
                     position: absolute;
-                    right: 0;
-                    top: 0;
-                    width: 3px;
-                    height: 100%;
-                    background-color: var(--color-point);
+                    right: auto;
+                    top: -47px;
+                    width: 100%;
+                    max-width: 244px;
+
+                    height: 3px;
                 }
-                .signature .content ul li:last-child::after {
+                .signature .content ul li:first-child::after {
                     display: none;
                 }
+                .signature .content ul li:last-child::after {
+                    display: block;
+                }
                 .signature .content ul li a .txt h2 {
-                    font-size: 2.4rem;
-                    line-height: 1.3;
+                    font-size: 2.2rem;
                 }
                 .signature .content ul li a .txt p {
-                    margin: 9px 0 29px 0;
+                    margin: 5px 0 17px 0;
                     font-family: "Cafe24Danjeonghae";
                 }
                 .signature .content ul li a .photo {
-                    overflow: hidden;
-                    height: 302px;
-                }
-                .signature .content ul li a .photo img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    height: 250px;
                 }
                 .signature .content ul li.olddog a .photo {
-                    width: 212px;
+                    width: 175px;
                 }
                 .signature .content ul li.good a .photo {
-                    width: 204px;
-                    height: 296px;
-                    margin-left: 25px;
+                    width: 175px;
+                    height: 250px;
+                    margin-left: 30px;
                 }
                 .signature .content ul li.cinema a .photo {
-                    width: 201px;
-                    height: 293px;
+                    width: 175px;
+                    height: 250px;
                     margin-left: 55px;
                 }
+}
+
+.shop {
+    padding: 156px 0 95px 0;
+    background: url(../images/main/bg02.jpg) no-repeat center center / cover;
+}
+
+.shop h2 {
+    font-size: 4rem;
+    line-height: 1.3;
+    color: var(--color-white);
+    margin: 0 0 77px 0;
+}
+.shop h2 strong {
+    color: #ededed;
+    position: relative;
+    margin-left: 42px;
+}
+.shop h2 strong::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 7px;
+    width: 1px;
+    height: 31px;
+    background-color: #ededed;
+}
+.shop .list .swiper .swiper-wrapper .swiper-slide .photo {
+    overflow: hidden;
+    height: 220px;
+}
+.shop .list .swiper .swiper-wrapper .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shop .list .swiper .swiper-wrapper .swiper-slide .txt {
+    text-align: center;
+    margin: 65px 0 0 0;
 }
