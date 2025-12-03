@@ -320,5 +320,101 @@ header.up:not(.menu_pc, .menu_mo) {
 
 
 footer {
-    margin: 500px 0 0 0;
+    padding: 151px 0 87px 0;
+    background: url(../images/main/bg01.jpg) no-repeat center center / cover;
+    font-family: "Cafe24Danjeonghae";
+    color: var(--color-black80);
+}
+footer .wrapper {
+    display: flex;
+    gap: 0 17px;
+    position: relative;
+}
+footer .wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -78px;
+    width: 100%;
+    height: 5px;
+    background-color: var(--color-point);
+}
+footer .f_logo {
+    width: 173px;
+    height: 173px;
+    background: url(../images/common/logo_footer.svg) no-repeat center center / contain;
+    margin-top: -10px;
+}
+footer .inner {
+    display: flex;
+    gap: 0 102px;
+}
+footer .inner .f_left ul li {
+    margin-bottom: 17px;
+}
+footer .inner .f_left ul li a {
+    display: block;
+    position: relative;
+}
+footer .inner .f_left ul li a::after {
+    content: "";
+    position: absolute;
+    left: 51px;
+    top: 2px;
+    width: 20.58px;
+    height: 20.58px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2919 6.86133C8.43753 6.86133 6.86133 8.43753 6.86133 10.2919C6.86133 12.1462 8.43753 13.7224 10.2919 13.7224C12.1462 13.7224 13.7224 12.1462 13.7224 10.2919C13.7224 8.43753 12.1462 6.86133 10.2919 6.86133Z' fill='%231D1D1D' fill-opacity='0.8'/%3E%3Cpath d='M14.689 0H5.98788C2.6197 0 0 2.6197 0 5.89432V14.5955C0 17.9636 2.6197 20.5833 5.98788 20.5833H14.689C17.9636 20.5833 20.5833 17.9636 20.5833 14.5955V5.89432C20.5833 2.6197 17.9636 0 14.689 0ZM10.2917 15.7182C7.29773 15.7182 4.95871 13.2856 4.95871 10.3852C4.95871 7.48485 7.29773 4.95871 10.2917 4.95871C13.2856 4.95871 15.6246 7.39129 15.6246 10.2917C15.6246 13.192 13.2856 15.7182 10.2917 15.7182ZM15.8117 6.08144C15.1568 6.08144 14.5955 5.52008 14.5955 4.86515C14.5955 4.21023 15.1568 3.64886 15.8117 3.64886C16.4667 3.64886 17.028 4.21023 17.028 4.86515C17.028 5.52008 16.4667 6.08144 15.8117 6.08144Z' fill='%231D1D1D' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+}
+footer .inner .f_rignt .f_nav span {
+    margin-right: 49px;
+}
+footer .inner .f_rignt .f_info {
+    margin: 17px 0 17px 0;
+}
+footer .inner .f_rignt .f_info span {
+    margin-right: 49px;
+}
+
+@media screen and (max-width:1024px){
+                footer {
+                    padding: 88px 0 120px 0;
+                    text-align: center;
+                }
+                footer .wrapper {
+                    display: block;
+                }
+                footer .wrapper::before {
+                    left: 0;
+                    top: -44px;
+                }
+                footer .f_logo {
+                    margin: 0 auto
+                }
+                footer .inner {
+                    display: block;
+                    margin-top: 20px;
+                }
+                footer .inner .f_left ul li {
+                    margin-bottom: 10px;
+                }
+                footer .inner .f_left ul li a::after {
+                    content: "";
+                    position: absolute;
+                    left: auto;
+                    top: auto;
+                    /* 여기부터 고치면됨*/
+                    width: 20.58px;
+                    height: 20.58px;
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2919 6.86133C8.43753 6.86133 6.86133 8.43753 6.86133 10.2919C6.86133 12.1462 8.43753 13.7224 10.2919 13.7224C12.1462 13.7224 13.7224 12.1462 13.7224 10.2919C13.7224 8.43753 12.1462 6.86133 10.2919 6.86133Z' fill='%231D1D1D' fill-opacity='0.8'/%3E%3Cpath d='M14.689 0H5.98788C2.6197 0 0 2.6197 0 5.89432V14.5955C0 17.9636 2.6197 20.5833 5.98788 20.5833H14.689C17.9636 20.5833 20.5833 17.9636 20.5833 14.5955V5.89432C20.5833 2.6197 17.9636 0 14.689 0ZM10.2917 15.7182C7.29773 15.7182 4.95871 13.2856 4.95871 10.3852C4.95871 7.48485 7.29773 4.95871 10.2917 4.95871C13.2856 4.95871 15.6246 7.39129 15.6246 10.2917C15.6246 13.192 13.2856 15.7182 10.2917 15.7182ZM15.8117 6.08144C15.1568 6.08144 14.5955 5.52008 14.5955 4.86515C14.5955 4.21023 15.1568 3.64886 15.8117 3.64886C16.4667 3.64886 17.028 4.21023 17.028 4.86515C17.028 5.52008 16.4667 6.08144 15.8117 6.08144Z' fill='%231D1D1D' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+                }
+                
+                footer .inner .f_rignt .f_nav span {
+                    margin-right: 49px;
+                }
+                footer .inner .f_rignt .f_info {
+                    margin: 17px 0 17px 0;
+                }
+                footer .inner .f_rignt .f_info span {
+                    margin-right: 49px;
+                }
 }

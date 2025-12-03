@@ -2,10 +2,10 @@
 	font-family:'Miwon';
 	font-style: normal;
 	font-weight: 400;
-	src: url('../../fonts/Miwon.ttf') format('truetype'),
-		 url('../../fonts/Miwon.woff2') format('woff2'),
-		 url('../../fonts/Miwon.woff') format('woff'),
-		 url('../../fonts/Miwon.otf') format('opentype');
+	src: url('../fonts/Miwon.ttf') format('truetype'),
+		 url('../fonts/Miwon.woff2') format('woff2'),
+		 url('../fonts/Miwon.woff') format('woff'),
+		 url('../fonts/Miwon.otf') format('opentype');
 }
 @font-face {
     font-family: 'Cafe24Danjeonghae';

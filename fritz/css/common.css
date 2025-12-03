@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    font-family: "Miwon","Cafe24Danjeonghae", "Pretendard", sans-serif;
+    font-family: 'Miwon',"Cafe24Danjeonghae", "Pretendard", sans-serif;
     /* 영문폰트와 한글폰트를 섞어서 쓸 때, 반드시 영문폰트는 한글이 지원되지 않는 폰트를 사용해야함
        font-family에서 영문폰트를 먼저 선언한 뒤 한글폰트를 선언해야 
        영문폰트를 먼저 적용하고 지원안되는 한글을 만나면 다음폰트가 적용  */
