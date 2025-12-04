@@ -25,7 +25,7 @@ $(document).ready(function(){
     })
 
     /*----------- 시작 : pc버전 메뉴오버 -----------*/
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
         if(device_status == 'pc'){ //pc일때만 동작 
             // console.log('오버했음')
             $('header').addClass('menu_pc')
@@ -33,6 +33,20 @@ $(document).ready(function(){
             $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
             $(this).addClass('over')
             $(this).find('.depth2').slideDown()
+        }
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('focusin', function(){
+        if(device_status == 'pc'){ //pc일때만 동작 
+            // console.log('오버했음')
+            $(this).addClass('over')
+            $(this).find('.depth2').slideDown()
+        }
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){
+        if(device_status == 'pc'){ //pc일때만 동작 
+            // console.log('오버했음')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
         }
     })
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){

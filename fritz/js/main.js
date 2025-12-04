@@ -50,6 +50,15 @@ $(document).ready(function(){
     });
     /*----------- 끝 : shop swriper ----------*/
 
+    /*----------- top버튼 클릭하면 상단으로 이동 ----------*/
+       
+    $('aside.quick .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
+
 
 
 
