@@ -20,8 +20,8 @@ header {
 }
 header .logo a {
     display: block;
-    width: 50px;
-    height: 58px;
+    width: 63.74px;
+    height: 71.01px;
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
     /* contain 로고가 안잘리고 영역에 맞게 사이즈 조절해서 나옴 */
 }
@@ -170,17 +170,14 @@ header.up:not(.menu_pc, .menu_mo) {
                     height: var(--header-var);
                     justify-content: space-between;
                 }
-                header .logo a {
-                    width: 43px;
-                    height: 50px;
-                }
+                
                 header .gnb .gnb_open {
                     display: block;
                     width: var(--header-h);
                     height: var(--header-h);
                     background-position: center center;
                     background-repeat: no-repeat;
-                    background-size: 18px;
+                    background-size: 25px;
                     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 14' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.125 0C0.50368 2.89917e-07 0 0.50368 0 1.125C0 1.74632 0.50368 2.25 1.125 2.25H16.875C17.4963 2.25 18 1.74632 18 1.125C18 0.50368 17.4963 0 16.875 0H1.125Z' fill='white'/%3E%3Cpath d='M5.625 5.625C5.00368 5.625 4.5 6.12868 4.5 6.75C4.5 7.37132 5.00368 7.875 5.625 7.875H16.875C17.4963 7.875 18 7.37132 18 6.75C18 6.12868 17.4963 5.625 16.875 5.625H5.625Z' fill='white'/%3E%3Cpath d='M10.125 11.25C9.50368 11.25 9 11.7537 9 12.375C9 12.9963 9.50368 13.5 10.125 13.5H16.875C17.4963 13.5 18 12.9963 18 12.375C18 11.7537 17.4963 11.25 16.875 11.25H10.125Z' /%3E%3C/svg%3E%0A");
                 }
                 header .gnb .gnb_wrap {
@@ -201,10 +198,10 @@ header.up:not(.menu_pc, .menu_mo) {
                     position: absolute; /* gnb_wrap을 기준으로 정렬 */
                     left: var(--wrapper-margin);
                     top: 0;
-                    width: 43px;
-                    height: 50px;
+                    width: 63.74px;
+                    height: 71.01px;
                     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
-                    margin-top: 20px;
+                    margin-top: 5px;
                 }
                 header .gnb .gnb_wrap ul.depth1 {
                     display: block;
@@ -272,7 +269,7 @@ header.up:not(.menu_pc, .menu_mo) {
                     height: var(--header-h);
                     background-repeat: no-repeat;
                     background-position: center center;
-                    background-size: 13.15px;
+                    background-size: 20px;
                     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.575 7.975L1.675 12.875C1.49167 13.0583 1.25833 13.15 0.975 13.15C0.691667 13.15 0.458333 13.0583 0.275 12.875C0.0916667 12.6917 0 12.4583 0 12.175C0 11.8917 0.0916667 11.6583 0.275 11.475L5.175 6.575L0.275 1.675C0.0916667 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916667 0.458333 0.275 0.275C0.458333 0.0916667 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916667 1.675 0.275L6.575 5.175L11.475 0.275C11.6583 0.0916667 11.8917 0 12.175 0C12.4583 0 12.6917 0.0916667 12.875 0.275C13.0583 0.458333 13.15 0.691667 13.15 0.975C13.15 1.25833 13.0583 1.49167 12.875 1.675L7.975 6.575L12.875 11.475C13.0583 11.6583 13.15 11.8917 13.15 12.175C13.15 12.4583 13.0583 12.6917 12.875 12.875C12.6917 13.0583 12.4583 13.15 12.175 13.15C11.8917 13.15 11.6583 13.0583 11.475 12.875L6.575 7.975Z' /%3E%3C/svg%3E%0A");
                 }
                 header .gnb .gnb_wrap ul.depth1 > li.open > a span::after {
@@ -308,13 +305,16 @@ header.up:not(.menu_pc, .menu_mo) {
 }/* @media max-width:1024px */
 @media screen and (max-width:768px){
                 header .logo a {
-                    width: 32px;
-                    height: 36px;
+                    width: 38.15px;
+                    height: 42.5px;
+                    margin-top: 5px;
                 }
                 header .gnb .gnb_wrap .gnb_logo {
-                    width: 32px;
-                    height: 36px;
-                    margin-top: 10px;
+                    width: 38.15px;
+                    height: 42.5px;
+                }
+                header .gnb .gnb_wrap .gnb_close {
+                    background-size: 15px;
                 }
 }
 
